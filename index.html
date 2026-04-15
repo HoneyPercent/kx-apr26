@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
 <title>Knoxville Family Trip — April 18–20, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1787,63 +1788,60 @@ const ZONES = {
 
 const PINS = [
   // Home base
-  { lat: 35.97731, lng: -83.92123, name: 'Your Airbnb', zone: 'downtown', desc: '814 Deery St · Home base', icon: '🏠' },
+  { lat: 35.97731, lng: -83.92123, name: 'Your Airbnb', zone: 'downtown', desc: '814 Deery St · Home base', cat: 'home' },
   // Downtown
-  { lat: 35.9652, lng: -83.9199, name: 'Market Square / Rossini', zone: 'downtown', desc: 'Festival Sat 10AM-10PM, Sun 12-7PM · FREE' },
-  { lat: 35.9670, lng: -83.9195, name: 'Gay Street', zone: 'downtown', desc: 'Main downtown strip · bookstores, restaurants, coffee' },
-  { lat: 35.9641, lng: -83.9209, name: 'Union Ave Books', zone: 'downtown', desc: '517 Union Ave · Sat 10-7, Sun 12-6, Mon 10-8' },
-  { lat: 35.9686, lng: -83.9205, name: "Addison's Bookstore", zone: 'downtown', desc: '126 S Gay St · Sat 10-6, Sun 12-4, Mon CLOSED' },
-  { lat: 35.9626, lng: -83.9193, name: 'Lawson McGhee Library', zone: 'downtown', desc: '500 W Church Ave · Sun 1-5PM, Mon 9AM-8PM' },
-  { lat: 35.9627, lng: -83.9258, name: 'Knoxville Museum of Art', zone: 'downtown', desc: '1050 World\'s Fair Park Dr · FREE · Mon CLOSED' },
-  { lat: 35.9525, lng: -83.9272, name: 'McClung Museum', zone: 'downtown', desc: '1327 Circle Park Dr · FREE · Mon CLOSED' },
-  { lat: 35.9619, lng: -83.9235, name: 'Sunsphere', zone: 'downtown', desc: '810 Clinch Ave · FREE · Mon 10AM-5PM' },
-  { lat: 35.9580, lng: -83.9170, name: 'Volunteer Landing', zone: 'downtown', desc: 'Bike rental start · Neyland Greenway access' },
-  { lat: 35.9705, lng: -83.9212, name: "Marble City Market (Yassin's)", zone: 'downtown', desc: '333 W Depot Ave · Daily 11AM-9PM · 3 min from Airbnb' },
-  { lat: 35.9653, lng: -83.9198, name: 'Tomato Head', zone: 'downtown', desc: '12 Market Sq · Sat-Sun only · Vegan cheese pizza' },
-  { lat: 35.9650, lng: -83.9182, name: 'K Brew', zone: 'downtown', desc: '507 S Gay St · Cold brew + bagels' },
-  { lat: 35.9656, lng: -83.9186, name: 'Cruze Farm', zone: 'downtown', desc: '445 S Gay St · Sat-Mon 12-10PM · Sorbet for Martha' },
-  { lat: 35.9670, lng: -83.9190, name: 'Nama Sushi', zone: 'downtown', desc: '506 S Gay St · Mon half-price to-go from 4PM' },
-  { lat: 35.9680, lng: -83.9200, name: 'Potchke', zone: 'downtown', desc: '318 N Gay St · Daily 9AM-3PM · Michelin-listed Jewish deli' },
-  { lat: 35.9645, lng: -83.9190, name: 'Tennessee Theatre (Shatner)', zone: 'downtown', desc: '604 S Gay St · Sun 7-10 PM · Wrath of Khan + Shatner · State St Garage free after 6 PM', icon: '🎬' },
+  { lat: 35.9652, lng: -83.9199, name: 'Market Square / Rossini', zone: 'downtown', desc: 'Festival Sat 10AM-10PM, Sun 12-7PM · FREE', cat: 'music' },
+  { lat: 35.9641, lng: -83.9209, name: 'Union Ave Books', zone: 'downtown', desc: '517 Union Ave · Sat 10-7, Sun 12-6, Mon 10-8', cat: 'books' },
+  { lat: 35.9686, lng: -83.9205, name: "Addison's Bookstore", zone: 'downtown', desc: '126 S Gay St · Sat 10-6, Sun 12-4, Mon CLOSED', cat: 'books' },
+  { lat: 35.9626, lng: -83.9193, name: 'Lawson McGhee Library', zone: 'downtown', desc: '500 W Church Ave · Sun 1-5PM, Mon 9AM-8PM', cat: 'books' },
+  { lat: 35.9627, lng: -83.9258, name: 'Knoxville Museum of Art', zone: 'downtown', desc: '1050 World\'s Fair Park Dr · FREE · Mon CLOSED', cat: 'culture' },
+  { lat: 35.9525, lng: -83.9272, name: 'McClung Museum', zone: 'downtown', desc: '1327 Circle Park Dr · FREE · Mon CLOSED', cat: 'culture' },
+  { lat: 35.9619, lng: -83.9235, name: 'Sunsphere', zone: 'downtown', desc: '810 Clinch Ave · FREE · Mon 10AM-5PM', cat: 'culture' },
+  { lat: 35.9705, lng: -83.9212, name: "Marble City Market (Yassin's)", zone: 'downtown', desc: '333 W Depot Ave · Daily 11AM-9PM · 3 min from Airbnb', cat: 'food' },
+  { lat: 35.9653, lng: -83.9198, name: 'Tomato Head', zone: 'downtown', desc: '12 Market Sq · Sat-Sun only · Vegan cheese pizza', cat: 'food' },
+  { lat: 35.9650, lng: -83.9182, name: 'K Brew', zone: 'downtown', desc: '507 S Gay St · Cold brew + bagels', cat: 'coffee' },
+  { lat: 35.9656, lng: -83.9186, name: 'Cruze Farm', zone: 'downtown', desc: '445 S Gay St · Sat-Mon 12-10PM · Sorbet for Martha', cat: 'dessert' },
+  { lat: 35.9670, lng: -83.9190, name: 'Nama Sushi', zone: 'downtown', desc: '506 S Gay St · Mon half-price to-go from 4PM', cat: 'sushi' },
+  { lat: 35.9680, lng: -83.9200, name: 'Potchke', zone: 'downtown', desc: '318 N Gay St · Daily 9AM-3PM · Michelin-listed Jewish deli', cat: 'food' },
+  { lat: 35.9645, lng: -83.9190, name: 'Tennessee Theatre (Shatner)', zone: 'downtown', desc: '604 S Gay St · Sun 7-10 PM · Wrath of Khan + Shatner', cat: 'movie' },
   // South Knox
-  { lat: 35.9562, lng: -83.8718, name: 'Ijams Nature Center', zone: 'south', desc: '2915 Island Home Ave · 12 min · Free (parking $5)' },
-  { lat: 35.9574, lng: -83.9091, name: 'Honeybee Coffee', zone: 'south', desc: '700 Sevier Ave · 6 min · Oat milk, vegan options' },
-  { lat: 35.9450, lng: -83.8905, name: 'SoKno Taco', zone: 'south', desc: '3701 Sevierville Pike · 10 min' },
-  { lat: 35.9322, lng: -83.9188, name: 'Tri-Star Arts / Candoro', zone: 'south', desc: '4450 Candora Ave · Contemporary art in 1923 marble building' },
-  { lat: 35.9530, lng: -83.9050, name: 'Southside Garage', zone: 'south', desc: '1014 Sevier Ave · Food trucks + patio games' },
+  { lat: 35.9562, lng: -83.8718, name: 'Ijams Nature Center', zone: 'south', desc: '2915 Island Home Ave · 12 min · Free (parking $5)', cat: 'nature' },
+  { lat: 35.9574, lng: -83.9091, name: 'Honeybee Coffee', zone: 'south', desc: '700 Sevier Ave · 6 min · Oat milk, vegan options', cat: 'coffee' },
+  { lat: 35.9450, lng: -83.8905, name: 'SoKno Taco', zone: 'south', desc: '3701 Sevierville Pike · 10 min', cat: 'food' },
+  { lat: 35.9322, lng: -83.9188, name: 'Tri-Star Arts / Candoro', zone: 'south', desc: '4450 Candora Ave · Contemporary art in 1923 marble building', cat: 'culture' },
+  { lat: 35.9530, lng: -83.9050, name: 'Southside Garage', zone: 'south', desc: '1014 Sevier Ave · Food trucks + patio games', cat: 'food' },
   // North/East
-  { lat: 35.9831, lng: -83.8824, name: 'Botanical Garden', zone: 'north', desc: '2743 Wimpole Ave · 7 min · FREE · Dawn-dusk' },
-  { lat: 35.9816, lng: -83.9233, name: "Scruffy's Cat Cafe", zone: 'north', desc: '1015 N Broadway · 3 min · BOOK AHEAD · Mon CLOSED' },
-  { lat: 35.9967, lng: -83.8928, name: 'Zoo Knoxville', zone: 'north', desc: '3500 Knoxville Zoo Dr · 5 min · Daily 9-5' },
-  { lat: 35.9971, lng: -83.8850, name: 'Muse Knoxville', zone: 'north', desc: '516 N Beaman St · 10 min · Mon CLOSED' },
+  { lat: 35.9831, lng: -83.8824, name: 'Botanical Garden', zone: 'north', desc: '2743 Wimpole Ave · 7 min · FREE · Dawn-dusk', cat: 'nature' },
+  { lat: 35.9816, lng: -83.9233, name: "Scruffy's Cat Cafe", zone: 'north', desc: '1015 N Broadway · 3 min · BOOK AHEAD · Mon CLOSED', cat: 'cats' },
+  { lat: 35.9967, lng: -83.8928, name: 'Zoo Knoxville', zone: 'north', desc: '3500 Knoxville Zoo Dr · 5 min · Daily 9-5', cat: 'zoo' },
+  { lat: 35.9971, lng: -83.8850, name: 'Muse Knoxville', zone: 'north', desc: '516 N Beaman St · 10 min · Mon CLOSED', cat: 'kids' },
   // West
-  { lat: 35.8912, lng: -84.1464, name: "Sir Goony's", zone: 'west', desc: '10925 Kingston Pike · 25 min · Mini golf + go-karts' },
-  { lat: 35.9122, lng: -84.0843, name: 'Main Event', zone: 'west', desc: '9081 Kingston Pike · 20 min · Laser tag, bowling, arcade' },
-  { lat: 35.9077, lng: -84.1061, name: 'Urban Air', zone: 'west', desc: '9626 Kingston Pike · 22 min · Trampoline park' },
-  { lat: 35.9079, lng: -84.1215, name: 'Breakout Games', zone: 'west', desc: '211 Center Park Dr · 22 min · Escape rooms · Try CYBER50' },
-  { lat: 35.8621, lng: -84.0669, name: 'Cinnaholic', zone: 'west', desc: '9450 S Northshore Dr · 20 min · 100% vegan cinnamon rolls' },
-  { lat: 35.9332, lng: -84.0010, name: 'Sitar Indian', zone: 'west', desc: '6004 Kingston Pike · 15 min · Lunch buffet' },
-  { lat: 35.9210, lng: -84.0400, name: 'Makino', zone: 'west', desc: '8217 Kingston Pike · 15 min · All-you-can-eat sushi' },
+  { lat: 35.8912, lng: -84.1464, name: "Sir Goony's", zone: 'west', desc: '10925 Kingston Pike · 25 min · Mini golf + go-karts', cat: 'kids' },
+  { lat: 35.9122, lng: -84.0843, name: 'Main Event', zone: 'west', desc: '9081 Kingston Pike · 20 min · Laser tag, bowling, arcade', cat: 'kids' },
+  { lat: 35.9077, lng: -84.1061, name: 'Urban Air', zone: 'west', desc: '9626 Kingston Pike · 22 min · Trampoline park', cat: 'kids' },
+  { lat: 35.8621, lng: -84.0669, name: 'Cinnaholic', zone: 'west', desc: '9450 S Northshore Dr · 20 min · 100% vegan cinnamon rolls', cat: 'dessert' },
+  { lat: 35.9332, lng: -84.0010, name: 'Sitar Indian', zone: 'west', desc: '6004 Kingston Pike · 15 min · Lunch buffet', cat: 'food' },
+  { lat: 35.9210, lng: -84.0400, name: 'Makino', zone: 'west', desc: '8217 Kingston Pike · 15 min · All-you-can-eat sushi', cat: 'sushi' },
   // Oak Ridge
-  { lat: 36.0131, lng: -84.2529, name: 'AMSE', zone: 'oakridge', desc: '115 E Main St · 35 min · Sun 1-5, Mon 9-5 · $10/5' },
-  { lat: 36.0237, lng: -84.2731, name: 'Manhattan Project + Children\'s Museum', zone: 'oakridge', desc: '461 W Outer Dr · 35 min · Sun 1-4 · Mon CLOSED' },
-  { lat: 35.9260, lng: -84.3903, name: 'K-25 History Center', zone: 'oakridge', desc: '652 Enrichment St · 40 min · Sun 1-5 · Free' },
+  { lat: 36.0131, lng: -84.2529, name: 'AMSE', zone: 'oakridge', desc: '115 E Main St · 35 min · Sun 1-5, Mon 9-5 · $10/5', cat: 'science' },
+  { lat: 36.0237, lng: -84.2731, name: 'Manhattan Project + Children\'s Museum', zone: 'oakridge', desc: '461 W Outer Dr · 35 min · Sun 1-4 · Mon CLOSED', cat: 'science' },
+  { lat: 35.9260, lng: -84.3903, name: 'K-25 History Center', zone: 'oakridge', desc: '652 Enrichment St · 40 min · Sun 1-5 · Free', cat: 'science' },
   // Smokies
-  { lat: 35.6730, lng: -83.7483, name: 'Foothills Parkway / Look Rock', zone: 'smokies', desc: '360° views · 0.8 mi RT hike to tower · 50 min' },
-  { lat: 35.6690, lng: -83.6751, name: 'Meigs Falls', zone: 'smokies', desc: 'Roadside pullout · Zero hiking · 1 hr 15 min' },
-  { lat: 35.6844, lng: -83.5373, name: 'Sugarlands Visitor Center', zone: 'smokies', desc: '1420 Fighting Creek Gap Rd · 1 hr' },
-  { lat: 35.6065, lng: -83.7741, name: 'Cades Cove', zone: 'smokies', desc: '11-mi loop · 2-4 hrs · Wildlife · 1 hr 15 min' },
+  { lat: 35.6730, lng: -83.7483, name: 'Foothills Parkway / Look Rock', zone: 'smokies', desc: '360° views · 0.8 mi RT hike to tower · 50 min', cat: 'scenic' },
+  { lat: 35.6690, lng: -83.6751, name: 'Meigs Falls', zone: 'smokies', desc: 'Roadside pullout · Zero hiking · 1 hr 15 min', cat: 'scenic' },
+  { lat: 35.6844, lng: -83.5373, name: 'Sugarlands Visitor Center', zone: 'smokies', desc: '1420 Fighting Creek Gap Rd · 1 hr', cat: 'scenic' },
+  { lat: 35.6065, lng: -83.7741, name: 'Cades Cove', zone: 'smokies', desc: '11-mi loop · 2-4 hrs · Wildlife · 1 hr 15 min', cat: 'scenic' },
   // Gatlinburg
-  { lat: 35.7093, lng: -83.5205, name: 'Ober Mountain Tram', zone: 'gatlinburg', desc: '1001 Parkway · 55 min · $29/person · Buy online' },
-  { lat: 35.7341, lng: -83.5216, name: 'Gatlinburg Welcome Center', zone: 'gatlinburg', desc: '1011 Banner Rd · Free trolley + park-and-ride' },
+  { lat: 35.7093, lng: -83.5205, name: 'Ober Mountain Tram', zone: 'gatlinburg', desc: '1001 Parkway · 55 min · $29/person · Buy online', cat: 'tram' },
+  { lat: 35.7341, lng: -83.5216, name: 'Gatlinburg Welcome Center', zone: 'gatlinburg', desc: '1011 Banner Rd · Free trolley + park-and-ride', cat: 'route' },
   // Birding
-  { lat: 35.9538, lng: -83.6865, name: 'Seven Islands Birding Park', zone: 'birding', desc: '2809 Kelly Ln, Kodak · 25 min · Free · Dawn-dusk' },
+  { lat: 35.9538, lng: -83.6865, name: 'Seven Islands Birding Park', zone: 'birding', desc: '2809 Kelly Ln, Kodak · 25 min · Free · Dawn-dusk', cat: 'bird' },
   // Route stops
-  { lat: 34.3081, lng: -84.7498, name: "Buc-ee's Calhoun", zone: 'route', desc: 'I-75 Exit 310 · Gas, food, restrooms · ~65 mi from Atlanta' },
-  { lat: 35.6010, lng: -84.4610, name: 'The Lost Sea', zone: 'route', desc: 'I-75 Exit 60 · Cave + underground lake boat tour · $98 family' },
-  { lat: 35.6037, lng: -84.4636, name: 'Duck Park — Sweetwater', zone: 'route', desc: 'I-75 Exit 60 · Free · Quick kid leg-stretch' },
-  { lat: 35.4430, lng: -84.7550, name: 'Mayfield Dairy — Athens', zone: 'route', desc: 'I-75 Exit 52 · Mon tours only · Factory tour + ice cream · $32 family' },
-  { lat: 35.1160, lng: -84.9780, name: 'Red Clay State Park', zone: 'route', desc: 'I-75 Exit 20 · 20 min off highway · Cherokee history · Free' },
+  { lat: 34.3081, lng: -84.7498, name: "Buc-ee's Calhoun", zone: 'route', desc: 'I-75 Exit 310 · Gas, food, restrooms · ~65 mi from Atlanta', cat: 'route' },
+  { lat: 35.6010, lng: -84.4610, name: 'The Lost Sea', zone: 'route', desc: 'I-75 Exit 60 · Cave + underground lake boat tour · $98 family', cat: 'route' },
+  { lat: 35.6037, lng: -84.4636, name: 'Duck Park — Sweetwater', zone: 'route', desc: 'I-75 Exit 60 · Free · Quick kid leg-stretch', cat: 'nature' },
+  { lat: 35.4430, lng: -84.7550, name: 'Mayfield Dairy — Athens', zone: 'route', desc: 'I-75 Exit 52 · Mon tours only · Factory tour + ice cream · $32 family', cat: 'dessert' },
+  { lat: 35.1160, lng: -84.9780, name: 'Red Clay State Park', zone: 'route', desc: 'I-75 Exit 20 · 20 min off highway · Cherokee history · Free', cat: 'culture' },
 ];
 
 // ── MAP ──
@@ -1857,19 +1855,58 @@ function initMap() {
     maxZoom: 19
   }).addTo(map);
 
+  // Category icons for distinguished markers
+  const CAT_ICONS = {
+    home: { emoji: '🏠', size: 28 },
+    food: { emoji: '🍽️', size: 20 },
+    coffee: { emoji: '☕', size: 18 },
+    dessert: { emoji: '🍦', size: 18 },
+    nature: { emoji: '🌿', size: 20 },
+    culture: { emoji: '🏛️', size: 20 },
+    kids: { emoji: '🎮', size: 20 },
+    cats: { emoji: '🐱', size: 20 },
+    music: { emoji: '🎵', size: 20 },
+    sushi: { emoji: '🍣', size: 20 },
+    books: { emoji: '📚', size: 18 },
+    movie: { emoji: '🎬', size: 20 },
+    market: { emoji: '🛒', size: 18 },
+    zoo: { emoji: '🦁', size: 20 },
+    bird: { emoji: '🐦', size: 20 },
+    scenic: { emoji: '🏔️', size: 20 },
+    tram: { emoji: '🚡', size: 20 },
+    science: { emoji: '🔬', size: 20 },
+    route: { emoji: '📍', size: 18 },
+    default: { emoji: '●', size: 16 }
+  };
+
   PINS.forEach(pin => {
     const zone = ZONES[pin.zone];
-    const marker = L.circleMarker([pin.lat, pin.lng], {
-      radius: pin.icon === '🏠' ? 10 : 7,
-      fillColor: zone.color,
-      color: '#fff',
-      weight: 2,
-      opacity: 1,
-      fillOpacity: 0.85
-    }).addTo(map);
+    const cat = CAT_ICONS[pin.cat] || CAT_ICONS.default;
+    let marker;
+
+    if (pin.cat) {
+      // Use emoji div icon for categorized pins
+      const icon = L.divIcon({
+        html: `<div style="font-size:${cat.size}px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));cursor:pointer;">${cat.emoji}</div>`,
+        iconSize: [cat.size + 4, cat.size + 4],
+        iconAnchor: [(cat.size + 4) / 2, (cat.size + 4) / 2],
+        className: ''
+      });
+      marker = L.marker([pin.lat, pin.lng], { icon }).addTo(map);
+    } else {
+      // Fallback circle marker for uncategorized
+      marker = L.circleMarker([pin.lat, pin.lng], {
+        radius: 7,
+        fillColor: zone.color,
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.85
+      }).addTo(map);
+    }
 
     marker.bindPopup(`
-      <div class="popup-name">${pin.icon || zone.icon} ${pin.name}</div>
+      <div class="popup-name">${pin.icon || cat.emoji || zone.icon} ${pin.name}</div>
       <div class="popup-meta">${pin.desc}</div>
     `);
 
