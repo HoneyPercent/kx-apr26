@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Knoxville Family Trip — April 18–20, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root {
+  --bg: #f8f7f5;
+  --surface: #ffffff;
+  --surface-alt: #f3f1ec;
+  --border: #e2ddd5;
+  --text: #2c2825;
+  --text-dim: #7a7267;
+  --text-light: #a39888;
+  --red: #c53030;
+  --orange: #c05621;
+  --yellow: #975a16;
+  --green: #276749;
+  --blue: #2b6cb0;
+  --purple: #6b46c1;
+  --teal: #2c7a7b;
+  --pink: #b83280;
+  --accent: #8b5e34;
+  --signature: #276749;
+  --signature-bg: #f0fff4;
+  --excellent: #2b6cb0;
+  --excellent-bg: #ebf8ff;
+  --backup: #7a7267;
+  --backup-bg: #f3f1ec;
+  --zone-downtown: #2b6cb0;
+  --zone-south: #276749;
+  --zone-north: #6b46c1;
+  --zone-west: #c05621;
+  --zone-oakridge: #c53030;
+  --zone-smokies: #2c7a7b;
+  --zone-gatlinburg: #b83280;
+  --zone-route: #8b5e34;
+  --zone-birding: #975a16;
+  --dairy-excellent: #276749;
+  --dairy-good: #2b6cb0;
+  --dairy-fair: #c05621;
+  --dairy-poor: #c53030;
+  --shadow-sm: 0 1px 3px rgba(44,40,37,0.08);
+  --shadow-md: 0 4px 12px rgba(44,40,37,0.1);
+  --shadow-lg: 0 8px 24px rgba(44,40,37,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+[data-theme="dark"] {
+  --bg: #111827;
+  --surface: #1f2937;
+  --surface-alt: #374151;
+  --border: #4b5563;
+  --text: #f3f4f6;
+  --text-dim: #9ca3af;
+  --text-light: #6b7280;
+  --red: #fca5a5;
+  --orange: #fdba74;
+  --yellow: #fcd34d;
+  --green: #6ee7b7;
+  --blue: #93c5fd;
+  --purple: #c4b5fd;
+  --teal: #5eead4;
+  --pink: #f9a8d4;
+  --accent: #d4a574;
+  --signature: #6ee7b7;
+  --signature-bg: #064e3b;
+  --excellent: #93c5fd;
+  --excellent-bg: #1e3a5f;
+  --backup: #9ca3af;
+  --backup-bg: #374151;
+  --zone-downtown: #93c5fd;
+  --zone-south: #6ee7b7;
+  --zone-north: #c4b5fd;
+  --zone-west: #fdba74;
+  --zone-oakridge: #fca5a5;
+  --zone-smokies: #5eead4;
+  --zone-gatlinburg: #f9a8d4;
+  --zone-route: #d4a574;
+  --zone-birding: #fcd34d;
+  --dairy-excellent: #6ee7b7;
+  --dairy-good: #93c5fd;
+  --dairy-fair: #fdba74;
+  --dairy-poor: #fca5a5;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.hero {
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #276749 100%);
+  color: #fff;
+  padding: 40px 24px 24px;
+  position: relative;
+}
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #064e3b 100%);
+}
+.hero-inner { max-width: 1200px; margin: 0 auto; }
+.hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 4px; }
+.hero .subtitle { font-size: 1.1rem; opacity: 0.85; margin-bottom: 16px; font-family: 'DM Sans', sans-serif; }
+.hero-stats {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+.hero-stat {
+  background: rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(4px);
+}
+.hero-stat strong { display: block; font-size: 1.1rem; }
+.theme-toggle {
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(255,255,255,0.2);
+  border: none; border-radius: 50%;
+  width: 40px; height: 40px;
+  cursor: pointer; font-size: 1.2rem;
+  color: #fff;
+  transition: background 0.2s;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.35); }
+
+/* Timeline nav */
+.timeline-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  position: sticky; top: 0; z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+.timeline-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; gap: 0;
+  overflow-x: auto;
+}
+.timeline-tab {
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  background: none; border-top: none; border-left: none; border-right: none;
+  font-family: 'DM Sans', sans-serif;
+}
+.timeline-tab:hover { color: var(--text); background: var(--surface-alt); }
+.timeline-tab.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+/* Main layout */
+.main { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+/* Map */
+.map-section { margin-bottom: 32px; }
+.map-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+#map { height: 480px; width: 100%; }
+.map-filters {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.map-filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--surface);
+}
+.map-filter-btn.active { color: #fff !important; }
+.map-filter-btn:not(.active) { opacity: 0.6; }
+
+/* Section */
+.section {
+  margin-bottom: 40px;
+  scroll-margin-top: 60px;
+}
+.section-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed var(--border);
+}
+.section-icon { font-size: 1.5rem; }
+.section-title { font-size: 1.5rem; font-weight: 700; }
+.section-count {
+  background: var(--surface-alt);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+/* Expand chevron affordance */
+.card::after {
+  content: '▾ tap for details';
+  display: block;
+  text-align: right;
+  font-size: 0.7rem;
+  color: var(--text-light);
+  padding: 4px 16px 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+.card.expanded::after {
+  content: '▴ collapse';
+}
+.card-accent {
+  height: 4px;
+}
+.card-body { padding: 16px; }
+.card-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 8px;
+}
+.card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.card-badges { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+.badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+}
+.badge-signature { background: var(--signature-bg); color: var(--signature); }
+.badge-excellent { background: var(--excellent-bg); color: var(--excellent); }
+.badge-backup { background: var(--backup-bg); color: var(--backup); }
+.badge-zone {
+  font-size: 0.6rem;
+  padding: 2px 7px;
+}
+
+.card-sell {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+.card-meta {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 8px;
+}
+.meta-item {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  display: flex; align-items: center; gap: 4px;
+}
+.meta-icon { font-size: 0.85rem; }
+
+/* Expandable detail */
+.card-detail {
+  display: none;
+  padding: 12px 16px 16px;
+  border-top: 1px dashed var(--border);
+  background: var(--surface-alt);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.card.expanded .card-detail { display: block; }
+.card.expanded { box-shadow: var(--shadow-lg); }
+.detail-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin-bottom: 10px;
+}
+.detail-label { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; }
+.detail-value { font-size: 0.83rem; }
+.detail-tip {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: 8px;
+  font-size: 0.82rem;
+}
+
+/* Dairy badge */
+.dairy-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+.dairy-excellent { background: #f0fff4; color: var(--dairy-excellent); }
+.dairy-good { background: #ebf8ff; color: var(--dairy-good); }
+.dairy-fair { background: #fffaf0; color: var(--dairy-fair); }
+[data-theme="dark"] .dairy-excellent { background: #064e3b; }
+[data-theme="dark"] .dairy-good { background: #1e3a5f; }
+[data-theme="dark"] .dairy-fair { background: #451a03; }
+
+/* Decision tree */
+.decision-tree {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+  margin-bottom: 32px;
+}
+.decision-tree h3 { margin-bottom: 16px; font-size: 1.3rem; }
+.decision-prompt {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.decision-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.decision-option {
+  background: var(--surface-alt);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+}
+.decision-option:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+.decision-option.selected {
+  border-color: var(--blue);
+  background: var(--excellent-bg);
+  box-shadow: 0 0 0 1px var(--blue);
+}
+.decision-option h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  font-family: 'Playfair Display', serif;
+}
+.decision-option p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.decision-result {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--blue);
+  display: none;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.decision-result.visible { display: block; animation: fadeSlide 0.3s ease; }
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Drive route */
+.route-timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.route-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--border);
+  border-radius: 3px;
+}
+.route-stop {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.route-stop:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+.route-stop::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 18px;
+  width: 13px;
+  height: 13px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+}
+.route-stop.highlight::before { background: var(--green); width: 15px; height: 15px; left: -28px; top: 17px; }
+.route-stop-header { display: flex; justify-content: space-between; align-items: center; }
+.route-stop-name { font-weight: 700; font-size: 0.95rem; }
+.route-stop-distance {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  background: var(--surface-alt);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+.route-stop-detail {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.route-stop.expanded .route-stop-detail { display: block; }
+.route-stop-sell {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+.route-stop .expand-chevron {
+  float: right;
+  font-size: 0.7rem;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+.route-stop .expand-chevron::after { content: '▾ details'; }
+.route-stop.expanded .expand-chevron::after { content: '▴ collapse'; }
+
+/* Action items callout */
+.callout {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--orange);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.callout h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.callout ul { padding-left: 20px; }
+.callout li { margin-bottom: 6px; font-size: 0.88rem; }
+.callout-info { border-left-color: var(--blue); }
+.callout-warn { border-left-color: var(--orange); }
+.callout-good { border-left-color: var(--green); }
+
+/* Useful apps */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.app-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.app-icon { font-size: 2rem; flex-shrink: 0; }
+.app-name { font-weight: 700; font-size: 0.9rem; }
+.app-desc { font-size: 0.8rem; color: var(--text-dim); }
+
+/* Cross-reference links with tooltips */
+.ref {
+  color: var(--blue);
+  cursor: pointer;
+  border-bottom: 1px dotted var(--blue);
+  position: relative;
+  white-space: nowrap;
+}
+.ref:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.ref-tooltip {
+  display: none;
+  position: fixed;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 12px 16px;
+  width: 340px;
+  z-index: 2000;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text);
+  pointer-events: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+}
+.ref-tooltip * { white-space: normal !important; }
+.ref-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: var(--arrow-left, 50%);
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--border);
+}
+.ref-tooltip.visible { display: block; }
+.ref-tooltip .tt-name { font-weight: 700; font-size: 0.85rem; margin-bottom: 3px; }
+.ref-tooltip .tt-meta { color: var(--text-dim); font-size: 0.75rem; margin-bottom: 4px; }
+.ref-tooltip .tt-sell { font-size: 0.78rem; }
+.ref-tooltip .tt-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 6px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.tt-df-excellent { background: var(--signature-bg); color: var(--dairy-excellent); }
+.tt-df-good { background: var(--excellent-bg); color: var(--dairy-good); }
+.tt-df-fair { background: #fffaf0; color: var(--dairy-fair); }
+[data-theme="dark"] .tt-df-fair { background: #451a03; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 1.6rem; }
+  .hero-stats { flex-direction: column; }
+  #map { height: 320px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .decision-options { grid-template-columns: 1fr; }
+  .timeline-tab { padding: 10px 14px; font-size: 0.8rem; }
+  .section-title { font-size: 1.2rem; }
+}
+
+/* Leaflet popup custom */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-sm) !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+.leaflet-popup-content { font-size: 0.85rem !important; margin: 10px 14px !important; }
+.popup-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+.popup-meta { color: #666; font-size: 0.78rem; }
+.popup-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+/* Glance card */
+.glance-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+.glance-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+.glance-days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+.glance-day {
+  padding: 12px 16px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--blue);
+}
+.glance-day h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  font-family: 'Playfair Display', serif;
+}
+.glance-day p {
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.glance-day.sat { border-left-color: var(--green); }
+.glance-day.sun { border-left-color: var(--blue); }
+.glance-day.mon { border-left-color: var(--accent); }
+.glance-meal {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+.glance-provision {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--orange);
+  font-size: 0.84rem;
+  color: var(--text-dim);
+}
+
+/* Scroll hint */
+.expand-hint {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  text-align: right;
+  margin-top: 4px;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+  <div class="hero-inner">
+    <h1>Knoxville Family Trip</h1>
+    <div class="subtitle">Saturday April 18 – Monday April 20, 2026 &nbsp;·&nbsp; The Steins</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>814 Deery St</strong>Walkable to Old City &amp; Downtown</div>
+      <div class="hero-stat"><strong>Check-in 4 PM Sat</strong>Checkout 10 AM Mon</div>
+      <div class="hero-stat"><strong>~3 hr drive</strong>185 mi via I-75 N</div>
+      <div class="hero-stat"><strong>Rossini Festival</strong>Free downtown — your weekend</div>
+    </div>
+  </div>
+</div>
+
+<nav class="timeline-nav">
+  <div class="timeline-inner">
+    <button class="timeline-tab active" onclick="scrollToSection('map-section')">Map</button>
+    <button class="timeline-tab" onclick="scrollToSection('action-items')">Do Now</button>
+    <button class="timeline-tab" onclick="scrollToSection('drive-up')">Sat Drive</button>
+    <button class="timeline-tab" onclick="scrollToSection('saturday')">Sat PM</button>
+    <button class="timeline-tab" onclick="scrollToSection('sunday-decision')">Sunday</button>
+    <button class="timeline-tab" onclick="scrollToSection('monday')">Mon AM</button>
+    <button class="timeline-tab" onclick="scrollToSection('food')">Food</button>
+    <button class="timeline-tab" onclick="scrollToSection('kids')">Kids</button>
+    <button class="timeline-tab" onclick="scrollToSection('nature')">Nature</button>
+    <button class="timeline-tab" onclick="scrollToSection('drive-back')">Mon Drive</button>
+    <button class="timeline-tab" onclick="scrollToSection('apps')">Apps</button>
+  </div>
+</nav>
+
+<div class="main">
+
+<!-- MAP -->
+<div class="section map-section" id="map-section">
+  <div class="map-container">
+    <div id="map"></div>
+    <div class="map-filters" id="map-filters"></div>
+  </div>
+</div>
+
+<!-- WEEKEND AT A GLANCE -->
+<div class="glance-card">
+  <h3>Your Weekend in 30 Seconds</h3>
+  <div class="glance-days">
+    <div class="glance-day sat">
+      <h4>Saturday — Arrive &amp; Explore</h4>
+      <p>Drive up after Eli's game (~10:30 AM, Buc-ee's stop). Arrive ~2:30. Settle in, then walk to Rossini Festival — free music, food, kids zone, all downtown. The city hands you your evening.</p>
+      <div class="glance-meal">Road lunch ~11:30: Champy's Fried Chicken (Exit 1 TN, zero detour) or North Indian Flame (Exit 312, Calhoun) · Arrival snack ~3 PM: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-yassins').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-yassins').classList.add('expanded');">Yassin's<span class="ref-tooltip"><div class="tt-name">Yassin's Falafel House<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Marble City Market · Daily 11-9 · $ · 3 min</div><div class="tt-sell">Falafel is naturally dairy-free. Open every day.</div></span></span> or Three Rivers Market · Dinner: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-tomato-head').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-tomato-head').classList.add('expanded');">Tomato Head<span class="ref-tooltip"><div class="tt-name">Tomato Head<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">12 Market Sq · Sat-Sun only · $$ · 5 min</div><div class="tt-sell">Vegan cheese on any pizza. Best all-around.</div></span></span> at Market Square or <span class="ref" onclick="event.stopPropagation();document.getElementById('card-gosh').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-gosh').classList.add('expanded');">Gosh Ethiopian<span class="ref-tooltip"><div class="tt-name">Gosh Ethiopian<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Sat 4-8 PM ONLY · $$ · 10 min</div><div class="tt-sell">Communal injera eating. Fun for kids. Very limited hours.</div></span></span> (Sat 4-8 PM only)</div>
+    </div>
+    <div class="glance-day sun">
+      <h4>Sunday — Adventure + Shatner</h4>
+      <p>Morning adventure (pick a branch at breakfast — Smokies, Oak Ridge, or chill). Wrap by 4-5 PM → Airbnb downtime &amp; naps → early dinner → <strong>Wrath of Khan + William Shatner at Tennessee Theatre, 7-10 PM.</strong></p>
+      <div class="glance-meal">Brunch: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-potchke').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-potchke').classList.add('expanded');">Potchke<span class="ref-tooltip"><div class="tt-name">Potchke<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">318 N Gay St · Daily 9-3 · $$ · 5 min</div><div class="tt-sell">Michelin-listed Jewish deli. Avo Tartine for Martha.</div></span></span> (9-3) · Pre-show dinner ~5:30: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-yassins').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-yassins').classList.add('expanded');">Yassin's<span class="ref-tooltip"><div class="tt-name">Yassin's<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Marble City Market · Daily 11-9 · $ · 3 min</div><div class="tt-sell">Quick, close to Airbnb, naturally dairy-free.</div></span></span> (quick, 3 min) or <span class="ref" onclick="event.stopPropagation();document.getElementById('card-nama').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-nama').classList.add('expanded');">Nama Sushi<span class="ref-tooltip"><div class="tt-name">Nama Sushi Bar<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">506 S Gay St · Sun 12-9 · $$-$$$ · 5 min</div><div class="tt-sell">Near the Tennessee Theatre. Kids menu available.</div></span></span> (near theatre)</div>
+    </div>
+    <div class="glance-day mon">
+      <h4>Monday — Light Exit</h4>
+      <p>Potchke breakfast → hit the road by 10:30. <strong>Home by 4 PM.</strong> One stop on the way: Mayfield Dairy tour (Mon only, free ice cream) or Lost Sea cave — not both.</p>
+      <div class="glance-meal">Breakfast: Potchke (9 AM) · Lunch: Mayfield Dairy ice cream or grab-and-go</div>
+    </div>
+  </div>
+  <div class="glance-provision">
+    <strong>Provisions note:</strong> Three Rivers Market co-op is a 2-min walk from your Airbnb (daily 8AM-8PM). Grab breakfast supplies, snacks, and drinks Saturday evening so Sunday morning is relaxed. Nearest full grocery: Kroger at 2640 N Broadway, 5 min drive.
+  </div>
+</div>
+
+<!-- PRIORITY CHOICES -->
+<div class="callout callout-info" style="margin-bottom:24px;">
+  <h3>The Choices You'll Need to Make</h3>
+  <p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:10px;">This guide has ~40 options. You'll do maybe 8-10 things total. Here's what competes for the same time slot:</p>
+  <ul>
+    <li><strong>Saturday pre-check-in (2:30-4 PM):</strong> Pick ONE — <span class="ref" onclick="event.stopPropagation();document.getElementById('card-ijams').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-ijams').classList.add('expanded');">Ijams<span class="ref-tooltip"><div class="tt-name">Ijams Nature Center</div><div class="tt-meta">12 min · Free (parking $5)</div><div class="tt-sell">River boardwalk, quarry views. The "we're really away" mood.</div></span></span> (nature, 12 min), <span class="ref" onclick="event.stopPropagation();document.getElementById('card-botanical').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-botanical').classList.add('expanded');">Botanical Garden<span class="ref-tooltip"><div class="tt-name">Botanical Garden</div><div class="tt-meta">7 min · FREE</div><div class="tt-sell">44 acres, stone walls. The reset button for tired families.</div></span></span> (easy, 7 min), or skip and head straight to the neighborhood.</li>
+    <li><strong>Saturday dinner:</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-tomato-head').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-tomato-head').classList.add('expanded');">Tomato Head<span class="ref-tooltip"><div class="tt-name">Tomato Head<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Market Square · Sat 11-9:30 · $$</div><div class="tt-sell">Vegan cheese pizza. Easiest family option.</div></span></span> (safe, at Rossini) vs. <span class="ref" onclick="event.stopPropagation();document.getElementById('card-gosh').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-gosh').classList.add('expanded');">Gosh Ethiopian<span class="ref-tooltip"><div class="tt-name">Gosh Ethiopian<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Sat 4-8 PM ONLY · $$ · 10 min</div><div class="tt-sell">Communal injera. Fun for kids. Martha's best DF option.</div></span></span> (adventurous, 4-8 PM only) vs. <span class="ref" onclick="event.stopPropagation();document.getElementById('card-sticky-rice').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-sticky-rice').classList.add('expanded');">Sticky Rice<span class="ref-tooltip"><div class="tt-name">Sticky Rice Cafe<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">Mon-Sat 11-9 · $$ · 10 min</div><div class="tt-sell">Authentic Laotian. Mango sticky rice is a must. Gets crowded.</div></span></span> (local favorite, call ahead).</li>
+    <li><strong>Sunday daytime:</strong> Pick ONE branch — Smokies scenic, Oak Ridge science, downtown chill, or Gatlinburg tram. All must wrap by 4-5 PM for the Shatner show.</li>
+    <li><strong>Sushi night (Sat dinner or Sun pre-show):</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-nama').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-nama').classList.add('expanded');">Nama<span class="ref-tooltip"><div class="tt-name">Nama Sushi Bar<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">506 S Gay St · $$-$$$ · 5 min</div><div class="tt-sell">Knoxville's best. Kids menu. Mon half-price to-go from 4 PM.</div></span></span> (quality, downtown) vs. <span class="ref" onclick="event.stopPropagation();document.getElementById('card-makino').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-makino').classList.add('expanded');">Makino<span class="ref-tooltip"><div class="tt-name">Makino Japanese Buffet<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">8217 Kingston Pike · $$ · 15 min</div><div class="tt-sell">All-you-can-eat, made to order. Kids try everything.</div></span></span> (value, kids love it, 15 min west).</li>
+    <li><strong>Monday return stop:</strong> Pick ONE — Mayfield Dairy tour (Mon only, free ice cream, 45 min) vs. Lost Sea cave (underground lake, 75 min, ⚠️ boat ride) vs. skip both and drive straight.</li>
+    <li><strong>Saturday afternoon fun:</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-scruffys').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-scruffys').classList.add('expanded');">Scruffy's Cat Cafe<span class="ref-tooltip"><div class="tt-name">Scruffy's Cat Cafe</div><div class="tt-meta">1015 N Broadway · Sat-Sun 10-7 · $12/person · 3 min</div><div class="tt-sell">Room of rescue cats. Book ahead on weekends.</div></span></span> (3 min walk, easy win — book a 3 or 4 PM slot as a pre-check-in treat) vs. Zoo Knoxville (half-day, 5 min) vs. save kid activities for Sunday chill branch.</li>
+    <li><strong>West Knox batch (if you go):</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-cinnaholic').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-cinnaholic').classList.add('expanded');">Cinnaholic<span class="ref-tooltip"><div class="tt-name">Cinnaholic<span class="tt-badge tt-df-excellent">DF: Perfect</span></div><div class="tt-meta">9450 S Northshore Dr · Sun 12-6 · $$ · 20 min</div><div class="tt-sell">100% vegan cinnamon rolls. Martha's dessert destination.</div></span></span> + <span class="ref" onclick="event.stopPropagation();document.getElementById('card-makino').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-makino').classList.add('expanded');">Makino<span class="ref-tooltip"><div class="tt-name">Makino<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">8217 Kingston Pike · 15 min</div><div class="tt-sell">All-you-can-eat sushi. Great for kids.</div></span></span> + Sir Goony's / Main Event / Urban Air all cluster in the same direction. Batch them into one west-side outing.</li>
+  </ul>
+</div>
+
+<!-- ACTION ITEMS -->
+<div class="section" id="action-items">
+  <div class="section-header">
+    <span class="section-icon">⚡</span>
+    <h2 class="section-title">Book Now — Before You Forget</h2>
+  </div>
+  <div class="callout callout-warn">
+    <h3>Time-Sensitive</h3>
+    <ul>
+      <li><strong>Scruffy's Cat Cafe</strong> — Weekend slots fill up. Book at <a href="https://www.scruffyscafeknox.com" target="_blank">scruffyscafeknox.com</a>. $12/person weekend, all ages welcome. 1 hr sessions.</li>
+      <li><strong>Airbnb cancellation deadline:</strong> Free cancellation before <strong>4 PM Thursday April 17</strong>.</li>
+      <li><strong>Smokies parking tag:</strong> Buy at <a href="https://www.recreation.gov" target="_blank">recreation.gov</a>. $5/day. Must print — digital not accepted. Match license plate.</li>
+    </ul>
+  </div>
+  <div class="callout callout-good">
+    <h3>Worth Grabbing</h3>
+    <ul>
+      <li><strong>Ober Mountain Tram</strong> (if doing Gatlinburg): Buy online at <a href="https://tickets.obermountain.com" target="_blank">tickets.obermountain.com</a>. $29/person or $37 Spring Fun Pass.</li>
+    </ul>
+  </div>
+  <div class="callout callout-info">
+    <h3>Verify Before Going</h3>
+    <ul>
+      <li><strong>Old City Market:</strong> "Second Sunday" pattern = April 12, not April 19. This market is <strong>probably NOT your weekend</strong>. Call to verify before planning around it.</li>
+      <li><strong>Gosh Ethiopian hours:</strong> Sat 4–8 PM only. Very limited window — plan around it if you want to go.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SATURDAY DRIVE UP -->
+<div class="section" id="drive-up">
+  <div class="section-header">
+    <span class="section-icon">🚗</span>
+    <h2 class="section-title">Saturday Drive Up</h2>
+    <span class="section-count">185 mi · ~3.5 hrs with stops</span>
+  </div>
+  <p style="margin-bottom:10px;font-size:0.9rem;color:var(--text-dim);">Departure ~10:30 AM from Inman Park after Eli's baseball game. I-75 N all the way. Saturday northbound traffic thins by the time you're past Marietta.</p>
+  <p style="margin-bottom:16px;"><a href="#map-section" onclick="event.preventDefault();scrollToSection('map-section');setTimeout(showDriveRoute,400);" style="font-size:0.85rem;font-weight:600;">View drive route on map ↑</a></p>
+  <div class="route-timeline">
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Depart Inman Park</span>
+        <span class="route-stop-distance">Mile 0 · 10:30 AM</span>
+      </div>
+      <div class="route-stop-sell">Through the Connector → I-75 N. Saturday morning = manageable.</div>
+      <div class="route-stop-detail">
+        <p>The I-75/I-85 Connector through Midtown is the first pinch point, but you're starting right at it so you'll be through quickly. I-285 North Perimeter can add 5-10 min on Saturdays. Once past Marietta/Kennesaw, it's clear sailing.</p>
+        <p style="margin-top:6px"><strong>Tip:</strong> If you can push departure to 9:30-10:00 AM, the ride through metro Atlanta is noticeably smoother.</p>
+      </div>
+    </div>
+    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Buc-ee's Calhoun</span>
+        <span class="route-stop-distance">Exit 310 · ~65 mi · ~11:30 AM</span>
+      </div>
+      <div class="route-stop-sell">The family road trip mega-stop. Gas, clean restrooms, BBQ, Beaver Nuggets, fudge.</div>
+      <div class="route-stop-detail">
+        <p><strong>What:</strong> 53,200 sq ft travel center with 120 fuel positions, BBQ counter, kolaches, fudge, and the famous Beaver Nuggets.</p>
+        <p><strong>Why stop:</strong> Perfect 1-hour mark. Cleanest restrooms on I-75. Gas prices are competitive. Kids love browsing. Tesla superchargers if applicable.</p>
+        <p><strong>Time needed:</strong> 15-20 min for gas + restrooms, 30 min if you eat.</p>
+        <p><strong>Gas tip:</strong> Fill up here. This tank gets you to Knoxville easily.</p>
+      </div>
+    </div>
+    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Lunch Stop Options (pick one)</span>
+        <span class="route-stop-distance">Exits 290-312 · ~11:30 AM-12:30 PM</span>
+      </div>
+      <div class="route-stop-sell">Real food, not gas station. Three strong options right off I-75.</div>
+      <div class="route-stop-detail">
+        <p><strong>Option A: <a href="https://champyschicken.com/locations/east-ridge" target="_blank" onclick="event.stopPropagation()">Champy's Fried Chicken</a></strong> — 6515 Ringgold Rd, East Ridge, TN (Exit 1 TN, &lt;2 min off highway). Sat 10:30AM-midnight. Legendary Chattanooga fried chicken, catfish, Southern sides. $9-14. Zero detour — literally at the exit. Dairy-free: chicken batter is flour-based, sides like beans/slaw/greens work. <strong>Top pick if timing works (~12:30 PM).</strong></p>
+        <p style="margin-top:6px;"><strong>Option B: <a href="https://www.nifbr.net" target="_blank" onclick="event.stopPropagation()">North Indian Flame</a></strong> — 115 Travelers Pathway, Calhoun, GA (Exit 312, &lt;2 min off highway). Sat opens 10AM. Surprisingly legit Indian restaurant in small-town Georgia. Tandoori, curries, biryani, naan. $10-18. Dairy-free: excellent — specify "no cream, no ghee." Dal, chana masala, tandoori chicken all work. <strong>Top pick if you want something more adventurous (~11:30 AM).</strong></p>
+        <p style="margin-top:6px;"><strong>Option C: <a href="https://eldoradocartersvillega.com" target="_blank" onclick="event.stopPropagation()">El Dorado Salvadorian &amp; Mexican</a></strong> — 910 Joe Frank Harris Pkwy, Cartersville, GA (Exit 290, ~5 min off highway). Sat 11AM-10PM. Pupusas, tamales, burritos. $8-15. Dairy-free: high — Salvadorian pupusas are naturally dairy-free (corn masa + beans/meat). <strong>Earliest option (~11:15 AM).</strong></p>
+        <p style="margin-top:6px;"><em>Note: No pork constraint — Champy's has chicken/catfish, Indian Flame has all non-pork options, El Dorado has beef/chicken.</em></p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Chattanooga I-75/I-24 Split</span>
+        <span class="route-stop-distance">~120 mi · ~12:45 PM</span>
+      </div>
+      <div class="route-stop-sell">$328M reconstruction mostly done. Daytime should flow, but lane shifts possible.</div>
+      <div class="route-stop-detail">
+        <p>The infamous "Split" reconstruction (Phase 2) completed March 2026. Nighttime lane closures continue between Exit 1 (East Ridge) and Exit 3A (East Brainerd Road), but Saturday daytime should be flowing normally. Stay alert for reduced lanes in spots.</p>
+      </div>
+    </div>
+    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">The Lost Sea — Sweetwater</span>
+        <span class="route-stop-distance">Exit 60 · ~155 mi · 12 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">America's largest underground lake. 75-min guided cave tour + boat ride. Genuinely unique.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=140+Lost+Sea+Rd+Sweetwater+TN+37874" target="_blank" onclick="event.stopPropagation()">140 Lost Sea Rd, Sweetwater, TN 37874</a></p>
+        <p><strong>Website:</strong> <a href="https://thelostsea.com" target="_blank" onclick="event.stopPropagation()">thelostsea.com</a></p>
+        <p><strong>Saturday hours:</strong> 9:30 AM – 6:00 PM, tours every 30 min</p>
+        <p><strong>Cost:</strong> Adults $29.95, Kids (4-12) $18.95 → Family of 4: ~$98</p>
+        <p><strong>Tour:</strong> 75 min. 3/4-mile guided walk through Craighead Caverns + boat ride on the underground lake (the climax).</p>
+        <p><strong>Cave temp:</strong> Constant 58°F — bring a light jacket for the kids.</p>
+        <p><strong>⚠️ Martha note:</strong> The tour includes a BOAT RIDE on the underground lake. This is the highlight — but Martha gets nauseous on boats. It's a flat, calm, glass-bottom boat on still underground water (not ocean waves), but flag this with her. Could be an "Andrew + kids" activity while Martha waits above ground.</p>
+        <p><strong>Detour time:</strong> 12 min off I-75 each way + 75 min tour = ~2 hrs total commitment.</p>
+        <p><strong>Verdict:</strong> If you do this, skip it Saturday (tight timing with 4 PM check-in) and save for Monday return. Open Monday 9:30 AM – 5 PM.</p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Duck Park — Sweetwater</span>
+        <span class="route-stop-distance">Exit 60 · 7 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">Paved trails along Sweetwater Creek, playground, ducks. Quick kid leg-stretch.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> 201 Duck Park Ln, Sweetwater, TN 37874</p>
+        <p><strong>Hours:</strong> Daily 5 AM – 11 PM. Free.</p>
+        <p><strong>Time needed:</strong> 15-20 min for a quick stretch.</p>
+        <p><strong>Verdict:</strong> Nice if you're already stopped at The Lost Sea (same exit). Not worth a standalone detour.</p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Arrive Knoxville — 814 Deery St</span>
+        <span class="route-stop-distance">185 mi · ~1:30-2:00 PM</span>
+      </div>
+      <div class="route-stop-sell">Drop bags, decompress, then downtown for Rossini Festival.</div>
+      <div class="route-stop-detail">
+        <p>Check-in isn't until 4 PM, but you can drop bags and start exploring. Your Airbnb is walkable to Old City and 5 min from downtown. Marble City Market (Yassin's) is 0.5 miles away for a quick lunch.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SATURDAY PM -->
+<div class="section" id="saturday">
+  <div class="section-header">
+    <span class="section-icon">🌆</span>
+    <h2 class="section-title">Saturday Afternoon & Evening</h2>
+  </div>
+  <p style="margin-bottom:16px;font-size:0.9rem;color:var(--text-dim);">Realistically arrive ~2:30 PM (kids + Buc-ee's add time). If before 2, one nature stop before check-in. If after 2, head straight to the neighborhood — Marble City Market is a 3-min walk for a snack. Check in at 4, then let downtown + Rossini carry the evening. State Street Garage is free all weekend.</p>
+  <div class="callout callout-info" style="margin-bottom:16px;">
+    <h3>If It Rains Saturday</h3>
+    <ul>
+      <li>Rossini is outdoor — rain kills the Saturday anchor plan.</li>
+      <li><strong>Backup:</strong> Scruffy's Cat Cafe + bookstores (Union Ave Books, Addison's) + Zoo Knoxville (many covered exhibits) + Cruze Farm for dessert.</li>
+      <li>Or pivot to Main Event (laser tag, bowling — all indoors, open Sat 9AM-2AM).</li>
+    </ul>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" id="card-rossini" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Rossini Festival</span>
+          <div class="card-badges">
+            <span class="badge badge-signature">Signature</span>
+          </div>
+        </div>
+        <div class="card-sell">The short-weekend cheat code. Four outdoor stages of opera, jazz, gospel, ballet. 100+ artisan vendors, food trucks, YFunZone for kids. Free, walkable from your Airbnb. You don't have to invent Saturday — the city does it for you.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> Market Square · 0.9 mi</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 10AM–10PM, Sun 12–7PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Where</span><span class="detail-value">Market Square &amp; surrounding downtown blocks (500 Market St area)</span>
+          <span class="detail-label">Parking</span><span class="detail-value">State Street Garage — free all weekend. Market Square Garage — $3 flat Sat, free Sun.</span>
+          <span class="detail-label">Transit</span><span class="detail-value">KAT Downtown Connector — fare-free, every 15 min weekends</span>
+          <span class="detail-label">Kids</span><span class="detail-value">YFunZone with kid-friendly activities. Wine tastings for adults.</span>
+          <span class="detail-label">Food</span><span class="detail-value">International food trucks — tacos, baklava, cocktails, lemonade</span>
+          <span class="detail-label">Schedule</span><span class="detail-value"><a href="https://www.knoxvilleopera.org/rossini-festival" target="_blank">knoxvilleopera.org/rossini-festival</a></span>
+        </div>
+        <div class="detail-tip">💡 You're walking distance from your Airbnb. No parking needed. This is the anchor of your Saturday — everything else wraps around it.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-ijams" data-zone="south" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-south)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Ijams Nature Center</span>
+          <div class="card-badges">
+            <span class="badge badge-excellent">Quietly Great</span>
+          </div>
+        </div>
+        <div class="card-sell">The best pre-check-in decompression stop. River boardwalk, quarry views, real woods — 12 minutes from your door. It's the "we're really away now" mood without paying a fatigue tax.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 2915 Island Home Ave · 12 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Grounds 8AM–dusk daily</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> Free (parking $5)</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Best trail</span><span class="detail-value">River Boardwalk: ~1.4 mi loop, mostly flat, follows Tennessee River. Mix of mulch + paved. Has steps in spots — not stroller-friendly. 30-60 min.</span>
+          <span class="detail-label">Also</span><span class="detail-value">Tharp Trace around Mead's Quarry: ~1 mi loop with one steep section. Flooded former marble quarry — beautiful.</span>
+          <span class="detail-label">Parking</span><span class="detail-value">$5/day per vehicle. Overflow lot at Mead's Quarry. Members free.</span>
+          <span class="detail-label">Visitor Center</span><span class="detail-value">Sun-Fri 10AM-5PM, Sat 9AM-5PM · <a href="https://www.ijams.org" target="_blank" onclick="event.stopPropagation()">ijams.org</a></span>
+        </div>
+        <div class="detail-tip">💡 Pair with Honeybee Coffee (6 min away) or SoKno Taco for a South Knox half-day.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-botanical" data-zone="north" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-north)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Knoxville Botanical Garden</span>
+          <div class="card-badges">
+            <span class="badge badge-excellent">Pleasant & Peaceful</span>
+          </div>
+        </div>
+        <div class="card-sell">44 acres of gardens, stone walls, and Smoky Mountain views. Free, dawn to dusk. The reset button for a tired-from-driving family — no agenda, just green space.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 2743 Wimpole Ave · 7 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Dawn to dusk daily</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Trails</span><span class="detail-value">0.9-mile greenway (crushed gravel, stroller/wheelchair-friendly) + 2+ miles of garden paths</span>
+          <span class="detail-label">April highlights</span><span class="detail-value">Paulk Peony Garden, dogwood trail, Secret Garden (stone-walled garden rooms), Pollinator Garden</span>
+          <span class="detail-label">Restrooms</span><span class="detail-value">Available during visitor center hours (9AM-5PM)</span>
+        </div>
+        <div class="detail-tip">💡 This is the "reset button" stop, not the grand scenic gesture. Perfect caliber for a tired-from-driving family.</div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Downtown Evening Walk</span>
+          <div class="card-badges">
+            <span class="badge badge-signature">Signature</span>
+          </div>
+        </div>
+        <div class="card-sell">Market Square → Gay Street → bookstores → dessert or cats. Everything on one walk: Rossini, food trucks, Union Ave Books, Cruze Farm, Scruffy's. State Street Garage is free all weekend.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> Downtown · 5 min from Airbnb</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Rossini till 10PM Sat</span>
+          <span class="meta-item"><span class="meta-icon">🅿️</span> State St Garage: FREE weekends</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Bookstores</span><span class="detail-value">Union Ave Books (517 Union Ave, Sat 10-7) · Addison's (126 S Gay St, Sat 10-6)</span>
+          <span class="detail-label">Dessert</span><span class="detail-value">Cruze Farm (445 S Gay St, Sat 12-10PM) — sorbet for Martha, dairy ice cream for others</span>
+          <span class="detail-label">Cats</span><span class="detail-value">Scruffy's Cat Cafe (1015 N Broadway, Sat 10-7) — book ahead! $12/person weekend.</span>
+          <span class="detail-label">Coffee</span><span class="detail-value">K Brew (507 S Gay St, Sat 7AM-8PM) — cold brew, NYC-style bagels</span>
+        </div>
+        <div class="detail-tip">💡 Saturday evening sequence: Rossini + food → bookstore browse → Cruze Farm OR Scruffy's. The city hands you an evening.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUNDAY DECISION TREE -->
+<div class="section" id="sunday-decision">
+  <div class="section-header">
+    <span class="section-icon">🌤️</span>
+    <h2 class="section-title">Sunday — Choose Your Adventure</h2>
+  </div>
+  <div class="callout callout-good" style="margin-bottom:20px;">
+    <h3>Sunday Evening: Wrath of Khan + William Shatner</h3>
+    <ul>
+      <li><strong><a href="https://www.tennesseetheatre.com" target="_blank">Tennessee Theatre</a></strong> — <a href="https://maps.google.com/?q=604+S+Gay+St+Knoxville+TN+37902" target="_blank">604 S Gay St</a> (downtown, walkable from Airbnb)</li>
+      <li><strong>7:00 PM – 10:00 PM</strong> · Doors TBD · Metal detectors at entry, no cameras/recording</li>
+      <li><strong>Parking:</strong> State Street Garage — free after 6 PM on weekends</li>
+      <li><strong>What this means for Sunday:</strong> Wrap your adventure by 4-5 PM → Airbnb downtime / naps → early dinner ~5:30 → walk to theatre by 6:30-6:45</li>
+      <li><strong>Dinner before the show:</strong> Yassin's at Marble City (quick, 3 min from Airbnb, open till 9) or Nama Sushi downtown (near the theatre). Keep it fast — you want to be seated, not rushing.</li>
+    </ul>
+  </div>
+  <p style="margin-bottom:20px;font-size:0.9rem;color:var(--text-dim);">One major choice for daytime, not two. Pick based on the morning radar and your collective energy. All branches should wrap by 4-5 PM for Airbnb downtime before the show.</p>
+
+  <div class="decision-tree">
+    <div class="decision-prompt">What does Sunday morning feel like?</div>
+    <div class="decision-options">
+      <button class="decision-option" onclick="selectDecision(this, 'scenic')">
+        <h4>🏔️ Scenic Calm</h4>
+        <p>Weather is clearing, family wants beauty. Drive to the Smokies via Townsend — roadside waterfalls, paved trails, mountain views. Best scenery-per-effort ratio.</p>
+      </button>
+      <button class="decision-option" onclick="selectDecision(this, 'science')">
+        <h4>🔬 Science & History</h4>
+        <p>Rain or gray sky, or you want indoor structure. Oak Ridge: AMSE, Manhattan Project, real narrative. The "only here" day trip. 35 min drive.</p>
+      </button>
+      <button class="decision-option" onclick="selectDecision(this, 'chill')">
+        <h4>☕ Downtown Chill</h4>
+        <p>Everyone woke up tired or socially full. Stay local: Old City Market, museums, Scruffy's, Ijams. The "we came back restored" choice.</p>
+      </button>
+      <button class="decision-option" onclick="selectDecision(this, 'spectacle')">
+        <h4>🎢 Kid Spectacle</h4>
+        <p>Kids need a big memory. Ober Mountain Tram in Gatlinburg — 2.1-mile aerial ride, alpine coaster, ice skating. More touristy but worth it for wow factor.</p>
+      </button>
+    </div>
+
+    <div class="decision-result" id="result-scenic">
+      <h4 style="margin-bottom:8px;">🏔️ Townsend + Low-Effort Smokies</h4>
+      <p><strong>Drive:</strong> ~75-90 min from Airbnb. Take US-321 S to Townsend ("Peaceful Side of the Smokies").</p>
+      <p style="margin-top:8px;"><strong>Route sequence:</strong></p>
+      <ol style="padding-left:20px;margin-top:4px;">
+        <li><strong>Foothills Parkway West</strong> — 17-mile scenic drive, Look Rock observation tower (0.8 mi RT hike, 360° views). 50 min from Airbnb.</li>
+        <li><strong>Meigs Falls</strong> — Visible from a roadside pullout on Little River Road. Zero hiking. 1 hr 15 min from Airbnb.</li>
+        <li><strong>Sugarlands Visitor Center</strong> — Restrooms, bookshop, exhibits. 1 hr from Airbnb.</li>
+        <li><strong>Sugarlands Valley Nature Trail</strong> — 0.5 mi paved, flat, ADA accessible. The only fully accessible trail in the park. Stroller-friendly. Benches along the way.</li>
+        <li><strong>Cataract Falls</strong> — 0.7 mi RT from Sugarlands. Easy, 32 ft elevation gain. Small 40-ft waterfall. Most dramatic after rain.</li>
+        <li><strong>Cades Cove</strong> (optional, adds 2-4 hrs) — 11-mile one-way scenic loop. 20 mph speed limit. Wildlife (deer almost certain, black bears possible, wild turkeys). Cable Mill stop with historic buildings, restrooms. <strong>Warning: once you start, there is no shortcut out.</strong> Commit or skip. With kids, budget 3-4 hours minimum.</li>
+      </ol>
+      <p style="margin-top:8px;"><strong>Parking:</strong> $5/day tag required (buy at <a href="https://www.recreation.gov" target="_blank">recreation.gov</a>, must print, match license plate). Under 15 min stops don't need one.</p>
+      <p style="margin-top:4px;"><strong>Closed:</strong> Laurel Falls Trail — closed for rehabilitation. Don't plan around it.</p>
+      <p style="margin-top:4px;"><strong>Best version:</strong> Foothills Parkway + Meigs Falls + Sugarlands + Cataract Falls. Skip Cades Cove — with the Shatner show at 7 PM, you need to be back at the Airbnb by 4-5 PM for downtime.</p>
+    </div>
+
+    <div class="decision-result" id="result-science">
+      <h4 style="margin-bottom:8px;">🔬 Oak Ridge — The Secret City</h4>
+      <p><strong>Drive:</strong> ~35 min from Airbnb. I-40 W to Oak Ridge.</p>
+      <p style="margin-top:8px;"><strong>Recommended sequence:</strong></p>
+      <ol style="padding-left:20px;margin-top:4px;">
+        <li><strong>AMSE</strong> (American Museum of Science & Energy) — 115 E Main St. Sun 1-5 PM. Adults $10, Youth $5, under 5 free. Hands-on science + energy exhibits. Start here.</li>
+        <li><strong>Manhattan Project Visitor Center</strong> — Inside Children's Museum at 461 W Outer Dr. Sun 1-4 PM. <strong>Closed Monday.</strong> NPS rangers, oral histories, the "Secret City" story.</li>
+        <li><strong>Children's Museum of Oak Ridge</strong> — Same building (461 W Outer Dr). Sun 1-4 PM. Adults $10, Kids $8. Hands-on backup if attention wobbles.</li>
+        <li><strong>K-25 History Center</strong> — 652 Enrichment St. Sun 1-5 PM. Free. The uranium enrichment plant story. Older-kid appropriate.</li>
+      </ol>
+      <p style="margin-top:8px;"><strong>Note:</strong> Sunday hours start at 1 PM for most Oak Ridge venues. Don't rush out early — have a leisurely Knoxville morning, then head to Oak Ridge after lunch. <strong>Realistically, pick two of the four</strong> — AMSE alone can eat 1.5-2 hrs with hands-on kids, and you only have until 4-5 PM.</p>
+      <p style="margin-top:4px;"><strong>Also open Monday:</strong> AMSE (9-5). Others closed Monday. So if you want to split: do Manhattan Project + Children's Museum Sunday, AMSE Monday morning.</p>
+    </div>
+
+    <div class="decision-result" id="result-chill">
+      <h4 style="margin-bottom:8px;">☕ Downtown Chill Day</h4>
+      <p>This is not the lazy compromise. This is the "we came home feeling better than when we left" choice.</p>
+      <p style="margin-top:8px;"><strong>Morning:</strong> Potchke for brunch (Jewish deli, Michelin-listed, 318 N Gay St, 9AM-3PM) → stroll Gay Street.</p>
+      <p style="margin-top:4px;"><strong>Midday:</strong> Rossini Festival round two (Sun 12-7PM). Browse Union Ave Books or Addison's (Sun 12-4).</p>
+      <p style="margin-top:4px;"><strong>Afternoon:</strong> Pick two: Knoxville Museum of Art (free, Sun 1-5PM) · McClung Museum (free, Sun 10-5) · Sunsphere (Sun 12-4PM) · Scruffy's Cat Cafe (Sun 10-7). Or Ijams for a quiet nature walk.</p>
+      <p style="margin-top:4px;"><strong>4-5 PM:</strong> Back to Airbnb for downtime and naps.</p>
+      <p style="margin-top:4px;"><strong>~5:30 PM:</strong> Quick dinner — Yassin's (3 min walk) or Nama Sushi (near theatre, Sun 12-9PM).</p>
+      <p style="margin-top:4px;"><strong>7 PM:</strong> Wrath of Khan + Shatner at Tennessee Theatre.</p>
+      <p style="margin-top:4px;"><strong>Closed Sunday:</strong> Good Golly Tamale, Sticky Rice Cafe, Benefit Your Life Bakery, KoPita.</p>
+    </div>
+
+    <div class="decision-result" id="result-spectacle">
+      <h4 style="margin-bottom:8px;">🎢 Ober Mountain + Gatlinburg</h4>
+      <p><strong>Drive:</strong> ~55 min from Airbnb to Ober base station (1001 Parkway, Gatlinburg).</p>
+      <p style="margin-top:8px;"><strong>Smart logistics:</strong> Park at Gatlinburg Welcome Center (1011 Banner Rd) and take the free trolley into downtown. Saves parking anxiety.</p>
+      <p style="margin-top:4px;"><strong>Ober Tram:</strong> 2.1-mile ride, 10 min each way, departs every 20 min. $29/person (5+), under 5 free. Spring Fun Pass $37 (includes most mountaintop attractions). Family of 4: ~$116-148.</p>
+      <p style="margin-top:4px;"><strong>At the top:</strong> Tennessee Flyer alpine coaster (open in April — separate charge or Adventure Pass), indoor ice skating, scenic chairlift, Wildlife Encounter.</p>
+      <p style="margin-top:4px;"><strong>Food at top:</strong> Seasons of Ober (full service), Ober Mountain Cafe (burgers/pretzels), Fiddle & Pick BBQ, Buzzin' Bear (coffee + ice cream).</p>
+      <p style="margin-top:4px;"><strong>Anakeesta note:</strong> Partially open — Ridge Rambler only (scenic truck ride), both coasters work, but Chondola is closed. $35 adults / $23 kids. Only worth combining if you're already in Gatlinburg and have set expectations.</p>
+      <p style="margin-top:4px;"><strong>Buy tram tickets online in advance:</strong> <a href="https://tickets.obermountain.com" target="_blank">tickets.obermountain.com</a></p>
+      <p style="margin-top:8px;"><strong>⚠️ Shatner timing:</strong> 55 min drive back from Gatlinburg. To be at the Airbnb by 4:30 for downtime, you need to <strong>leave Gatlinburg by 3:15 PM</strong>. Plan your time at the top accordingly — don't start the alpine coaster at 2:45.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MONDAY AM -->
+<div class="section" id="monday">
+  <div class="section-header">
+    <span class="section-icon">🌅</span>
+    <h2 class="section-title">Monday Morning</h2>
+    <span class="section-count">Checkout by 10 AM</span>
+  </div>
+  <p style="margin-bottom:16px;font-size:0.9rem;color:var(--text-dim);">Keep it light. Coffee + one short walk + depart. Don't turn Monday into a final exam.</p>
+  <div class="card-grid">
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Potchke + Gay Street</span>
+          <div class="card-badges"><span class="badge badge-signature">Top Pick</span></div>
+        </div>
+        <div class="card-sell">Your Monday morning anchor — one of the few great options on a day when half of Knoxville closes. Open 9AM-3PM. Oat milk lattes, Avo Tartine and Mushroom Melt for Martha. Pastrami Reuben for you.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 318 N Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Mon 9AM–3PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ ($12-18)</span>
+          <span class="dairy-badge dairy-good">Dairy-free: Good</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Dairy-free picks</span><span class="detail-value">Avo Tartine (naturally vegan), Mushroom Melt (plant-based Swiss), Potchke Salad (vegan), oat milk for lattes</span>
+          <span class="detail-label">Best for kids</span><span class="detail-value">Bagels, matzoh ball soup, simple sandwiches</span>
+          <span class="detail-label">Also at</span><span class="detail-value">Potchke Bagel: 432 N Cedar Bluff Rd, daily 7AM-2PM</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Sunsphere + World's Fair Park</span>
+          <div class="card-badges"><span class="badge badge-excellent">Quick & Distinctive</span></div>
+        </div>
+        <div class="card-sell">The surviving icon of the 1982 World's Fair. Observation deck opens at 10 AM Monday — but with a 4 PM home deadline, only do this if you're already nearby. Quick 15-minute visit, not worth delaying departure for.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 810 Clinch Ave · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Mon 10AM–5PM (closed 12:30–1:30)</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-tip">💡 If you can leave a bit after 10, this is a distinctly Knoxville final stop. The observation deck has panoramic views and the kids will remember the gold sphere.</div>
+      </div>
+    </div>
+    <div class="card" data-zone="south" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-south)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Honeybee + Ijams</span>
+          <div class="card-badges"><span class="badge badge-excellent">Nature Reset</span></div>
+        </div>
+        <div class="card-sell">If you didn't do Ijams Saturday, Monday morning is perfect. Coffee at Honeybee (700 Sevier Ave), then a short nature walk before hitting the road.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> Honeybee: 6 min · Ijams: 12 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Honeybee: Mon 7AM-6PM · Ijams: 8AM-dusk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div class="callout callout-info">
+      <h3>Closed Monday — Don't Plan Around These</h3>
+      <ul>
+        <li>Tomato Head, Good Golly Tamale, Sticky Rice Cafe, Addison's Bookstore</li>
+        <li>KMA, McClung Museum, Scruffy's Cat Cafe, Muse Knoxville</li>
+        <li>Manhattan Project Visitor Center, Children's Museum of Oak Ridge</li>
+        <li>Knoxville Adventure Collective (bikes)</li>
+      </ul>
+    </div>
+    <div class="callout callout-good">
+      <h3>Open Monday</h3>
+      <ul>
+        <li>Potchke (9AM-3PM), Yassin's (11AM-9PM), Nama Sushi (11AM-9:30PM, half-price to-go from 4PM)</li>
+        <li>Union Ave Books (10AM-8PM), Lawson McGhee Library (9AM-8PM), Sunsphere (10AM-5PM)</li>
+        <li>AMSE Oak Ridge (9AM-5PM), Ijams (8AM-dusk), Zoo Knoxville (9AM-5PM)</li>
+        <li>Cruze Farm (12-10PM), Cinnaholic (8AM-9PM)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FOOD -->
+<div class="section" id="food">
+  <div class="section-header">
+    <span class="section-icon">🍽️</span>
+    <h2 class="section-title">Food Guide</h2>
+    <span class="section-count">Martha's dairy-free rating on every card</span>
+  </div>
+  <p style="margin-bottom:16px;font-size:0.9rem;color:var(--text-dim);">No pork/shellfish. Martha is nondairy. "Dairy-free" rating = how well Martha eats there, not whether they serve any dairy-free item.</p>
+
+  <div class="card-grid">
+    <div class="card" id="card-potchke" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Potchke</span>
+          <div class="card-badges"><span class="badge badge-signature">Don't Miss</span><span class="dairy-badge dairy-good">DF: Good</span></div>
+        </div>
+        <div class="card-sell">Michelin-listed Jewish deli on Gay Street. Pastrami, matzoh ball soup, lox bialys — and several genuinely dairy-free options, not afterthoughts. Andrew, this is your brunch spot.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 318 N Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Daily 9AM–3PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ · $12-18</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Martha picks</span><span class="detail-value">Avo Tartine (naturally vegan), Mushroom Melt (plant-based Swiss), Potchke Salad</span>
+          <span class="detail-label">Kid picks</span><span class="detail-value">Bagels, matzoh ball soup, sandwiches</span>
+          <span class="detail-label">Andrew picks</span><span class="detail-value">Pastrami Reuben ($18), Lox Bialy ($13-17)</span>
+          <span class="detail-label">Open</span><span class="detail-value">Sat ✓ Sun ✓ Mon ✓ (all 9AM-3PM)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-tomato-head" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Tomato Head</span>
+          <div class="card-badges"><span class="badge badge-signature">Best All-Around</span><span class="dairy-badge dairy-excellent">DF: Excellent</span></div>
+        </div>
+        <div class="card-sell">Knoxville institution on Market Square. Vegan cheese on any pizza, vegan pepperoni, daily vegan cupcakes and cookies. The easiest "everyone gets something good" option.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 12 Market Sq · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 11-9:30, Sun 11-8:30</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ · $12-18</span>
+          <span class="meta-item" style="color:var(--red)"><span class="meta-icon">⚠️</span> CLOSED Monday</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Martha picks</span><span class="detail-value">Any pizza with vegan soy cheese + vegan pepperoni (seitan). Daily vegan cupcakes &amp; cookies.</span>
+          <span class="detail-label">Also</span><span class="detail-value">Housemade dough and sandwich rolls are vegan. Staff is knowledgeable about subs.</span>
+          <span class="detail-label">Best pizza w/ vegan cheese in Knoxville</span><span class="detail-value">This is it. Also try A Dopo for best pizza overall (no vegan cheese but will do cheese-free).</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-good-golly" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Good Golly Tamale</span>
+          <div class="card-badges"><span class="badge badge-excellent">Unique & Cheap</span><span class="dairy-badge dairy-good">DF: Good</span></div>
+        </div>
+        <div class="card-sell">Old City tamale spot. The Vegan Soul tamale (blue corn, black-eyed peas, sweet potato, collards) is genuinely excellent, not a concession. $5/tamale. Quick, casual, deeply local.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 112 S Central St · 4 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Mon-Sat 11AM-8PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $ · $5-12</span>
+          <span class="meta-item" style="color:var(--red)"><span class="meta-icon">⚠️</span> CLOSED Sunday</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Martha picks</span><span class="detail-value">Vegan Soul tamale (fully vegan). All sides (black beans, rice, collards, curtido) are vegan.</span>
+          <span class="detail-label">Rating</span><span class="detail-value">4.8 Google · 4.5 Yelp (178 reviews)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-sticky-rice" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Sticky Rice Cafe</span>
+          <div class="card-badges"><span class="badge badge-signature">Hidden Gem</span><span class="dairy-badge dairy-good">DF: Good</span></div>
+        </div>
+        <div class="card-sell">Authentic Laotian, family-run (grandma in the kitchen). One of Knoxville's most beloved restaurants. Coconut curries, spring rolls, and the mango sticky rice dessert is a must. Gets crowded — go early or call ahead.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 120 Jack Dance St · 10 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Mon-Sat 11AM-9PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ · $12-16</span>
+          <span class="meta-item" style="color:var(--red)"><span class="meta-icon">⚠️</span> CLOSED Sunday</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Dairy-free</span><span class="detail-value">Laotian food is naturally low-dairy. Coconut milk curries. Most dishes rice/noodle based.</span>
+          <span class="detail-label">Rating</span><span class="detail-value">4.7 Google (3,797 reviews) · 4.5 Yelp (821 reviews)</span>
+          <span class="detail-label">Must order</span><span class="detail-value">Mango sticky rice for dessert. Non-negotiable.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-yassins" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Yassin's Falafel House</span>
+          <div class="card-badges"><span class="badge badge-excellent">Safe Bet</span><span class="dairy-badge dairy-excellent">DF: Excellent</span></div>
+        </div>
+        <div class="card-sell">"Nicest Place in America" (Reader's Digest). Syrian refugee-owned, beloved community institution. Falafel is naturally dairy-free. Open every day including Sunday — your reliable fallback.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> Marble City Market, 333 W Depot Ave · 3 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Daily 11AM-9PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $ · $8-12</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Dairy-free</span><span class="detail-value">Falafel, hummus, baba ganoush, rice, salads all dairy-free. Avoid tzatziki (yogurt). One of the most naturally DF-friendly cuisines.</span>
+          <span class="detail-label">Website</span><span class="detail-value"><a href="https://yassinsfalafelhouse.com" target="_blank" onclick="event.stopPropagation()">yassinsfalafelhouse.com</a></span>
+          <span class="detail-label">Location note</span><span class="detail-value">Temporarily in Marble City Market food hall while downtown location under construction. Food hall has other options if kids are picky.</span>
+          <span class="detail-label">Open</span><span class="detail-value">Sat ✓ Sun ✓ Mon ✓</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-gosh" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Gosh Ethiopian</span>
+          <div class="card-badges"><span class="badge badge-signature">Hidden Gem</span><span class="dairy-badge dairy-excellent">DF: Excellent</span></div>
+        </div>
+        <div class="card-sell">Communal eating with injera bread — fun and interactive for kids. Many dishes naturally vegan/dairy-free. Ethiopian is one of the best cuisines for Martha. But: very limited Saturday hours.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 3609 Sutherland Ave · 10 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 4-8PM ONLY</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ · $12-18</span>
+          <span class="meta-item" style="color:var(--red)"><span class="meta-icon">⚠️</span> CLOSED Sunday</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Why special</span><span class="detail-value">Ethiopian food is communal (tear injera, scoop), naturally dairy-free in many dishes, and genuinely fun for kids who've never tried it.</span>
+          <span class="detail-label">Must order</span><span class="detail-value">Vegetarian combo platter — multiple dishes, all shareable, most dairy-free</span>
+          <span class="detail-label">Rating</span><span class="detail-value">4.5+ · 147 reviews</span>
+        </div>
+        <div class="detail-tip">⚠️ Saturday 4-8 PM is the only window. If this is your Saturday dinner, plan around it. Conflicts with peak Rossini time — but the festival runs till 10 PM so you could do Gosh early, Rossini after.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-nama" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Nama Sushi Bar</span>
+          <div class="card-badges"><span class="badge badge-excellent">Best Sushi</span><span class="dairy-badge dairy-excellent">DF: Excellent</span></div>
+        </div>
+        <div class="card-sell">Knoxville's gold standard for sushi since 2004. Downtown Gay Street location, kids menu, walkable. Monday = half-price sushi to-go from 4PM. No conveyor belt (none exists in Knoxville), but quality is strong.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 506 S Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 11-10:30, Sun 12-9, Mon 11-9:30</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$-$$$ · $15-30/person</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Kids</span><span class="detail-value">Kids menu available. Multiple locations (Downtown, Bearden, Cedar Bluff).</span>
+          <span class="detail-label">Deal</span><span class="detail-value">Half-price sushi to-go Mon &amp; Thu 4PM-close</span>
+          <span class="detail-label">Open</span><span class="detail-value">Sat ✓ Sun ✓ Mon ✓</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-makino" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-west)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Makino Japanese Buffet</span>
+          <div class="card-badges"><span class="badge badge-excellent">Kid Favorite</span><span class="dairy-badge dairy-good">DF: Good</span></div>
+        </div>
+        <div class="card-sell">All-you-can-eat, made fresh to order (not a steam table). Kids order whatever they want, try everything. Great value at $15-21/person. Not conveyor belt but similarly fun for adventurous eaters.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 8217 Kingston Pike · 15 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 11:30-10, Sun 11:30-9, Mon 11:30-9</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ · Lunch ~$15, Dinner ~$21</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-south)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Southside Garage</span>
+          <div class="card-badges"><span class="badge badge-excellent">Food Trucks</span></div>
+        </div>
+        <div class="card-sell">Bar + rotating food trucks + patio games. The food truck park that's actually active. Check their Instagram Friday/Saturday for the weekend's truck lineup. Family-friendly.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 1014 Sevier Ave · 6 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 12-midnight, Sun 11-10PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-north)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Three Rivers Market</span>
+          <div class="card-badges"><span class="badge badge-backup">Walking Distance</span><span class="dairy-badge dairy-excellent">DF: Excellent</span></div>
+        </div>
+        <div class="card-sell">Natural food co-op with hot bar, 0.5 miles from your Airbnb. Daily 8AM-8PM. Lots of vegan/dairy-free hot bar options. Perfect for a quick grab when you don't want a restaurant.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 1100 N Central St · 2 min walk</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Daily 8AM-8PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $ · Hot bar by weight</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px;margin-bottom:16px;">Dessert & Coffee</h3>
+  <div class="card-grid">
+    <div class="card" id="card-cinnaholic" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--pink)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Cinnaholic</span>
+          <div class="card-badges"><span class="badge badge-signature">Martha's Paradise</span><span class="dairy-badge dairy-excellent">DF: Perfect</span></div>
+        </div>
+        <div class="card-sell">Every item is vegan, dairy-free, egg-free — no exceptions, no asterisks. Kids build custom rolls with toppings. Martha's dessert destination, nothing else close.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 9450 S Northshore Dr · 20 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 8-10, Sun 12-6, Mon 8-9</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ · $6-10/roll</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-tip">💡 20-minute drive is the downside. Batch with Makino or west-side play options (Main Event, Urban Air) if you head that direction.</div>
+      </div>
+    </div>
+    <div class="card" id="card-cruze" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--pink)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Cruze Farm</span>
+          <div class="card-badges"><span class="badge badge-excellent">Downtown Classic</span><span class="dairy-badge dairy-fair">DF: Fair</span></div>
+        </div>
+        <div class="card-sell">Outstanding local dairy ice cream. Martha's options are sorbet only (Strawberry Dole Whip, seasonal flavors) — limited but not zero. Everyone else gets the legendary farm milk ice cream.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 445 S Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat-Mon 12-10PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $ · $5-8</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--pink)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">K Brew</span>
+          <div class="card-badges"><span class="badge badge-backup">Coffee Stop</span></div>
+        </div>
+        <div class="card-sell">Best downtown cold brew. Handmade NYC-style bagels with house-made cream cheese. Gay Street location inside Embassy Suites lobby.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 507 S Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 7-8, Sun 8-6, Mon 7-6</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--pink)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Honeybee Coffee</span>
+          <div class="card-badges"><span class="badge badge-backup">South Knox Gem</span></div>
+        </div>
+        <div class="card-sell">Locally roasted, great cold brew, oat milk standard. Pair with Ijams for the South Knox loop. Vegan food options available.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 700 Sevier Ave · 6 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat-Sun 8-6, Mon 7-6</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KIDS -->
+<div class="section" id="kids">
+  <div class="section-header">
+    <span class="section-icon">🎮</span>
+    <h2 class="section-title">Kid-First Options</h2>
+    <span class="section-count">When the kids need a joy spike</span>
+  </div>
+  <div class="card-grid">
+    <div class="card" id="card-scruffys" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-north)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Scruffy's Cat Cafe</span>
+          <div class="card-badges"><span class="badge badge-signature">Book Now</span></div>
+        </div>
+        <div class="card-sell">A room full of rescue cats, coffee for adults, and kids welcome (ages 2+). Walking distance from your Airbnb. One of the only family-friendly cat cafes in America. 10-15+ cats at any time.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 1015 N Broadway · 3 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat-Sun 10AM-7PM · Mon CLOSED</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $12/person weekend · 1 hr sessions</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Reserve</span><span class="detail-value"><a href="https://www.scruffyscafeknox.com" target="_blank">scruffyscafeknox.com</a> — weekend slots fill up. Book ASAP.</span>
+          <span class="detail-label">Drinks</span><span class="detail-value">Coffee, tea, wine, beer, pastries</span>
+          <span class="detail-label">Family total</span><span class="detail-value">~$48 for family of 4</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-north)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Zoo Knoxville</span>
+          <div class="card-badges"><span class="badge badge-excellent">Half-Day Outing</span></div>
+        </div>
+        <div class="card-sell">1,500+ animals, 200 species, 5 minutes from your Airbnb. Giraffe feeding ($5) where you feed 17-ft Jumbe at eye level. Aldabra giant tortoise encounter ($5). Max's Aviary is the standout new addition.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 3500 Knoxville Zoo Dr · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Daily 9AM-5PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> Check <a href="https://www.zooknoxville.org" target="_blank" onclick="event.stopPropagation()">zooknoxville.org</a> · Groupon from $17.95 · $5 parking</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-west)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Sir Goony's</span>
+          <div class="card-badges"><span class="badge badge-backup">Classic Fun</span></div>
+        </div>
+        <div class="card-sell">Old-school mini golf and go-karts. Outdoor, weather-permitting. The classic kid energy dump.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 10925 Kingston Pike · 25 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 10-8, Sun 12-6</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-west)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Main Event</span>
+          <div class="card-badges"><span class="badge badge-backup">Rainy Day Win</span></div>
+        </div>
+        <div class="card-sell">Laser tag, bowling, arcade. Widest age spread, all-weather, air-conditioned. The "everyone stops arguing" option.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 9081 Kingston Pike · 20 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 9AM-2AM, Sun 11AM-12AM</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-west)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Urban Air</span>
+          <div class="card-badges"><span class="badge badge-backup">Bounce It Out</span></div>
+        </div>
+        <div class="card-sell">Trampoline park, climbing walls, obstacle courses. High-energy kid outlet.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 9626 Kingston Pike · 22 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 10-9, Sun 12-8, Mon 4-8</span>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-north)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Muse Knoxville</span>
+          <div class="card-badges"><span class="badge badge-backup">Hands-On</span></div>
+        </div>
+        <div class="card-sell">Interactive children's museum. Tinkering, building, exploring. Skews a bit younger but kids who like hands-on environments will enjoy.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 516 N Beaman St · 10 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sat-Sun 9AM-4PM · Mon CLOSED</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NATURE -->
+<div class="section" id="nature">
+  <div class="section-header">
+    <span class="section-icon">🌿</span>
+    <h2 class="section-title">Nature & Outdoors</h2>
+    <span class="section-count">Easy-access, low-effort, high-reward</span>
+  </div>
+  <div class="card-grid">
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-birding)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Seven Islands Birding Park</span>
+          <div class="card-badges"><span class="badge badge-excellent">Peaceful</span></div>
+        </div>
+        <div class="card-sell">Tennessee's only state birding park. 1.2-mile paved accessible trail to a French Broad River overlook. 200+ species documented. Mid-April brings migrating warblers and Indigo Buntings. Merlin will light up here.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 2809 Kelly Ln, Kodak · 25 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Dawn to dusk · Free</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Facilities</span><span class="detail-value">Portable restrooms only (no flush). No drinking water — bring your own. Free parking at Bluebird Barn.</span>
+          <span class="detail-label">Trails</span><span class="detail-value">1.2-mi paved ADA trail + 8 mi natural trails (easy to moderate)</span>
+          <span class="detail-label">April birds</span><span class="detail-value">Warblers, Indigo Buntings, Yellow-breasted Chats, Northern Bobwhite, Wild Turkey, herons, swallows</span>
+        </div>
+        <div class="detail-tip">💡 Best early morning for birding activity. But even midday, the landscape is beautiful — river, grassland, forest edge.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MONDAY DRIVE BACK -->
+<div class="section" id="drive-back">
+  <div class="section-header">
+    <span class="section-icon">🏠</span>
+    <h2 class="section-title">Monday Drive Home</h2>
+    <span class="section-count">185 mi · I-75 S · Aim to clear Atlanta by 5 PM</span>
+  </div>
+  <p style="margin-bottom:10px;font-size:0.9rem;color:var(--text-dim);">Same route back (I-75 S). Monday traffic is light. <strong>Must be home by 4 PM.</strong> With checkout at 10 and a 3-hour drive, you have room for ONE stop (~1.5 hrs with detour). Two stops won't work.</p>
+  <p style="margin-bottom:16px;"><a href="#map-section" onclick="event.preventDefault();scrollToSection('map-section');setTimeout(showDriveRoute,400);" style="font-size:0.85rem;font-weight:600;">View drive route on map ↑</a></p>
+
+  <div class="route-timeline">
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Depart Knoxville</span>
+        <span class="route-stop-distance">Checkout by 10 AM</span>
+      </div>
+      <div class="route-stop-sell">Potchke breakfast → Sunsphere quick look → hit the road by 10:30-11.</div>
+    </div>
+    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Mayfield Dairy — Athens</span>
+        <span class="route-stop-distance">Exit 52 · 8 min off I-75 · ~30 mi from Knox</span>
+      </div>
+      <div class="route-stop-sell">Factory tour (Mon only!) + free scoop of ice cream. 45-min guided tour, tours on the hour, last tour 3 PM.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=806+E+Madison+Ave+Athens+TN+37303" target="_blank" onclick="event.stopPropagation()">806 E Madison Ave, Athens, TN 37303</a></p>
+        <p><strong>Website:</strong> <a href="https://www.mayfielddairy.com/visitor-center/" target="_blank" onclick="event.stopPropagation()">mayfielddairy.com</a></p>
+        <p><strong>Monday hours:</strong> 10 AM – 5 PM. Tours available Mon/Tue/Thu/Fri. Last tour 3 PM.</p>
+        <p><strong>Cost:</strong> Adults $8.50, Kids (4-15) $6.50, under 3 free + $1.50 ice cream → Family of 4: ~$32</p>
+        <p><strong>Tour:</strong> 45 min guided factory tour + free scoop. Kids love seeing how ice cream is made.</p>
+        <p><strong>Why Monday:</strong> Tours don't run Saturday or Sunday. Monday is the ONLY day this works for your trip.</p>
+      </div>
+    </div>
+    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">The Lost Sea — Sweetwater</span>
+        <span class="route-stop-distance">Exit 60 · 12 min off I-75 · ~55 mi from Knox</span>
+      </div>
+      <div class="route-stop-sell">If you didn't do this Saturday — America's largest underground lake. 75-min cave tour + boat ride. Open Mon 9:30-5.</div>
+      <div class="route-stop-detail">
+        <p><strong>Monday hours:</strong> 9:30 AM – 5:00 PM, tours every 30 min.</p>
+        <p><strong>Cost:</strong> Adults $29.95, Kids $18.95 → ~$98 family</p>
+        <p><strong>⚠️ Martha note:</strong> Boat ride on underground lake. Calm, flat, still water — but flag with Martha (nausea). Could be Andrew + kids while Martha browses the gift shop.</p>
+        <p><strong>Cave temp:</strong> 58°F — bring jackets.</p>
+        <p><strong>Time budget:</strong> 12 min off I-75 each way + 75 min tour = ~2 hrs total.</p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Red Clay State Historic Park</span>
+        <span class="route-stop-distance">Exit 20 · 20 min off I-75 · ~130 mi from Knox</span>
+      </div>
+      <div class="route-stop-sell">Last Cherokee council ground before Trail of Tears. Replica village, Blue Hole spring, short trails. Free. Educational and beautiful.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=1140+Red+Clay+Park+Rd+SW+Cleveland+TN+37311" target="_blank" onclick="event.stopPropagation()">1140 Red Clay Park Rd SW, Cleveland, TN 37311</a></p>
+        <p><strong>Website:</strong> <a href="https://tnstateparks.com/parks/red-clay" target="_blank" onclick="event.stopPropagation()">tnstateparks.com/parks/red-clay</a></p>
+        <p><strong>Monday:</strong> Park grounds dawn to dusk. Visitor Center 1 PM – 4:30 PM. Free admission.</p>
+        <p><strong>Trails:</strong> Blue Hole Trail (0.2 mi, easy, great for kids), Council of Trees Trail (1.7 mi, moderate, overlook tower).</p>
+        <p><strong>Why go:</strong> Cherokee replica buildings, interpretive museum, Blue Hole spring (visually striking). Educational, age-appropriate for Eli and Rosie. Moving place.</p>
+        <p><strong>Caveat:</strong> 20 min each way off I-75 + 1.5-2 hrs on-site = 2.5 hr commitment. Only if you have time. Visitor Center opens 1 PM Monday.</p>
+      </div>
+    </div>
+    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Lunch Stop Options (pick one)</span>
+        <span class="route-stop-distance">Exits 60-333 · ~12:00-1:00 PM</span>
+      </div>
+      <div class="route-stop-sell">Real lunch on the way home. Three options at different points on the route.</div>
+      <div class="route-stop-detail">
+        <p><strong>Option A: <a href="https://bradleypitbbq.com" target="_blank" onclick="event.stopPropagation()">Bradley's Pit BBQ</a></strong> — 517 New Hwy 68, Sweetwater, TN (Exit 60, ~4 min off highway). Mon 11AM-8PM. #1 rated restaurant in Sweetwater. Pit-smoked brisket, turkey, chicken. $9-16. Pairs with Lost Sea if doing that stop. <strong>Earliest option (~11:30 AM).</strong></p>
+        <p style="margin-top:6px;"><strong>Option B: <a href="https://www.oakwoodcafe.com" target="_blank" onclick="event.stopPropagation()">Oakwood Cafe</a></strong> — 195 W Cuyler St, Dalton, GA (Exit 333, ~6 min off highway). Mon 6:30AM-8:30PM. Operating since the 1940s. Southern meat-and-three: pick your meat + sides cafeteria-style. $8-13. Kids pick exactly what they want. <strong>Top pick for the family — everyone gets their own plate (~1:00 PM).</strong></p>
+        <p style="margin-top:6px;"><strong>Option C: <a href="https://www.yelp.com/biz/tacos-beto-dalton" target="_blank" onclick="event.stopPropagation()">Tacos Beto</a></strong> — 1009 E Morris St, Dalton, GA (Exit 333, ~5 min off highway). Mon 9AM-8PM. Authentic taqueria in Dalton's 40%-Hispanic community. Corn tortilla tacos, burritos, tortas. $6-12. Dairy-free: high — corn tortillas + meat + cilantro/onion. <strong>Same exit as Oakwood if you want to decide on arrival.</strong></p>
+        <p style="margin-top:6px;"><em>Note: Dub's BBQ in Calhoun is closed Monday. Champy's Fried Chicken in East Ridge is open Monday (10:30AM-10PM) if you missed it Saturday.</em></p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Buc-ee's Calhoun</span>
+        <span class="route-stop-distance">Exit 310 · ~120 mi from Knox</span>
+      </div>
+      <div class="route-stop-sell">Gas and snacks for the home stretch. 65 miles to Inman Park from here.</div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Arrive Inman Park</span>
+        <span class="route-stop-distance">185 mi total</span>
+      </div>
+      <div class="route-stop-sell">Must be home by 4 PM. Leave Knoxville by 10:30, one stop max. Arrive Inman Park ~2:30-3:30 depending on stop.</div>
+    </div>
+  </div>
+</div>
+
+<!-- APPS -->
+<div class="section" id="apps">
+  <div class="section-header">
+    <span class="section-icon">📱</span>
+    <h2 class="section-title">Useful Apps</h2>
+  </div>
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="app-icon">🗺️</div>
+      <div><div class="app-name"><a href="https://www.visitknoxville.com" target="_blank">Visit Knoxville</a></div><div class="app-desc">Events, restaurants, itinerary-building, neighborhood guides</div></div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🚌</div>
+      <div><div class="app-name"><a href="https://www.katbus.com" target="_blank">Transit (KAT)</a></div><div class="app-desc">Real-time bus arrivals, trip planning, mobile ticketing/KATPay</div></div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🏙️</div>
+      <div><div class="app-name">My Knoxville</div><div class="app-desc">Parking, outdoor recreation, city info in one place</div></div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🌤️</div>
+      <div><div class="app-name"><a href="https://www.wvlt.tv/weather" target="_blank">WVLT Weather</a></div><div class="app-desc">Local East Tennessee weather — useful for Sunday decision</div></div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🐦</div>
+      <div><div class="app-name"><a href="https://merlin.allaboutbirds.org" target="_blank">Merlin Bird ID</a></div><div class="app-desc">Already installed — Seven Islands will light it up</div></div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🅿️</div>
+      <div><div class="app-name"><a href="https://www.parkmobile.io" target="_blank">ParkMobile</a></div><div class="app-desc">Already installed — works in Knoxville</div></div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">⛽</div>
+      <div><div class="app-name"><a href="https://www.gasbuddy.com" target="_blank">GasBuddy</a> / <a href="https://www.iexit.com" target="_blank">iExit</a></div><div class="app-desc">Real-time gas prices at specific exits along I-75</div></div>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🚗</div>
+      <div><div class="app-name"><a href="https://511ga.org" target="_blank">511GA</a> / <a href="https://smartway.tn.gov" target="_blank">TDOT SmartWay</a></div><div class="app-desc">Live traffic, lane closures. Check Thursday night + Saturday morning.</div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<div class="footer">
+  Knoxville Family Trip Guide · Compiled April 2026 · Verify hours before going
+</div>
+
+<script>
+// ── DATA ──
+const ZONES = {
+  downtown: { name: 'Downtown', color: '#2b6cb0', icon: '🏙️' },
+  south: { name: 'South Knox', color: '#276749', icon: '🌿' },
+  north: { name: 'North/East', color: '#6b46c1', icon: '🐱' },
+  west: { name: 'West Knox', color: '#c05621', icon: '🎮' },
+  oakridge: { name: 'Oak Ridge', color: '#c53030', icon: '🔬' },
+  smokies: { name: 'Smokies', color: '#2c7a7b', icon: '🏔️' },
+  gatlinburg: { name: 'Gatlinburg', color: '#b83280', icon: '🚡' },
+  route: { name: 'Drive Route', color: '#8b5e34', icon: '🚗' },
+  birding: { name: 'Birding', color: '#975a16', icon: '🐦' }
+};
+
+const PINS = [
+  // Home base
+  { lat: 35.97731, lng: -83.92123, name: 'Your Airbnb', zone: 'downtown', desc: '814 Deery St · Home base', icon: '🏠' },
+  // Downtown
+  { lat: 35.9652, lng: -83.9199, name: 'Market Square / Rossini', zone: 'downtown', desc: 'Festival Sat 10AM-10PM, Sun 12-7PM · FREE' },
+  { lat: 35.9670, lng: -83.9195, name: 'Gay Street', zone: 'downtown', desc: 'Main downtown strip · bookstores, restaurants, coffee' },
+  { lat: 35.9641, lng: -83.9209, name: 'Union Ave Books', zone: 'downtown', desc: '517 Union Ave · Sat 10-7, Sun 12-6, Mon 10-8' },
+  { lat: 35.9686, lng: -83.9205, name: "Addison's Bookstore", zone: 'downtown', desc: '126 S Gay St · Sat 10-6, Sun 12-4, Mon CLOSED' },
+  { lat: 35.9626, lng: -83.9193, name: 'Lawson McGhee Library', zone: 'downtown', desc: '500 W Church Ave · Sun 1-5PM, Mon 9AM-8PM' },
+  { lat: 35.9627, lng: -83.9258, name: 'Knoxville Museum of Art', zone: 'downtown', desc: '1050 World\'s Fair Park Dr · FREE · Mon CLOSED' },
+  { lat: 35.9525, lng: -83.9272, name: 'McClung Museum', zone: 'downtown', desc: '1327 Circle Park Dr · FREE · Mon CLOSED' },
+  { lat: 35.9619, lng: -83.9235, name: 'Sunsphere', zone: 'downtown', desc: '810 Clinch Ave · FREE · Mon 10AM-5PM' },
+  { lat: 35.9580, lng: -83.9170, name: 'Volunteer Landing', zone: 'downtown', desc: 'Bike rental start · Neyland Greenway access' },
+  { lat: 35.9705, lng: -83.9212, name: "Marble City Market (Yassin's)", zone: 'downtown', desc: '333 W Depot Ave · Daily 11AM-9PM · 3 min from Airbnb' },
+  { lat: 35.9653, lng: -83.9198, name: 'Tomato Head', zone: 'downtown', desc: '12 Market Sq · Sat-Sun only · Vegan cheese pizza' },
+  { lat: 35.9650, lng: -83.9182, name: 'K Brew', zone: 'downtown', desc: '507 S Gay St · Cold brew + bagels' },
+  { lat: 35.9656, lng: -83.9186, name: 'Cruze Farm', zone: 'downtown', desc: '445 S Gay St · Sat-Mon 12-10PM · Sorbet for Martha' },
+  { lat: 35.9670, lng: -83.9190, name: 'Nama Sushi', zone: 'downtown', desc: '506 S Gay St · Mon half-price to-go from 4PM' },
+  { lat: 35.9680, lng: -83.9200, name: 'Potchke', zone: 'downtown', desc: '318 N Gay St · Daily 9AM-3PM · Michelin-listed Jewish deli' },
+  { lat: 35.9645, lng: -83.9190, name: 'Tennessee Theatre (Shatner)', zone: 'downtown', desc: '604 S Gay St · Sun 7-10 PM · Wrath of Khan + Shatner · State St Garage free after 6 PM', icon: '🎬' },
+  // South Knox
+  { lat: 35.9562, lng: -83.8718, name: 'Ijams Nature Center', zone: 'south', desc: '2915 Island Home Ave · 12 min · Free (parking $5)' },
+  { lat: 35.9574, lng: -83.9091, name: 'Honeybee Coffee', zone: 'south', desc: '700 Sevier Ave · 6 min · Oat milk, vegan options' },
+  { lat: 35.9450, lng: -83.8905, name: 'SoKno Taco', zone: 'south', desc: '3701 Sevierville Pike · 10 min' },
+  { lat: 35.9322, lng: -83.9188, name: 'Tri-Star Arts / Candoro', zone: 'south', desc: '4450 Candora Ave · Contemporary art in 1923 marble building' },
+  { lat: 35.9530, lng: -83.9050, name: 'Southside Garage', zone: 'south', desc: '1014 Sevier Ave · Food trucks + patio games' },
+  // North/East
+  { lat: 35.9831, lng: -83.8824, name: 'Botanical Garden', zone: 'north', desc: '2743 Wimpole Ave · 7 min · FREE · Dawn-dusk' },
+  { lat: 35.9816, lng: -83.9233, name: "Scruffy's Cat Cafe", zone: 'north', desc: '1015 N Broadway · 3 min · BOOK AHEAD · Mon CLOSED' },
+  { lat: 35.9967, lng: -83.8928, name: 'Zoo Knoxville', zone: 'north', desc: '3500 Knoxville Zoo Dr · 5 min · Daily 9-5' },
+  { lat: 35.9971, lng: -83.8850, name: 'Muse Knoxville', zone: 'north', desc: '516 N Beaman St · 10 min · Mon CLOSED' },
+  // West
+  { lat: 35.8912, lng: -84.1464, name: "Sir Goony's", zone: 'west', desc: '10925 Kingston Pike · 25 min · Mini golf + go-karts' },
+  { lat: 35.9122, lng: -84.0843, name: 'Main Event', zone: 'west', desc: '9081 Kingston Pike · 20 min · Laser tag, bowling, arcade' },
+  { lat: 35.9077, lng: -84.1061, name: 'Urban Air', zone: 'west', desc: '9626 Kingston Pike · 22 min · Trampoline park' },
+  { lat: 35.9079, lng: -84.1215, name: 'Breakout Games', zone: 'west', desc: '211 Center Park Dr · 22 min · Escape rooms · Try CYBER50' },
+  { lat: 35.8621, lng: -84.0669, name: 'Cinnaholic', zone: 'west', desc: '9450 S Northshore Dr · 20 min · 100% vegan cinnamon rolls' },
+  { lat: 35.9332, lng: -84.0010, name: 'Sitar Indian', zone: 'west', desc: '6004 Kingston Pike · 15 min · Lunch buffet' },
+  { lat: 35.9210, lng: -84.0400, name: 'Makino', zone: 'west', desc: '8217 Kingston Pike · 15 min · All-you-can-eat sushi' },
+  // Oak Ridge
+  { lat: 36.0131, lng: -84.2529, name: 'AMSE', zone: 'oakridge', desc: '115 E Main St · 35 min · Sun 1-5, Mon 9-5 · $10/5' },
+  { lat: 36.0237, lng: -84.2731, name: 'Manhattan Project + Children\'s Museum', zone: 'oakridge', desc: '461 W Outer Dr · 35 min · Sun 1-4 · Mon CLOSED' },
+  { lat: 35.9260, lng: -84.3903, name: 'K-25 History Center', zone: 'oakridge', desc: '652 Enrichment St · 40 min · Sun 1-5 · Free' },
+  // Smokies
+  { lat: 35.6730, lng: -83.7483, name: 'Foothills Parkway / Look Rock', zone: 'smokies', desc: '360° views · 0.8 mi RT hike to tower · 50 min' },
+  { lat: 35.6690, lng: -83.6751, name: 'Meigs Falls', zone: 'smokies', desc: 'Roadside pullout · Zero hiking · 1 hr 15 min' },
+  { lat: 35.6844, lng: -83.5373, name: 'Sugarlands Visitor Center', zone: 'smokies', desc: '1420 Fighting Creek Gap Rd · 1 hr' },
+  { lat: 35.6065, lng: -83.7741, name: 'Cades Cove', zone: 'smokies', desc: '11-mi loop · 2-4 hrs · Wildlife · 1 hr 15 min' },
+  // Gatlinburg
+  { lat: 35.7093, lng: -83.5205, name: 'Ober Mountain Tram', zone: 'gatlinburg', desc: '1001 Parkway · 55 min · $29/person · Buy online' },
+  { lat: 35.7341, lng: -83.5216, name: 'Gatlinburg Welcome Center', zone: 'gatlinburg', desc: '1011 Banner Rd · Free trolley + park-and-ride' },
+  // Birding
+  { lat: 35.9538, lng: -83.6865, name: 'Seven Islands Birding Park', zone: 'birding', desc: '2809 Kelly Ln, Kodak · 25 min · Free · Dawn-dusk' },
+  // Route stops
+  { lat: 34.3081, lng: -84.7498, name: "Buc-ee's Calhoun", zone: 'route', desc: 'I-75 Exit 310 · Gas, food, restrooms · ~65 mi from Atlanta' },
+  { lat: 35.6010, lng: -84.4610, name: 'The Lost Sea', zone: 'route', desc: 'I-75 Exit 60 · Cave + underground lake boat tour · $98 family' },
+  { lat: 35.6037, lng: -84.4636, name: 'Duck Park — Sweetwater', zone: 'route', desc: 'I-75 Exit 60 · Free · Quick kid leg-stretch' },
+  { lat: 35.4430, lng: -84.7550, name: 'Mayfield Dairy — Athens', zone: 'route', desc: 'I-75 Exit 52 · Mon tours only · Factory tour + ice cream · $32 family' },
+  { lat: 35.1160, lng: -84.9780, name: 'Red Clay State Park', zone: 'route', desc: 'I-75 Exit 20 · 20 min off highway · Cherokee history · Free' },
+];
+
+// ── MAP ──
+let map, markers = [], activeZones = new Set(Object.keys(ZONES));
+
+function initMap() {
+  map = L.map('map', { scrollWheelZoom: true }).setView([35.97, -83.92], 12);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  PINS.forEach(pin => {
+    const zone = ZONES[pin.zone];
+    const marker = L.circleMarker([pin.lat, pin.lng], {
+      radius: pin.icon === '🏠' ? 10 : 7,
+      fillColor: zone.color,
+      color: '#fff',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.85
+    }).addTo(map);
+
+    marker.bindPopup(`
+      <div class="popup-name">${pin.icon || zone.icon} ${pin.name}</div>
+      <div class="popup-meta">${pin.desc}</div>
+    `);
+
+    marker._zone = pin.zone;
+    markers.push(marker);
+  });
+
+  buildFilterButtons();
+}
+
+function buildFilterButtons() {
+  const container = document.getElementById('map-filters');
+  // Add zoom preset buttons first
+  const knoxBtn = document.createElement('button');
+  knoxBtn.className = 'map-filter-btn active';
+  knoxBtn.style.borderColor = '#2c2825';
+  knoxBtn.style.color = '#fff';
+  knoxBtn.style.backgroundColor = '#2c2825';
+  knoxBtn.textContent = '📍 Knoxville';
+  knoxBtn.onclick = showKnoxville;
+  container.appendChild(knoxBtn);
+
+  const routeViewBtn = document.createElement('button');
+  routeViewBtn.className = 'map-filter-btn active';
+  routeViewBtn.style.borderColor = '#8b5e34';
+  routeViewBtn.style.color = '#fff';
+  routeViewBtn.style.backgroundColor = '#8b5e34';
+  routeViewBtn.textContent = '🛣️ Full Drive Route';
+  routeViewBtn.onclick = showDriveRoute;
+  container.appendChild(routeViewBtn);
+
+  // Separator
+  const sep = document.createElement('span');
+  sep.style.cssText = 'width:1px;height:24px;background:var(--border);margin:0 4px;';
+  container.appendChild(sep);
+
+  // Zone filter buttons
+  Object.entries(ZONES).forEach(([key, zone]) => {
+    const btn = document.createElement('button');
+    btn.className = 'map-filter-btn active';
+    btn.style.borderColor = zone.color;
+    btn.style.color = '#fff';
+    btn.style.backgroundColor = zone.color;
+    btn.textContent = `${zone.icon} ${zone.name}`;
+    btn.dataset.zone = key;
+    btn.onclick = () => toggleZone(key, btn);
+    container.appendChild(btn);
+  });
+}
+
+function toggleZone(zone, btn) {
+  if (activeZones.has(zone)) {
+    activeZones.delete(zone);
+    btn.classList.remove('active');
+    btn.style.backgroundColor = 'var(--surface)';
+    btn.style.color = ZONES[zone].color;
+  } else {
+    activeZones.add(zone);
+    btn.classList.add('active');
+    btn.style.backgroundColor = ZONES[zone].color;
+    btn.style.color = '#fff';
+  }
+  markers.forEach(m => {
+    if (activeZones.has(m._zone)) {
+      m.setStyle({ opacity: 1, fillOpacity: 0.85 });
+      m.getElement() && (m.getElement().style.display = '');
+    } else {
+      m.setStyle({ opacity: 0.1, fillOpacity: 0.1 });
+    }
+  });
+  // If Drive Route zone toggled on, zoom to show full route
+  if (zone === 'route' && activeZones.has('route')) {
+    showDriveRoute();
+  }
+}
+
+function showDriveRoute() {
+  // Fit map to show full Atlanta → Knoxville corridor
+  const routeBounds = L.latLngBounds(
+    [33.78, -84.38],  // Atlanta (Inman Park)
+    [36.00, -83.52]   // North of Knoxville
+  );
+  map.flyToBounds(routeBounds, { padding: [30, 30], duration: 1.2 });
+  // Make sure route pins are visible
+  if (!activeZones.has('route')) {
+    const routeBtn = document.querySelector('[data-zone="route"]');
+    if (routeBtn) toggleZone('route', routeBtn);
+  }
+}
+
+function showKnoxville() {
+  map.flyTo([35.97, -83.92], 12, { duration: 1 });
+}
+
+// ── INTERACTIONS ──
+function toggleCard(card) {
+  card.classList.toggle('expanded');
+}
+
+function toggleRouteStop(stop) {
+  stop.classList.toggle('expanded');
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+    document.querySelectorAll('.timeline-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+}
+
+// ── SUNDAY DECISION TREE ──
+function selectDecision(btn, branch) {
+  const wasSelected = btn.classList.contains('selected');
+
+  // Deselect all
+  document.querySelectorAll('.decision-option').forEach(o => o.classList.remove('selected'));
+  document.querySelectorAll('.decision-result').forEach(r => r.classList.remove('visible'));
+
+  // If clicking the same one, toggle off and zoom back to Knoxville
+  if (wasSelected) {
+    showKnoxville();
+    return;
+  }
+
+  // Otherwise select this one
+  btn.classList.add('selected');
+  const result = document.getElementById('result-' + branch);
+  if (result) result.classList.add('visible');
+
+  // Zoom map to relevant area
+  if (branch === 'scenic') map.flyTo([35.65, -83.70], 10, { duration: 1 });
+  else if (branch === 'science') map.flyTo([36.00, -84.30], 11, { duration: 1 });
+  else if (branch === 'chill') map.flyTo([35.965, -83.92], 14, { duration: 1 });
+  else if (branch === 'spectacle') map.flyTo([35.71, -83.52], 12, { duration: 1 });
+}
+
+// ── THEME ──
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('knoxville-theme', next);
+  document.querySelector('.theme-toggle').textContent = next === 'dark' ? '☀️' : '🌙';
+}
+
+// Init
+(function() {
+  const saved = localStorage.getItem('knoxville-theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    if (saved === 'dark') document.querySelector('.theme-toggle').textContent = '☀️';
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.querySelector('.theme-toggle').textContent = '☀️';
+  }
+})();
+
+// ── REFERENCE TOOLTIPS ──
+const REFS = {
+  'potchke': { card: 'card-potchke', name: 'Potchke', meta: '318 N Gay St · Daily 9AM-3PM · $$ · 5 min', sell: 'Michelin-listed Jewish deli. Avo Tartine &amp; Mushroom Melt for Martha. Pastrami Reuben for Andrew.', df: 'good' },
+  'tomato-head': { card: 'card-tomato-head', name: 'Tomato Head', meta: '12 Market Sq · Sat-Sun only · $$ · 5 min', sell: 'Vegan cheese on any pizza, vegan pepperoni, daily vegan cupcakes. Best all-around family option.', df: 'excellent' },
+  'yassins': { card: 'card-yassins', name: "Yassin's Falafel House", meta: 'Marble City Market · Daily 11-9 · $ · 3 min', sell: '"Nicest Place in America." Falafel is naturally dairy-free. Open every day.', df: 'excellent' },
+  'good-golly': { card: 'card-good-golly', name: 'Good Golly Tamale', meta: '112 S Central St · Mon-Sat 11-8 · $ · 4 min', sell: 'Vegan Soul tamale is genuinely excellent. $5/tamale. Closed Sunday.', df: 'good' },
+  'sticky-rice': { card: 'card-sticky-rice', name: 'Sticky Rice Cafe', meta: '120 Jack Dance St · Mon-Sat 11-9 · $$ · 10 min', sell: 'Authentic Laotian, family-run. Coconut curries, mango sticky rice. Closed Sunday.', df: 'good' },
+  'gosh': { card: 'card-gosh', name: 'Gosh Ethiopian', meta: '3609 Sutherland Ave · Sat 4-8 PM ONLY · $$ · 10 min', sell: 'Communal eating with injera. Fun for kids. Many dishes naturally dairy-free. Very limited hours.', df: 'excellent' },
+  'nama': { card: 'card-nama', name: 'Nama Sushi Bar', meta: '506 S Gay St · Open Sat/Sun/Mon · $$-$$$ · 5 min', sell: "Knoxville's gold standard sushi since 2004. Kids menu. Mon half-price to-go from 4 PM.", df: 'excellent' },
+  'makino': { card: 'card-makino', name: 'Makino Japanese Buffet', meta: '8217 Kingston Pike · Open daily · $$ · 15 min', sell: 'All-you-can-eat, made fresh to order. Kids try everything. Great value $15-21/person.', df: 'good' },
+  'cinnaholic': { card: 'card-cinnaholic', name: 'Cinnaholic', meta: '9450 S Northshore Dr · Sun 12-6, Mon 8-9 · $$ · 20 min', sell: 'Every item vegan, dairy-free, egg-free. Kids build custom cinnamon rolls. 20 min west.', df: 'excellent' },
+  'cruze': { card: 'card-cruze', name: 'Cruze Farm', meta: '445 S Gay St · Sat-Mon 12-10 PM · $ · 5 min', sell: 'Outstanding local dairy ice cream. Martha: sorbet only (limited). Others: legendary.', df: 'fair' },
+  'scruffys': { card: 'card-scruffys', name: "Scruffy's Cat Cafe", meta: '1015 N Broadway · Sat-Sun 10-7 · $12/person · 3 min', sell: 'Room of rescue cats, coffee, kids welcome ages 2+. Book ahead on weekends.', df: null },
+  'ijams': { card: 'card-ijams', name: 'Ijams Nature Center', meta: '2915 Island Home Ave · 8AM-dusk · Free (parking $5) · 12 min', sell: 'River boardwalk, quarry views, real woods. Best pre-check-in decompression stop.', df: null },
+  'botanical': { card: 'card-botanical', name: 'Botanical Garden', meta: '2743 Wimpole Ave · Dawn-dusk · FREE · 7 min', sell: '44 acres of gardens, stone walls, Smoky Mountain views. The reset button for tired families.', df: null },
+  'rossini': { card: 'card-rossini', name: 'Rossini Festival', meta: 'Market Square · Sat 10AM-10PM, Sun 12-7 · FREE · 5 min', sell: 'Four outdoor stages, 100+ vendors, food trucks, kids zone. Your Saturday anchor.', df: null },
+  'three-rivers': { card: null, name: 'Three Rivers Market', meta: '1100 N Central St · Daily 8AM-8PM · $ · 2 min walk', sell: 'Natural food co-op with hot bar. Walking distance. Lots of vegan/dairy-free options.', df: 'excellent' },
+  'marble-city': { card: 'card-yassins', name: 'Marble City Market', meta: '333 W Depot Ave · Daily · $ · 3 min', sell: "Food hall with Yassin's + other options. Close to Airbnb, good for a quick bite.", df: null },
+};
+
+function refHTML(key, displayText) {
+  const r = REFS[key];
+  if (!r) return displayText || key;
+  const dfBadge = r.df ? `<span class="tt-badge tt-df-${r.df}">DF: ${r.df.charAt(0).toUpperCase() + r.df.slice(1)}</span>` : '';
+  const onclick = r.card ? `onclick="event.stopPropagation();const el=document.getElementById('${r.card}');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('expanded');}"` : '';
+  return `<span class="ref" ${onclick}>${displayText || r.name}<span class="ref-tooltip"><div class="tt-name">${r.name}${dfBadge}</div><div class="tt-meta">${r.meta}</div><div class="tt-sell">${r.sell}</div>${r.card ? '<div style="margin-top:4px;font-size:0.7rem;color:var(--blue);">Click to jump to full card ↓</div>' : ''}</span></span>`;
+}
+
+// Tooltip positioning
+function positionTooltip(refEl, tooltip) {
+  const rect = refEl.getBoundingClientRect();
+  const ttWidth = 340;
+  // Position above the ref, centered
+  let left = rect.left + rect.width / 2 - ttWidth / 2;
+  let top = rect.top - 8;
+  // Prevent going off left edge
+  if (left < 8) left = 8;
+  // Prevent going off right edge
+  if (left + ttWidth > window.innerWidth - 8) left = window.innerWidth - ttWidth - 8;
+  // Place tooltip, measure its height, then position above
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = '0px';
+  tooltip.style.visibility = 'hidden';
+  tooltip.classList.add('visible');
+  const ttHeight = tooltip.offsetHeight;
+  tooltip.style.visibility = '';
+  top = rect.top - ttHeight - 8;
+  // If not enough room above, show below
+  if (top < 8) top = rect.bottom + 8;
+  tooltip.style.top = top + 'px';
+  // Reposition arrow
+  const arrow = ttWidth / 2;
+  const refCenter = rect.left + rect.width / 2;
+  const arrowLeft = refCenter - left;
+  tooltip.style.setProperty('--arrow-left', arrowLeft + 'px');
+}
+
+// Inject refs on load
+document.addEventListener('DOMContentLoaded', function() {
+  // Add expand chevrons to route stops
+  document.querySelectorAll('.route-stop').forEach(stop => {
+    const header = stop.querySelector('.route-stop-header');
+    if (header && !header.querySelector('.expand-chevron')) {
+      const chev = document.createElement('span');
+      chev.className = 'expand-chevron';
+      header.appendChild(chev);
+    }
+  });
+
+  // Tooltip hover handlers
+  document.querySelectorAll('.ref').forEach(ref => {
+    const tooltip = ref.querySelector('.ref-tooltip');
+    if (!tooltip) return;
+    // Move tooltip to body so it's not clipped by overflow:hidden parents
+    document.body.appendChild(tooltip);
+    ref.addEventListener('mouseenter', () => {
+      positionTooltip(ref, tooltip);
+    });
+    ref.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('visible');
+    });
+  });
+});
+
+window.addEventListener('load', initMap);
+
+// Scroll spy for timeline
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      document.querySelectorAll('.timeline-tab').forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('onclick')?.includes(id)) {
+          tab.classList.add('active');
+        }
+      });
+    }
+  });
+}, { threshold: 0.2 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.section').forEach(s => observer.observe(s));
+});
+</script>
+</body>
+</html>
