@@ -669,6 +669,80 @@ a:hover { text-decoration: underline; }
   color: var(--text-dim);
 }
 
+/* Star/favorite button */
+.star-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: all 0.2s;
+  z-index: 10;
+  filter: grayscale(1);
+  padding: 0;
+  line-height: 1;
+}
+.star-btn:hover { opacity: 0.7; filter: grayscale(0); }
+.star-btn.starred { opacity: 1; filter: grayscale(0); }
+.card { position: relative; }
+
+/* Martha's Picks floating bar */
+.picks-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
+  padding: 12px 24px;
+  z-index: 3000;
+  display: none;
+  font-family: 'DM Sans', sans-serif;
+}
+.picks-bar.visible { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.picks-count {
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.picks-list {
+  flex: 1;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.picks-copy-btn {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.picks-copy-btn:hover { background: var(--accent); }
+.picks-clear-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+
 /* Scroll hint */
 .expand-hint {
   font-size: 0.72rem;
@@ -1768,6 +1842,13 @@ a:hover { text-decoration: underline; }
 
 </div><!-- end main -->
 
+<div class="picks-bar" id="picks-bar">
+  <span class="picks-count" id="picks-count">0 starred</span>
+  <span class="picks-list" id="picks-list"></span>
+  <button class="picks-copy-btn" onclick="copyPicks()">Copy Martha's Picks</button>
+  <button class="picks-clear-btn" onclick="clearPicks()">Clear</button>
+</div>
+
 <div class="footer">
   Knoxville Family Trip Guide · Compiled April 2026 · Verify hours before going
 </div>
@@ -2132,6 +2213,58 @@ function positionTooltip(refEl, tooltip) {
   tooltip.style.setProperty('--arrow-left', arrowLeft + 'px');
 }
 
+// ── MARTHA'S PICKS (star/favorite) ──
+let picks = JSON.parse(localStorage.getItem('knoxville-picks') || '{}');
+
+function addStarButtons() {
+  document.querySelectorAll('.card').forEach(card => {
+    const nameEl = card.querySelector('.card-name');
+    if (!nameEl) return;
+    const name = nameEl.textContent.trim();
+    const btn = document.createElement('button');
+    btn.className = 'star-btn' + (picks[name] ? ' starred' : '');
+    btn.textContent = '⭐';
+    btn.title = 'Star this as a favorite';
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      if (picks[name]) { delete picks[name]; btn.classList.remove('starred'); }
+      else { picks[name] = true; btn.classList.add('starred'); }
+      localStorage.setItem('knoxville-picks', JSON.stringify(picks));
+      updatePicksBar();
+    };
+    card.querySelector('.card-body').appendChild(btn);
+  });
+}
+
+function updatePicksBar() {
+  const names = Object.keys(picks);
+  const bar = document.getElementById('picks-bar');
+  const count = document.getElementById('picks-count');
+  const list = document.getElementById('picks-list');
+  if (names.length === 0) { bar.classList.remove('visible'); return; }
+  bar.classList.add('visible');
+  count.textContent = names.length + ' starred';
+  list.textContent = names.join(' · ');
+}
+
+function copyPicks() {
+  const names = Object.keys(picks);
+  if (names.length === 0) return;
+  const text = "Martha's Picks for Knoxville:\n\n" + names.map((n, i) => `${i+1}. ${n}`).join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.picks-copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = "Copy Martha's Picks", 2000);
+  });
+}
+
+function clearPicks() {
+  picks = {};
+  localStorage.setItem('knoxville-picks', JSON.stringify(picks));
+  document.querySelectorAll('.star-btn.starred').forEach(b => b.classList.remove('starred'));
+  updatePicksBar();
+}
+
 // Inject refs on load
 document.addEventListener('DOMContentLoaded', function() {
   // Add expand chevrons to route stops
@@ -2143,6 +2276,10 @@ document.addEventListener('DOMContentLoaded', function() {
       header.appendChild(chev);
     }
   });
+
+  // Star buttons on cards
+  addStarButtons();
+  updatePicksBar();
 
   // Tooltip hover handlers
   document.querySelectorAll('.ref').forEach(ref => {
