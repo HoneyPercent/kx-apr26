@@ -210,7 +210,172 @@ a:hover { text-decoration: underline; }
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 2px dashed var(--border);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
 }
+.section-header:hover { opacity: 0.75; }
+.section-chevron {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  transition: transform 0.2s;
+}
+.section.collapsed .section-chevron { transform: rotate(-90deg); }
+.section.collapsed .section-body { display: none; }
+.section.collapsed .section-header { margin-bottom: 0; padding-bottom: 0; border-bottom-style: solid; border-bottom-color: var(--border); }
+
+/* Dinner pickup cards (Monday) */
+.dinner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.dinner-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.dinner-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.dinner-card.top-pick {
+  border: 2px solid var(--green);
+  background: linear-gradient(180deg, var(--signature-bg) 0%, var(--surface) 40%);
+}
+.dinner-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.dinner-card-name a { color: var(--text); }
+.dinner-card-name a:hover { color: var(--accent); }
+.dinner-card-angle {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--surface-alt);
+  color: var(--text-dim);
+  margin-bottom: 4px;
+  align-self: flex-start;
+}
+.dinner-card.top-pick .dinner-card-angle { background: var(--green); color: #fff; }
+.dinner-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  padding: 6px 0;
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+}
+.dinner-note {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.dinner-note strong { color: var(--accent); }
+.dinner-why {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text);
+  font-style: italic;
+  padding: 8px 10px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent);
+}
+.dinner-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.dinner-btn {
+  flex: 1;
+  text-align: center;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.dinner-btn-menu {
+  background: var(--surface-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.dinner-btn-menu:hover { background: var(--excellent-bg); border-color: var(--blue); color: var(--blue); }
+.dinner-btn-order {
+  background: var(--green);
+  color: #fff !important;
+  border: 1px solid var(--green);
+}
+.dinner-btn-order:hover { background: var(--accent); border-color: var(--accent); }
+
+/* Collapsible blocks (glance card, callouts) */
+.collapsible > .collapsible-header {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+.collapsible > .collapsible-header:hover { opacity: 0.75; }
+.collapsible-chevron {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.collapsible.collapsed .collapsible-chevron { transform: rotate(-90deg); }
+.collapsible.collapsed .collapsible-body { display: none; }
+
+/* Section controls bar */
+.section-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.section-controls-label {
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-right: 4px;
+}
+.section-ctrl-btn {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
+}
+.section-ctrl-btn:hover { background: var(--excellent-bg); border-color: var(--blue); color: var(--blue); }
 .section-icon { font-size: 1.5rem; }
 .section-title { font-size: 1.5rem; font-weight: 700; }
 .section-count {
@@ -788,7 +953,8 @@ a:hover { text-decoration: underline; }
 <div class="main">
 
 <!-- MAP -->
-<div class="section map-section" id="map-section">
+<div class="section map-section collapsible" id="map-section">
+  <div class="collapsible-header" style="padding:0 0 10px 0;margin-bottom:10px;border-bottom:2px dashed var(--border);font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;">🗺️ Map</div>
   <div class="map-container">
     <div id="map"></div>
     <div class="map-filters" id="map-filters"></div>
@@ -796,8 +962,8 @@ a:hover { text-decoration: underline; }
 </div>
 
 <!-- WEEKEND AT A GLANCE -->
-<div class="glance-card">
-  <h3>Your Weekend in 30 Seconds</h3>
+<div class="glance-card collapsible" id="block-glance">
+  <h3 class="collapsible-header">Your Weekend in 30 Seconds</h3>
   <div class="glance-days">
     <div class="glance-day sat">
       <h4>Saturday — Arrive &amp; Explore</h4>
@@ -812,7 +978,7 @@ a:hover { text-decoration: underline; }
     <div class="glance-day mon">
       <h4>Monday — Light Exit</h4>
       <p>Potchke breakfast → hit the road by 10:30. <strong>Home by 4 PM.</strong> One stop on the way: Mayfield Dairy tour (Mon only, free ice cream) or Lost Sea cave — not both. Order dinner from the road ~3 PM for pickup on arrival.</p>
-      <div class="glance-meal">Breakfast: Potchke (9 AM) · Road lunch: Oakwood Cafe (Dalton) or Tacos Beto · Dinner pickup: Chipotle Ponce, Your Pie Grant Park, or Willy's Edgewood</div>
+      <div class="glance-meal">Breakfast: Potchke (9 AM) · Road lunch: Oakwood Cafe (Dalton) or Tacos Beto · <strong>Dinner pickup (Martha picks): Muss &amp; Turner's (Smyrna) or Main Street Eats (Kennesaw)</strong></div>
     </div>
   </div>
   <div class="glance-provision">
@@ -828,9 +994,17 @@ a:hover { text-decoration: underline; }
   </div>
 </div>
 
+<!-- SECTION CONTROLS -->
+<div class="section-controls">
+  <span class="section-controls-label">Sections:</span>
+  <button class="section-ctrl-btn" onclick="expandAllSections()">▼ Expand all</button>
+  <button class="section-ctrl-btn" onclick="collapseAllSections()">▶ Collapse all</button>
+  <button class="section-ctrl-btn" onclick="collapsePastDays()">⏭️ Collapse past days</button>
+</div>
+
 <!-- AIRBNB -->
-<div class="callout callout-good" style="margin-bottom:24px;">
-  <h3>🏠 Your Airbnb — "Walkable Knoxville Home, Near Breweries & Old City"</h3>
+<div class="callout callout-good collapsible" id="block-airbnb" style="margin-bottom:24px;">
+  <h3 class="collapsible-header">🏠 Your Airbnb — "Walkable Knoxville Home, Near Breweries & Old City"</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 20px;margin-top:10px;font-size:0.88rem;">
     <div><strong>Address:</strong> <a href="https://maps.google.com/?q=814+Deery+St+Knoxville+TN+37917" target="_blank">814 Deery St, Knoxville, TN 37917</a></div>
     <div><strong>Dates:</strong> Sat 4/18 → Mon 4/20 (2 nights)</div>
@@ -849,8 +1023,8 @@ a:hover { text-decoration: underline; }
 </div>
 
 <!-- PRIORITY CHOICES -->
-<div class="callout callout-info" style="margin-bottom:24px;">
-  <h3>The Choices You'll Need to Make</h3>
+<div class="callout callout-info collapsible" id="block-choices" style="margin-bottom:24px;">
+  <h3 class="collapsible-header">The Choices You'll Need to Make</h3>
   <p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:10px;">This guide has ~40 options. You'll do maybe 8-10 things total. Here's what competes for the same time slot:</p>
   <ul>
     <li><strong>Saturday pre-check-in (2:30-4 PM):</strong> Pick ONE — <span class="ref" onclick="event.stopPropagation();document.getElementById('card-ijams').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-ijams').classList.add('expanded');">Ijams<span class="ref-tooltip"><div class="tt-name">Ijams Nature Center</div><div class="tt-meta">12 min · Free (parking $5)</div><div class="tt-sell">River boardwalk, quarry views. The "we're really away" mood.</div></span></span> (nature, 12 min), <span class="ref" onclick="event.stopPropagation();document.getElementById('card-botanical').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-botanical').classList.add('expanded');">Botanical Garden<span class="ref-tooltip"><div class="tt-name">Botanical Garden</div><div class="tt-meta">7 min · FREE</div><div class="tt-sell">44 acres, stone walls. The reset button for tired families.</div></span></span> (easy, 7 min), or skip and head straight to the neighborhood.</li>
@@ -914,6 +1088,19 @@ a:hover { text-decoration: underline; }
         <p style="margin-top:6px"><strong>Tip:</strong> If you can push departure to 9:30-10:00 AM, the ride through metro Atlanta is noticeably smoother.</p>
       </div>
     </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">The Big Chicken — Marietta (optional)</span>
+        <span class="route-stop-distance">Exit 263 · ~2 min off I-75 · ~10:50 AM</span>
+      </div>
+      <div class="route-stop-sell">56-ft sheet-metal chicken with moving eyes and beak, built 1963. Atlanta landmark, 5-min photo stop.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=12+Cobb+Pkwy+SE+Marietta+GA+30060" target="_blank" onclick="event.stopPropagation()">12 Cobb Pkwy SE, Marietta, GA 30060</a> (KFC location)</p>
+        <p><strong>Cost/Hours:</strong> Free, visible from the road. Has its own gift shop.</p>
+        <p><strong>Why stop:</strong> It's the Big Chicken. Every Atlantan knows it as a wayfinding landmark. Survived a 1993 storm and near-demolition after 10,000 angry letters. The kids will laugh.</p>
+        <p><strong>Time:</strong> 5 min photo stop, back on highway.</p>
+      </div>
+    </div>
     <div class="route-stop highlight" onclick="toggleRouteStop(this)">
       <div class="route-stop-header">
         <span class="route-stop-name">Buc-ee's Calhoun</span>
@@ -938,6 +1125,49 @@ a:hover { text-decoration: underline; }
         <p style="margin-top:6px;"><strong>Option B: <a href="https://www.nifbr.net" target="_blank" onclick="event.stopPropagation()">North Indian Flame</a></strong> — 115 Travelers Pathway, Calhoun, GA (Exit 312, &lt;2 min off highway). Sat opens 10AM. Surprisingly legit Indian restaurant in small-town Georgia. Tandoori, curries, biryani, naan. $10-18. Dairy-free: excellent — specify "no cream, no ghee." Dal, chana masala, tandoori chicken all work. <strong>Top pick if you want something more adventurous (~11:30 AM).</strong></p>
         <p style="margin-top:6px;"><strong>Option C: <a href="https://eldoradocartersvillega.com" target="_blank" onclick="event.stopPropagation()">El Dorado Salvadorian &amp; Mexican</a></strong> — 910 Joe Frank Harris Pkwy, Cartersville, GA (Exit 290, ~5 min off highway). Sat 11AM-10PM. Pupusas, tamales, burritos. $8-15. Dairy-free: high — Salvadorian pupusas are naturally dairy-free (corn masa + beans/meat). <strong>Earliest option (~11:15 AM).</strong></p>
         <p style="margin-top:6px;"><em>Note: No pork constraint — Champy's has chicken/catfish, Indian Flame has all non-pork options, El Dorado has beef/chicken.</em></p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Rock Garden — Calhoun (optional)</span>
+        <span class="route-stop-distance">Exit 310 · ~10 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">Miniature rock castles, cathedrals, and villages built behind a church. Weird, delightful, free. Atlas Obscura hidden gem.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=1411+Rome+Rd+SW+Calhoun+GA+30701" target="_blank" onclick="event.stopPropagation()">1411 Rome Rd SW, Calhoun, GA 30701</a> (behind Calhoun Seventh-Day Adventist Church)</p>
+        <p><strong>Hours:</strong> Daily 8 AM – 7 PM · <strong>Free</strong></p>
+        <p><strong>What:</strong> A retired man built miniature rock structures (tiny castles, churches, towers) along a stream behind a church. Whimsical, handcrafted, genuinely unusual. Kids love scale-hunting.</p>
+        <p><strong>Time needed:</strong> 20-30 min on site · Total detour ~45 min with drive off/on</p>
+        <p><strong>Tip:</strong> Can do this as a stretch/explore stop after Buc-ee's. Different vibe — Buc-ee's is scale, Rock Garden is intimacy.</p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Tunnel Hill Civil War Railroad Tunnel (optional, 1.5 hrs)</span>
+        <span class="route-stop-distance">Exit 341 · ~5 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">Golf-cart tour through an 1850 Civil War railroad tunnel. The "Great Locomotive Chase" ran through it in 1862.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=215+Clisby+Austin+Dr+Tunnel+Hill+GA+30755" target="_blank" onclick="event.stopPropagation()">Tunnel Hill Heritage Center, 215 Clisby Austin Dr, Tunnel Hill, GA 30755</a></p>
+        <p><strong>Hours:</strong> Mon-Sat 10 AM – 4 PM. <strong>Closed Sunday.</strong></p>
+        <p><strong>Cost:</strong> Guided tour $15 adult · $13 ages 4-10 · under 3 free. Self-guided $13. <strong>Family of 4 guided: ~$56.</strong></p>
+        <p><strong>⚠️ Reservations:</strong> Call <a href="tel:+17068761571" onclick="event.stopPropagation()">(706) 876-1571</a> to reserve a guided tour. Recommended but not required.</p>
+        <p><strong>Why stop:</strong> First major railroad tunnel in the South. Union commandos stole "The General" locomotive and ran through this tunnel in 1862 — one of the Civil War's most famous raids. You see original drill marks in the rock. The golf-cart-through-a-dark-tunnel format beats "read a plaque."</p>
+        <p><strong>Time:</strong> ~1.5 hrs on site + ~15 min detour = 2 hrs total commitment. Realistic only if leaving Atlanta early enough, or split into a Monday return-trip stop.</p>
+        <p><strong>Pairs with:</strong> The General locomotive at Southern Museum of Civil War &amp; Locomotive History in Kennesaw (Exit 273) — the actual stolen locomotive. Set up the story either way.</p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Atomic Mouse — Ringgold (optional)</span>
+        <span class="route-stop-distance">Exit 345 · &lt;1 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">11-foot-tall mouse holding a radiant cheese wedge on a pest-control office roof. Pure roadside absurdity.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=456+Bandy+Lane+Ringgold+GA" target="_blank" onclick="event.stopPropagation()">456 Bandy Lane, Ringgold, GA</a> (on top of EnviroGuard Pest Solutions)</p>
+        <p><strong>Cost/Hours:</strong> Free, always visible from the parking lot.</p>
+        <p><strong>Why stop:</strong> Originally on Atomic Pest Control in Memphis since 1978, moved to Georgia in 2013. A giant mouse with a glowing cheese wedge. The kids will remember it.</p>
+        <p><strong>Time:</strong> 5 min photo stop, right at the exit.</p>
       </div>
     </div>
     <div class="route-stop" onclick="toggleRouteStop(this)">
@@ -1844,6 +2074,45 @@ a:hover { text-decoration: underline; }
         <p><strong>Caveat:</strong> 20 min each way off I-75 + 1.5-2 hrs on-site = 2.5 hr commitment. Only if you have time. Visitor Center opens 1 PM Monday.</p>
       </div>
     </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Atomic Mouse — Ringgold (optional)</span>
+        <span class="route-stop-distance">Exit 345 · &lt;1 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">Giant mouse with glowing cheese on a pest control roof. 5-min photo stop right at the exit.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=456+Bandy+Lane+Ringgold+GA" target="_blank" onclick="event.stopPropagation()">456 Bandy Lane, Ringgold, GA</a> (on top of EnviroGuard Pest Solutions)</p>
+        <p><strong>Cost/Hours:</strong> Free, visible from the parking lot anytime.</p>
+        <p><strong>Time:</strong> 5 min, right at the exit.</p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Tunnel Hill Civil War Railroad Tunnel (optional, 1.5 hrs)</span>
+        <span class="route-stop-distance">Exit 341 · ~5 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">Golf-cart tour through an 1850 Civil War railroad tunnel. Only makes sense Monday if skipping other stops — tight with the 4 PM deadline.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=215+Clisby+Austin+Dr+Tunnel+Hill+GA+30755" target="_blank" onclick="event.stopPropagation()">215 Clisby Austin Dr, Tunnel Hill, GA 30755</a></p>
+        <p><strong>Monday hours:</strong> 10 AM – 4 PM (last tour typically ~2:30 PM)</p>
+        <p><strong>Cost:</strong> Guided $15 adult / $13 kid 4-10. Family of 4: ~$56.</p>
+        <p><strong>⚠️ Reservations:</strong> Call <a href="tel:+17068761571" onclick="event.stopPropagation()">(706) 876-1571</a> to reserve. Book Sunday night or Monday morning.</p>
+        <p><strong>⚠️ Time warning:</strong> 1.5 hrs tour + 15 min detour = 2 hrs total. With 4 PM home deadline and a ~3 hr drive, this replaces Mayfield Dairy and Lost Sea — can't do multiple stops.</p>
+      </div>
+    </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Rock Garden — Calhoun (optional)</span>
+        <span class="route-stop-distance">Exit 310 · ~10 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">Miniature rock castles and villages behind a church. Free, open daily 8 AM–7 PM. Kid magnet.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=1411+Rome+Rd+SW+Calhoun+GA+30701" target="_blank" onclick="event.stopPropagation()">1411 Rome Rd SW, Calhoun, GA 30701</a></p>
+        <p><strong>Hours:</strong> Daily 8 AM – 7 PM · <strong>Free</strong></p>
+        <p><strong>Time needed:</strong> 20-30 min on site + drive = ~45 min total.</p>
+        <p>If not done Saturday, this fits well into the Monday return.</p>
+      </div>
+    </div>
     <div class="route-stop highlight" onclick="toggleRouteStop(this)">
       <div class="route-stop-header">
         <span class="route-stop-name">Lunch Stop Options (pick one)</span>
@@ -1864,18 +2133,67 @@ a:hover { text-decoration: underline; }
       </div>
       <div class="route-stop-sell">Gas and snacks for the home stretch. 65 miles to Inman Park from here.</div>
     </div>
+    <div class="route-stop" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">The Big Chicken — Marietta (optional)</span>
+        <span class="route-stop-distance">Exit 263 · ~2 min off I-75</span>
+      </div>
+      <div class="route-stop-sell">56-ft sheet-metal chicken with moving eyes. Your "we're almost home" photo landmark.</div>
+      <div class="route-stop-detail">
+        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=12+Cobb+Pkwy+SE+Marietta+GA+30060" target="_blank" onclick="event.stopPropagation()">12 Cobb Pkwy SE, Marietta, GA 30060</a></p>
+        <p><strong>Time:</strong> 5 min, then home is ~20 min away.</p>
+      </div>
+    </div>
     <div class="route-stop highlight" onclick="toggleRouteStop(this)">
       <div class="route-stop-header">
-        <span class="route-stop-name">Dinner Pickup (order from the road)</span>
+        <span class="route-stop-name">🍔 Dinner Pickup — Martha, You Pick</span>
         <span class="route-stop-distance">~3:30 PM · Order ~3:00 PM</span>
       </div>
-      <div class="route-stop-sell">Don't cook Monday night. Order from the car ~45 min before arrival, grab on the way home.</div>
+      <div class="route-stop-sell">Three non-chain burger spots along I-75 into Atlanta. No cooking after we get home. Browse the menus and pick whichever sounds best.</div>
       <div class="route-stop-detail">
-        <p><strong>Top pick: <a href="https://locations.chipotle.com/ga/atlanta/718-ponce-de-leon-ave-ne" target="_blank" onclick="event.stopPropagation()">Chipotle — Ponce de Leon</a></strong> (718 Ponce de Leon Ave NE). Exit 248C (Freedom Pkwy), ~8 min from Connector. Best online ordering UX in Atlanta — app order, pickup shelf, zero wait. Martha's dairy-free experience is cleanest here (dairy-free bowl on main menu). ~$50-55 family. Order from near Chattanooga or Cartersville.</p>
-        <p style="margin-top:6px;"><strong>Kid-vote pick: <a href="https://yourpie.com/locations/ga-atlanta-275-memorial-drive-se-suite-b1/" target="_blank" onclick="event.stopPropagation()">Your Pie — Grant Park</a></strong> (275 Memorial Dr SE). Exit 247 (Memorial Dr), literally on the way — 0.5 mi from exit. Vegan cheese for Martha ($1 upcharge) = real pizza, not a sad salad. Kids build their own personal pizzas. ~$50-55 family.</p>
-        <p style="margin-top:6px;"><strong>Almost-home pick: <a href="https://willys.com/locations/" target="_blank" onclick="event.stopPropagation()">Willy's Mexicana Grill — Edgewood</a></strong> (1230 Caroline St NE). ~5 min from home. Place order when you pass Marietta, walk in 5 min from arrival. Martha customizes freely (rice + beans cooked in veg broth, no lard). ~$45-50 family.</p>
-        <p style="margin-top:8px;"><em>Skip Panera — Martha's dairy-free options are the weakest there.</em></p>
-        <p style="margin-top:4px;"><strong>Order logistics:</strong> All three have apps/online ordering with ~15-20 min lead time. Aim to place the order around 3:00 PM so it's ready at 3:45.</p>
+        <p style="font-size:0.88rem;margin-bottom:4px;">Each spot has online ordering — once you decide, we'll place the order from the road ~45 min before arrival.</p>
+        <div class="dinner-grid">
+
+          <div class="dinner-card top-pick">
+            <span class="dinner-card-angle">Top Pick — Martha-Friendly</span>
+            <div class="dinner-card-name"><a href="https://mussandturners.com/" target="_blank" onclick="event.stopPropagation()">Muss &amp; Turner's</a></div>
+            <div style="font-size:0.82rem;color:var(--text-dim);">Smyrna · Tavern-deli + Atlanta institution</div>
+            <div class="dinner-meta-row">
+              <span>📍 <a href="https://maps.google.com/?q=1675+Cumberland+Pkwy+SE+Smyrna+GA+30080" target="_blank" onclick="event.stopPropagation()">1675 Cumberland Pkwy SE</a></span>
+              <span>🚗 Exit 260 · 5 min</span>
+              <span>🕐 Mon 11:30AM-9PM</span>
+              <span>💰 $$$ · ~$70 family</span>
+            </div>
+            <div class="dinner-note"><strong>For Martha:</strong> Real turkey options on the menu — <em>Basic Turkey</em>, <em>Turkey Gobbler</em> (roasted turkey breast, Bubby Mussy's Ritz stuffing, lingonberry coulis, thyme aioli, $20.33), <em>Turkey Clubbin'</em> (turkey salad — hold the provolone). Plus salads, bowls, and sandwiches. More choice than a pure burger joint.</div>
+            <div class="dinner-note"><strong>For the kids:</strong> Tavern-deli vibe — "grown-up" sandwiches alongside burgers. Works if they want variety over classic burger-and-fries.</div>
+            <div class="dinner-why">Recognized by Food &amp; Wine and Food Network as one of America's Best Delis. The Infatuation calls it the most beloved spot in Smyrna. Upscale but casual takeout — and the only spot on this list with real turkey on the menu.</div>
+            <div class="dinner-actions">
+              <a href="https://mussandturners.com/" target="_blank" onclick="event.stopPropagation()" class="dinner-btn dinner-btn-menu">See Menu</a>
+              <a href="https://mussandturners.com/" target="_blank" onclick="event.stopPropagation()" class="dinner-btn dinner-btn-order">Order Online</a>
+            </div>
+          </div>
+
+          <div class="dinner-card">
+            <span class="dinner-card-angle">Best Burger Quality</span>
+            <div class="dinner-card-name"><a href="https://www.themainstreeteats.com/menu" target="_blank" onclick="event.stopPropagation()">Main Street Eats</a></div>
+            <div style="font-size:0.82rem;color:var(--text-dim);">Kennesaw · Handcrafted Angus burgers + shakes</div>
+            <div class="dinner-meta-row">
+              <span>📍 <a href="https://maps.google.com/?q=2844+S+Main+St+Kennesaw+GA+30144" target="_blank" onclick="event.stopPropagation()">2844 S Main St</a></span>
+              <span>🚗 Exit 271 · 3-4 min</span>
+              <span>🕐 Mon 11:30AM-9PM</span>
+              <span>💰 $$ · ~$50 family</span>
+            </div>
+            <div class="dinner-note"><strong>For Martha:</strong> Grilled chicken sandwich is the best bet — simple and dairy-free. They have a house-made veggie burger but the ingredients aren't listed online; call to confirm it's not beyond-based or soy-based. <em>Note: their "Beyond Burger" contains pea protein — skip.</em></div>
+            <div class="dinner-note"><strong>For the kids:</strong> Classic burgers, chicken tenders, hot dogs, tater tots, hand-cut fries, shakes and custards.</div>
+            <div class="dinner-why">Voted Best of Cobb and Best of Kennesaw, Golden Spatula winner. Ex-BurgerFi location run as an independent since 2013. The best-quality burger stop on the whole route — if Martha is okay with grilled chicken.</div>
+            <div class="dinner-actions">
+              <a href="https://www.themainstreeteats.com/menu" target="_blank" onclick="event.stopPropagation()" class="dinner-btn dinner-btn-menu">See Menu</a>
+              <a href="https://www.toasttab.com/local/order/main-street-eats" target="_blank" onclick="event.stopPropagation()" class="dinner-btn dinner-btn-order">Order Online</a>
+            </div>
+          </div>
+
+        </div>
+        <p style="margin-top:14px;font-size:0.85rem;color:var(--text-dim);"><strong>Order logistics:</strong> All three take online orders with ~15-20 min lead time. Place the order around 3:00 PM so it's ready at 3:45. Main Street Eats runs continuous service; call Muss &amp; Turner's if ordering for the 3:30 window.</p>
       </div>
     </div>
     <div class="route-stop" onclick="toggleRouteStop(this)">
@@ -2025,10 +2343,14 @@ const PINS = [
   { lat: 35.6037, lng: -84.4636, name: 'Duck Park — Sweetwater', zone: 'route', desc: 'I-75 Exit 60 · Free · Quick kid leg-stretch', cat: 'nature' },
   { lat: 35.4430, lng: -84.7550, name: 'Mayfield Dairy — Athens', zone: 'route', desc: 'I-75 Exit 52 · Mon tours only · Factory tour + ice cream · $32 family', cat: 'dessert' },
   { lat: 35.1160, lng: -84.9780, name: 'Red Clay State Park', zone: 'route', desc: 'I-75 Exit 20 · 20 min off highway · Cherokee history · Free', cat: 'culture' },
-  // Monday dinner pickup (Atlanta)
-  { lat: 33.7720, lng: -84.3520, name: 'Chipotle Ponce (dinner pickup)', zone: 'route', desc: '718 Ponce de Leon Ave · Best online ordering · Martha-friendly', cat: 'food' },
-  { lat: 33.7400, lng: -84.3700, name: 'Your Pie Grant Park (dinner pickup)', zone: 'route', desc: '275 Memorial Dr SE · Exit 247 · Vegan cheese for Martha', cat: 'food' },
-  { lat: 33.7620, lng: -84.3450, name: "Willy's Edgewood (dinner pickup)", zone: 'route', desc: '1230 Caroline St NE · Closest to home · Quick grab', cat: 'food' },
+  // Quirky road trip stops
+  { lat: 33.9540, lng: -84.5470, name: 'The Big Chicken — Marietta', zone: 'route', desc: 'Exit 263 · 56-ft sheet-metal chicken · 5-min photo stop', cat: 'culture' },
+  { lat: 34.4830, lng: -84.9610, name: 'Rock Garden — Calhoun', zone: 'route', desc: '1411 Rome Rd SW · Exit 310 · Free · Daily 8AM-7PM · Miniature rock castles', cat: 'culture' },
+  { lat: 34.8400, lng: -85.0430, name: 'Tunnel Hill Railroad Tunnel', zone: 'route', desc: 'Exit 341 · Mon-Sat 10-4 · $15/$13 · Civil War tunnel · Reservations: (706) 876-1571', cat: 'culture' },
+  { lat: 34.9200, lng: -85.1050, name: 'Atomic Mouse — Ringgold', zone: 'route', desc: '456 Bandy Lane · Exit 345 · Free · Giant mouse w/ glowing cheese', cat: 'culture' },
+  // Monday dinner pickup (non-chain burger spots along I-75 S into Atlanta)
+  { lat: 34.0230, lng: -84.6145, name: 'Main Street Eats (dinner pickup)', zone: 'route', desc: '2844 S Main St, Kennesaw · Exit 271 · Mon 11:30-9 · Top pick burger', cat: 'food' },
+  { lat: 33.8860, lng: -84.5150, name: "Muss & Turner's (dinner pickup)", zone: 'route', desc: "1675 Cumberland Pkwy SE, Smyrna · Exit 260 · Mon 11:30-9 · Atlanta institution", cat: 'food' },
   // Road trip lunch stops
   { lat: 34.2350, lng: -84.8100, name: 'El Dorado Salvadorian', zone: 'route', desc: 'Exit 290, Cartersville · Sat 11AM-10PM, Mon 11AM-9PM · Pupusas, tamales · $8-15', cat: 'food' },
   { lat: 34.4870, lng: -84.9510, name: 'North Indian Flame', zone: 'route', desc: 'Exit 312, Calhoun · Sat 10AM-10PM, Mon 6AM-10PM · Legit Indian in small-town GA · $10-18', cat: 'food' },
@@ -2371,8 +2693,111 @@ function clearPicks() {
   updatePicksBar();
 }
 
+// ── COLLAPSE / EXPAND (sections + other blocks) ──
+// All collapsible elements need an id so state can persist across reloads
+function wrapSectionBodies() {
+  // Handle .section elements (day sections with section-header)
+  document.querySelectorAll('.section').forEach(section => {
+    const header = section.querySelector('.section-header');
+    if (!header) return;
+    if (!header.querySelector('.section-chevron')) {
+      const chev = document.createElement('span');
+      chev.className = 'section-chevron';
+      chev.textContent = '▼';
+      header.appendChild(chev);
+    }
+    if (!section.querySelector(':scope > .section-body')) {
+      const body = document.createElement('div');
+      body.className = 'section-body';
+      const nodes = Array.from(section.childNodes).filter(n => n !== header);
+      nodes.forEach(n => body.appendChild(n));
+      section.appendChild(body);
+    }
+    header.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+      section.classList.toggle('collapsed');
+      saveSectionState();
+    });
+  });
+
+  // Handle .collapsible elements (glance card, Airbnb, Choices callouts)
+  document.querySelectorAll('.collapsible').forEach(block => {
+    const header = block.querySelector(':scope > .collapsible-header');
+    if (!header) return;
+    if (!header.querySelector('.collapsible-chevron')) {
+      const chev = document.createElement('span');
+      chev.className = 'collapsible-chevron';
+      chev.textContent = '▼';
+      header.appendChild(chev);
+    }
+    if (!block.querySelector(':scope > .collapsible-body')) {
+      const body = document.createElement('div');
+      body.className = 'collapsible-body';
+      const nodes = Array.from(block.childNodes).filter(n => n !== header);
+      nodes.forEach(n => body.appendChild(n));
+      block.appendChild(body);
+    }
+    header.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+      block.classList.toggle('collapsed');
+      saveSectionState();
+    });
+  });
+
+  loadSectionState();
+}
+
+function getAllCollapsibles() {
+  return document.querySelectorAll('.section[id], .collapsible[id]');
+}
+
+function saveSectionState() {
+  const collapsed = [];
+  getAllCollapsibles().forEach(el => { if (el.classList.contains('collapsed')) collapsed.push(el.id); });
+  localStorage.setItem('knoxville-collapsed-sections', JSON.stringify(collapsed));
+}
+
+function loadSectionState() {
+  const saved = JSON.parse(localStorage.getItem('knoxville-collapsed-sections') || '[]');
+  saved.forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('collapsed'); });
+}
+
+function expandAllSections() {
+  getAllCollapsibles().forEach(el => el.classList.remove('collapsed'));
+  saveSectionState();
+}
+
+function collapseAllSections() {
+  getAllCollapsibles().forEach(el => el.classList.add('collapsed'));
+  saveSectionState();
+}
+
+function collapsePastDays() {
+  // Trip is Sat 4/18, Sun 4/19, Mon 4/20
+  const today = new Date();
+  const y = today.getFullYear(), m = today.getMonth() + 1, d = today.getDate();
+  const todayNum = y * 10000 + m * 100 + d;
+  const sat = 20260418, sun = 20260419, mon = 20260420;
+  const toCollapse = [];
+  if (todayNum > sat) toCollapse.push('drive-up', 'saturday');
+  if (todayNum > sun) toCollapse.push('sunday-decision');
+  if (todayNum > mon) toCollapse.push('monday', 'drive-back');
+  // Always expand the rest
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('collapsed'));
+  toCollapse.forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('collapsed'); });
+  saveSectionState();
+  // Friendly message if nothing applies
+  if (toCollapse.length === 0) {
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = 'Trip hasn\'t started yet';
+    setTimeout(() => btn.textContent = orig, 1800);
+  }
+}
+
 // Inject refs on load
 document.addEventListener('DOMContentLoaded', function() {
+  wrapSectionBodies();
   // Add expand chevrons to route stops
   document.querySelectorAll('.route-stop').forEach(stop => {
     const header = stop.querySelector('.route-stop-header');
