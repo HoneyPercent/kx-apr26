@@ -811,8 +811,8 @@ a:hover { text-decoration: underline; }
     </div>
     <div class="glance-day mon">
       <h4>Monday — Light Exit</h4>
-      <p>Potchke breakfast → hit the road by 10:30. <strong>Home by 4 PM.</strong> One stop on the way: Mayfield Dairy tour (Mon only, free ice cream) or Lost Sea cave — not both.</p>
-      <div class="glance-meal">Breakfast: Potchke (9 AM) · Lunch: Mayfield Dairy ice cream or grab-and-go</div>
+      <p>Potchke breakfast → hit the road by 10:30. <strong>Home by 4 PM.</strong> One stop on the way: Mayfield Dairy tour (Mon only, free ice cream) or Lost Sea cave — not both. Order dinner from the road ~3 PM for pickup on arrival.</p>
+      <div class="glance-meal">Breakfast: Potchke (9 AM) · Road lunch: Oakwood Cafe (Dalton) or Tacos Beto · Dinner pickup: Chipotle Ponce, Your Pie Grant Park, or Willy's Edgewood</div>
     </div>
   </div>
   <div class="glance-provision">
@@ -1864,6 +1864,20 @@ a:hover { text-decoration: underline; }
       </div>
       <div class="route-stop-sell">Gas and snacks for the home stretch. 65 miles to Inman Park from here.</div>
     </div>
+    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
+      <div class="route-stop-header">
+        <span class="route-stop-name">Dinner Pickup (order from the road)</span>
+        <span class="route-stop-distance">~3:30 PM · Order ~3:00 PM</span>
+      </div>
+      <div class="route-stop-sell">Don't cook Monday night. Order from the car ~45 min before arrival, grab on the way home.</div>
+      <div class="route-stop-detail">
+        <p><strong>Top pick: <a href="https://locations.chipotle.com/ga/atlanta/718-ponce-de-leon-ave-ne" target="_blank" onclick="event.stopPropagation()">Chipotle — Ponce de Leon</a></strong> (718 Ponce de Leon Ave NE). Exit 248C (Freedom Pkwy), ~8 min from Connector. Best online ordering UX in Atlanta — app order, pickup shelf, zero wait. Martha's dairy-free experience is cleanest here (dairy-free bowl on main menu). ~$50-55 family. Order from near Chattanooga or Cartersville.</p>
+        <p style="margin-top:6px;"><strong>Kid-vote pick: <a href="https://yourpie.com/locations/ga-atlanta-275-memorial-drive-se-suite-b1/" target="_blank" onclick="event.stopPropagation()">Your Pie — Grant Park</a></strong> (275 Memorial Dr SE). Exit 247 (Memorial Dr), literally on the way — 0.5 mi from exit. Vegan cheese for Martha ($1 upcharge) = real pizza, not a sad salad. Kids build their own personal pizzas. ~$50-55 family.</p>
+        <p style="margin-top:6px;"><strong>Almost-home pick: <a href="https://willys.com/locations/" target="_blank" onclick="event.stopPropagation()">Willy's Mexicana Grill — Edgewood</a></strong> (1230 Caroline St NE). ~5 min from home. Place order when you pass Marietta, walk in 5 min from arrival. Martha customizes freely (rice + beans cooked in veg broth, no lard). ~$45-50 family.</p>
+        <p style="margin-top:8px;"><em>Skip Panera — Martha's dairy-free options are the weakest there.</em></p>
+        <p style="margin-top:4px;"><strong>Order logistics:</strong> All three have apps/online ordering with ~15-20 min lead time. Aim to place the order around 3:00 PM so it's ready at 3:45.</p>
+      </div>
+    </div>
     <div class="route-stop" onclick="toggleRouteStop(this)">
       <div class="route-stop-header">
         <span class="route-stop-name">Arrive Inman Park</span>
@@ -2011,6 +2025,10 @@ const PINS = [
   { lat: 35.6037, lng: -84.4636, name: 'Duck Park — Sweetwater', zone: 'route', desc: 'I-75 Exit 60 · Free · Quick kid leg-stretch', cat: 'nature' },
   { lat: 35.4430, lng: -84.7550, name: 'Mayfield Dairy — Athens', zone: 'route', desc: 'I-75 Exit 52 · Mon tours only · Factory tour + ice cream · $32 family', cat: 'dessert' },
   { lat: 35.1160, lng: -84.9780, name: 'Red Clay State Park', zone: 'route', desc: 'I-75 Exit 20 · 20 min off highway · Cherokee history · Free', cat: 'culture' },
+  // Monday dinner pickup (Atlanta)
+  { lat: 33.7720, lng: -84.3520, name: 'Chipotle Ponce (dinner pickup)', zone: 'route', desc: '718 Ponce de Leon Ave · Best online ordering · Martha-friendly', cat: 'food' },
+  { lat: 33.7400, lng: -84.3700, name: 'Your Pie Grant Park (dinner pickup)', zone: 'route', desc: '275 Memorial Dr SE · Exit 247 · Vegan cheese for Martha', cat: 'food' },
+  { lat: 33.7620, lng: -84.3450, name: "Willy's Edgewood (dinner pickup)", zone: 'route', desc: '1230 Caroline St NE · Closest to home · Quick grab', cat: 'food' },
   // Road trip lunch stops
   { lat: 34.2350, lng: -84.8100, name: 'El Dorado Salvadorian', zone: 'route', desc: 'Exit 290, Cartersville · Sat 11AM-10PM, Mon 11AM-9PM · Pupusas, tamales · $8-15', cat: 'food' },
   { lat: 34.4870, lng: -84.9510, name: 'North Indian Flame', zone: 'route', desc: 'Exit 312, Calhoun · Sat 10AM-10PM, Mon 6AM-10PM · Legit Indian in small-town GA · $10-18', cat: 'food' },
