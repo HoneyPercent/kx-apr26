@@ -816,7 +816,15 @@ a:hover { text-decoration: underline; }
     </div>
   </div>
   <div class="glance-provision">
-    <strong>Provisions note:</strong> Three Rivers Market co-op is a 2-min walk from your Airbnb (daily 8AM-8PM). Grab breakfast supplies, snacks, and drinks Saturday evening so Sunday morning is relaxed. Nearest full grocery: Kroger at 2640 N Broadway, 5 min drive.
+    <strong>Provisions note:</strong> Three Rivers Market co-op is a 2-min walk (daily 8AM-8PM). Nearest full grocery: <strong>Food City at 4216 N Broadway</strong> (6AM-midnight all 3 days, 6-8 min drive). Kroger and Publix a bit farther.
+  </div>
+  <div class="glance-provision" style="border-left-color:var(--teal);">
+    <strong>🥐 Early breakfast with kids (let Martha sleep):</strong>
+    <ul style="margin-top:6px;padding-left:20px;font-size:0.84rem;">
+      <li><strong>Paysan Bread &amp; Bagels</strong> — 0.3 mi (4-6 min walk) · 804 Tyson St · Opens 8 AM daily. From-scratch bagels. The easy neighborhood pick.</li>
+      <li><strong>Pete's Coffee Shop</strong> — 5 min drive · 540 Union Ave · <strong>Opens 7 AM Sat/Sun/Mon</strong>. Classic diner, voted Best Breakfast in Knoxville. Only 7 AM Sunday option.</li>
+      <li><strong>K Brew</strong> — 5 min drive · 507 S Gay St · Opens 7 AM Sat/Mon, 8 AM Sun. Bagels + coffee.</li>
+    </ul>
   </div>
 </div>
 
@@ -1938,6 +1946,14 @@ const ZONES = {
 const PINS = [
   // Home base
   { lat: 35.97731, lng: -83.92123, name: 'Your Airbnb', zone: 'downtown', desc: '814 Deery St · Home base', cat: 'home' },
+  // Groceries
+  { lat: 36.0120, lng: -83.9280, name: 'Food City (closest full grocery)', zone: 'north', desc: '4216 N Broadway · 6AM-midnight daily · 6-8 min drive', cat: 'market' },
+  { lat: 36.0320, lng: -83.9390, name: 'Kroger - N Broadway', zone: 'north', desc: '5201 N Broadway · ~9-11 min drive', cat: 'market' },
+  { lat: 35.9490, lng: -83.9270, name: 'Publix - University Commons', zone: 'south', desc: '2429 University Commons Way · ~9-12 min drive', cat: 'market' },
+  { lat: 35.9727, lng: -83.9200, name: 'Three Rivers Market (walk)', zone: 'downtown', desc: '1100 N Central St · Daily 8AM-8PM · Co-op · 2 min walk', cat: 'market' },
+  // Early breakfast
+  { lat: 35.9800, lng: -83.9205, name: 'Paysan Bread & Bagels', zone: 'downtown', desc: '804 Tyson St · Daily 8AM-2PM · 0.3 mi walk · From-scratch bagels', cat: 'food' },
+  { lat: 35.9660, lng: -83.9200, name: "Pete's Coffee Shop (7AM)", zone: 'downtown', desc: '540 Union Ave · Sat/Sun/Mon 7AM-2PM · Classic diner · Only 7AM Sun option', cat: 'food' },
   // Downtown
   { lat: 35.9652, lng: -83.9199, name: 'Market Square / Rossini', zone: 'downtown', desc: 'Festival Sat 10AM-10PM, Sun 12-7PM · FREE', cat: 'music' },
   { lat: 35.9641, lng: -83.9209, name: 'Union Ave Books', zone: 'downtown', desc: '517 Union Ave · Sat 10-7, Sun 12-6, Mon 10-8', cat: 'books' },
