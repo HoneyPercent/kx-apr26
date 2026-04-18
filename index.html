@@ -938,9 +938,7 @@ a:hover { text-decoration: underline; }
   <div class="timeline-inner">
     <button class="timeline-tab active" onclick="scrollToSection('map-section')">Map</button>
     <button class="timeline-tab" onclick="scrollToSection('action-items')">Do Now</button>
-    <button class="timeline-tab" onclick="scrollToSection('drive-up')">Sat Drive</button>
-    <button class="timeline-tab" onclick="scrollToSection('saturday')">Sat PM</button>
-    <button class="timeline-tab" onclick="scrollToSection('sunday-decision')">Sunday</button>
+    <button class="timeline-tab" onclick="scrollToSection('sunday')">Sunday</button>
     <button class="timeline-tab" onclick="scrollToSection('monday')">Mon AM</button>
     <button class="timeline-tab" onclick="scrollToSection('food')">Food</button>
     <button class="timeline-tab" onclick="scrollToSection('kids')">Kids</button>
@@ -963,21 +961,16 @@ a:hover { text-decoration: underline; }
 
 <!-- WEEKEND AT A GLANCE -->
 <div class="glance-card collapsible" id="block-glance">
-  <h3 class="collapsible-header">Your Weekend in 30 Seconds</h3>
+  <h3 class="collapsible-header">The Rest of the Weekend in 30 Seconds</h3>
   <div class="glance-days">
-    <div class="glance-day sat">
-      <h4>Saturday — Arrive &amp; Explore</h4>
-      <p>Drive up after Eli's game (~10:30 AM, Buc-ee's stop). Arrive ~2:30. Walk to Two Bikes party (free food, Old City) + Rossini Festival (free music, kids zone, downtown). The city hands you your evening.</p>
-      <div class="glance-meal">Road lunch ~11:30: Champy's Fried Chicken (Exit 1 TN, zero detour) or North Indian Flame (Exit 312, Calhoun) · Arrival snack ~3 PM: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-yassins').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-yassins').classList.add('expanded');">Yassin's<span class="ref-tooltip"><div class="tt-name">Yassin's Falafel House<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Marble City Market · Daily 11-9 · $ · 3 min</div><div class="tt-sell">Falafel is naturally dairy-free. Open every day.</div></span></span> or Three Rivers Market · Dinner: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-tomato-head').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-tomato-head').classList.add('expanded');">Tomato Head<span class="ref-tooltip"><div class="tt-name">Tomato Head<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">12 Market Sq · Sat-Sun only · $$ · 5 min</div><div class="tt-sell">Vegan cheese on any pizza. Best all-around.</div></span></span> at Market Square or <span class="ref" onclick="event.stopPropagation();document.getElementById('card-gosh').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-gosh').classList.add('expanded');">Gosh Ethiopian<span class="ref-tooltip"><div class="tt-name">Gosh Ethiopian<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Sat 4-8 PM ONLY · $$ · 10 min</div><div class="tt-sell">Communal injera eating. Fun for kids. Very limited hours.</div></span></span> (Sat 4-8 PM only)</div>
-    </div>
     <div class="glance-day sun">
-      <h4>Sunday — Adventure + Shatner</h4>
-      <p>Morning adventure (pick a branch at breakfast — Smokies, Oak Ridge, or chill). Wrap by 4-5 PM → Airbnb downtime &amp; naps → early dinner → <strong>Wrath of Khan + William Shatner at Tennessee Theatre, 7-10 PM.</strong></p>
-      <div class="glance-meal">Brunch: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-potchke').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-potchke').classList.add('expanded');">Potchke<span class="ref-tooltip"><div class="tt-name">Potchke<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">318 N Gay St · Daily 9-3 · $$ · 5 min</div><div class="tt-sell">Michelin-listed Jewish deli. Avo Tartine for Martha.</div></span></span> (9-3) · Pre-show dinner ~5:30: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-yassins').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-yassins').classList.add('expanded');">Yassin's<span class="ref-tooltip"><div class="tt-name">Yassin's<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Marble City Market · Daily 11-9 · $ · 3 min</div><div class="tt-sell">Quick, close to Airbnb, naturally dairy-free.</div></span></span> (quick, 3 min) or <span class="ref" onclick="event.stopPropagation();document.getElementById('card-nama').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-nama').classList.add('expanded');">Nama Sushi<span class="ref-tooltip"><div class="tt-name">Nama Sushi Bar<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">506 S Gay St · Sun 12-9 · $$-$$$ · 5 min</div><div class="tt-sell">Near the Tennessee Theatre. Kids menu available.</div></span></span> (near theatre)</div>
+      <h4>Sunday — Browse Options + Shatner</h4>
+      <p>Morning: pick from the Sunday options below. Wrap by 4-5 PM → Airbnb downtime &amp; naps → early dinner → <strong>Wrath of Khan + William Shatner at Tennessee Theatre, 7-10 PM.</strong></p>
+      <div class="glance-meal">Brunch: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-potchke').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-potchke').classList.add('expanded');">Potchke<span class="ref-tooltip"><div class="tt-name">Potchke<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">318 N Gay St · Daily 9-3 · $$ · 5 min</div><div class="tt-sell">Michelin-listed Jewish deli. Avo Tartine for Martha.</div></span></span> (9-3) · Pre-show dinner ~5:30: <span class="ref" onclick="event.stopPropagation();document.getElementById('card-yassins').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-yassins').classList.add('expanded');">Yassin's<span class="ref-tooltip"><div class="tt-name">Yassin's<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Marble City Market · Daily 11-9 · $ · 3 min</div><div class="tt-sell">Quick, close to Airbnb, naturally dairy-free.</div></span></span> (3 min) or <span class="ref" onclick="event.stopPropagation();document.getElementById('card-nama').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-nama').classList.add('expanded');">Nama Sushi<span class="ref-tooltip"><div class="tt-name">Nama Sushi Bar<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">506 S Gay St · Sun 12-9 · $$-$$$ · 5 min</div><div class="tt-sell">Near the Tennessee Theatre. Kids menu available.</div></span></span> (near theatre)</div>
     </div>
     <div class="glance-day mon">
       <h4>Monday — Light Exit</h4>
-      <p>Potchke breakfast → hit the road by 10:30. <strong>Home by 4 PM.</strong> One stop on the way: Mayfield Dairy tour (Mon only, free ice cream) or Lost Sea cave — not both. Order dinner from the road ~3 PM for pickup on arrival.</p>
+      <p>Potchke breakfast → hit the road by 10:30. <strong>Home by 4 PM.</strong> One stop on the way: Mayfield Dairy tour (Mon only, free ice cream), Lost Sea cave, or Tunnel Hill — not multiple. Order dinner from the road ~3 PM for pickup on arrival.</p>
       <div class="glance-meal">Breakfast: Potchke (9 AM) · Road lunch: Oakwood Cafe (Dalton) or Tacos Beto · <strong>Dinner pickup (Martha picks): Muss &amp; Turner's (Smyrna) or Main Street Eats (Kennesaw)</strong></div>
     </div>
   </div>
@@ -1003,8 +996,8 @@ a:hover { text-decoration: underline; }
 </div>
 
 <!-- AIRBNB -->
-<div class="callout callout-good collapsible" id="block-airbnb" style="margin-bottom:24px;">
-  <h3 class="collapsible-header">🏠 Your Airbnb — "Walkable Knoxville Home, Near Breweries & Old City"</h3>
+<div class="callout callout-good collapsible collapsed" id="block-airbnb" style="margin-bottom:24px;">
+  <h3 class="collapsible-header">🏠 Your Airbnb — 814 Deery St (click to expand)</h3>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 20px;margin-top:10px;font-size:0.88rem;">
     <div><strong>Address:</strong> <a href="https://maps.google.com/?q=814+Deery+St+Knoxville+TN+37917" target="_blank">814 Deery St, Knoxville, TN 37917</a></div>
     <div><strong>Dates:</strong> Sat 4/18 → Mon 4/20 (2 nights)</div>
@@ -1023,17 +1016,12 @@ a:hover { text-decoration: underline; }
 </div>
 
 <!-- PRIORITY CHOICES -->
-<div class="callout callout-info collapsible" id="block-choices" style="margin-bottom:24px;">
-  <h3 class="collapsible-header">The Choices You'll Need to Make</h3>
-  <p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:10px;">This guide has ~40 options. You'll do maybe 8-10 things total. Here's what competes for the same time slot:</p>
+<div class="callout callout-info collapsible collapsed" id="block-choices" style="margin-bottom:24px;">
+  <h3 class="collapsible-header">The Choices Still Open (click to expand)</h3>
   <ul>
-    <li><strong>Saturday pre-check-in (2:30-4 PM):</strong> Pick ONE — <span class="ref" onclick="event.stopPropagation();document.getElementById('card-ijams').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-ijams').classList.add('expanded');">Ijams<span class="ref-tooltip"><div class="tt-name">Ijams Nature Center</div><div class="tt-meta">12 min · Free (parking $5)</div><div class="tt-sell">River boardwalk, quarry views. The "we're really away" mood.</div></span></span> (nature, 12 min), <span class="ref" onclick="event.stopPropagation();document.getElementById('card-botanical').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-botanical').classList.add('expanded');">Botanical Garden<span class="ref-tooltip"><div class="tt-name">Botanical Garden</div><div class="tt-meta">7 min · FREE</div><div class="tt-sell">44 acres, stone walls. The reset button for tired families.</div></span></span> (easy, 7 min), or skip and head straight to the neighborhood.</li>
-    <li><strong>Saturday dinner:</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-tomato-head').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-tomato-head').classList.add('expanded');">Tomato Head<span class="ref-tooltip"><div class="tt-name">Tomato Head<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Market Square · Sat 11-9:30 · $$</div><div class="tt-sell">Vegan cheese pizza. Easiest family option.</div></span></span> (safe, at Rossini) vs. <span class="ref" onclick="event.stopPropagation();document.getElementById('card-gosh').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-gosh').classList.add('expanded');">Gosh Ethiopian<span class="ref-tooltip"><div class="tt-name">Gosh Ethiopian<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">Sat 4-8 PM ONLY · $$ · 10 min</div><div class="tt-sell">Communal injera. Fun for kids. Martha's best DF option.</div></span></span> (adventurous, 4-8 PM only) vs. <span class="ref" onclick="event.stopPropagation();document.getElementById('card-sticky-rice').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-sticky-rice').classList.add('expanded');">Sticky Rice<span class="ref-tooltip"><div class="tt-name">Sticky Rice Cafe<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">Mon-Sat 11-9 · $$ · 10 min</div><div class="tt-sell">Authentic Laotian. Mango sticky rice is a must. Gets crowded.</div></span></span> (local favorite, call ahead).</li>
-    <li><strong>Sunday daytime:</strong> Pick ONE branch — Smokies scenic, Oak Ridge science, downtown chill, or Gatlinburg tram. All must wrap by 4-5 PM for the Shatner show.</li>
-    <li><strong>Sushi night (Sat dinner or Sun pre-show):</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-nama').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-nama').classList.add('expanded');">Nama<span class="ref-tooltip"><div class="tt-name">Nama Sushi Bar<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">506 S Gay St · $$-$$$ · 5 min</div><div class="tt-sell">Knoxville's best. Kids menu. Mon half-price to-go from 4 PM.</div></span></span> (quality, downtown) vs. <span class="ref" onclick="event.stopPropagation();document.getElementById('card-makino').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-makino').classList.add('expanded');">Makino<span class="ref-tooltip"><div class="tt-name">Makino Japanese Buffet<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">8217 Kingston Pike · $$ · 15 min</div><div class="tt-sell">All-you-can-eat, made to order. Kids try everything.</div></span></span> (value, kids love it, 15 min west).</li>
-    <li><strong>Monday return stop:</strong> Pick ONE — Mayfield Dairy tour (Mon only, free ice cream, 45 min) vs. Lost Sea cave (underground lake, 75 min, ⚠️ boat ride) vs. skip both and drive straight.</li>
-    <li><strong>Saturday afternoon fun:</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-scruffys').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-scruffys').classList.add('expanded');">Scruffy's Cat Cafe<span class="ref-tooltip"><div class="tt-name">Scruffy's Cat Cafe</div><div class="tt-meta">1015 N Broadway · Sat-Sun 10-7 · $12/person · 3 min</div><div class="tt-sell">Room of rescue cats. Book ahead on weekends.</div></span></span> (3 min walk, easy win — book a 3 or 4 PM slot as a pre-check-in treat) vs. Zoo Knoxville (half-day, 5 min) vs. save kid activities for Sunday chill branch.</li>
-    <li><strong>West Knox batch (if you go):</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-cinnaholic').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-cinnaholic').classList.add('expanded');">Cinnaholic<span class="ref-tooltip"><div class="tt-name">Cinnaholic<span class="tt-badge tt-df-excellent">DF: Perfect</span></div><div class="tt-meta">9450 S Northshore Dr · Sun 12-6 · $$ · 20 min</div><div class="tt-sell">100% vegan cinnamon rolls. Martha's dessert destination.</div></span></span> + <span class="ref" onclick="event.stopPropagation();document.getElementById('card-makino').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-makino').classList.add('expanded');">Makino<span class="ref-tooltip"><div class="tt-name">Makino<span class="tt-badge tt-df-good">DF: Good</span></div><div class="tt-meta">8217 Kingston Pike · 15 min</div><div class="tt-sell">All-you-can-eat sushi. Great for kids.</div></span></span> + Sir Goony's / Main Event / Urban Air all cluster in the same direction. Batch them into one west-side outing.</li>
+    <li><strong>Sunday pre-show dinner:</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-nama').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-nama').classList.add('expanded');">Nama<span class="ref-tooltip"><div class="tt-name">Nama Sushi Bar<span class="tt-badge tt-df-excellent">DF: Excellent</span></div><div class="tt-meta">506 S Gay St · $$-$$$ · 5 min</div><div class="tt-sell">Knoxville's best. Kids menu. Mon half-price to-go from 4 PM.</div></span></span> (downtown, near theatre) vs. Yassin's (3 min from Airbnb, fast, DF perfect).</li>
+    <li><strong>Monday return stop:</strong> Pick ONE — Mayfield Dairy tour (Mon-only, ice cream, 45 min) vs. Lost Sea cave (underground lake, 75 min, ⚠️ boat ride for Martha) vs. Tunnel Hill (Civil War railroad, 1.5 hrs, reservation required) vs. skip and drive straight.</li>
+    <li><strong>Martha/Cinnaholic run:</strong> <span class="ref" onclick="event.stopPropagation();document.getElementById('card-cinnaholic').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-cinnaholic').classList.add('expanded');">Cinnaholic<span class="ref-tooltip"><div class="tt-name">Cinnaholic<span class="tt-badge tt-df-excellent">DF: Perfect</span></div><div class="tt-meta">9450 S Northshore Dr · Sun 12-6 · $$ · 20 min</div><div class="tt-sell">100% vegan cinnamon rolls. Martha's dessert destination.</div></span></span> is 20 min west — only if you're making a trip out there anyway.</li>
   </ul>
 </div>
 
@@ -1044,231 +1032,112 @@ a:hover { text-decoration: underline; }
     <h2 class="section-title">Book Now — Before You Forget</h2>
   </div>
   <div class="callout callout-warn">
-    <h3>Time-Sensitive</h3>
+    <h3>Still To Do</h3>
     <ul>
-      <li><strong>Scruffy's Cat Cafe</strong> — Weekend slots fill up. Book at <a href="https://www.scruffyscafeknox.com" target="_blank">scruffyscafeknox.com</a>. $12/person weekend, all ages welcome. 1 hr sessions.</li>
-      <li><strong>Airbnb cancellation deadline:</strong> Free cancellation before <strong>4 PM Thursday April 17</strong>.</li>
-      <li><strong>Smokies parking tag:</strong> Buy at <a href="https://www.recreation.gov" target="_blank">recreation.gov</a>. $5/day. Must print — digital not accepted. Match license plate.</li>
-    </ul>
-  </div>
-  <div class="callout callout-good">
-    <h3>Worth Grabbing</h3>
-    <ul>
-      <li><strong>Ober Mountain Tram</strong> (if doing Gatlinburg): Buy online at <a href="https://tickets.obermountain.com" target="_blank">tickets.obermountain.com</a>. $29/person or $37 Spring Fun Pass.</li>
-    </ul>
-  </div>
-  <div class="callout callout-info">
-    <h3>Verify Before Going</h3>
-    <ul>
-      <li><strong>Old City Market:</strong> "Second Sunday" pattern = April 12, not April 19. This market is <strong>probably NOT your weekend</strong>. Call to verify before planning around it.</li>
-      <li><strong>Gosh Ethiopian hours:</strong> Sat 4–8 PM only. Very limited window — plan around it if you want to go.</li>
-      <li><strong>Three Rivers Rambler:</strong> ❌ <strong>Closed until November 2026.</strong> No public rides in April. Don't plan around it.</li>
+      <li><strong>Tunnel Hill (if doing Monday):</strong> Call <a href="tel:+17068761571">(706) 876-1571</a> to reserve — book Sunday night or Monday morning. Mon hrs 10 AM–4 PM, last tour ~2:30.</li>
+      <li><strong>Lost Sea (if doing Monday):</strong> No reservations needed — tours every 30 min, 9:30 AM–5 PM.</li>
+      <li><strong>Monday dinner pickup:</strong> Order from the road ~3:00 PM for 3:45 pickup.</li>
     </ul>
   </div>
 </div>
 
-<!-- SATURDAY DRIVE UP -->
-<div class="section" id="drive-up">
+<!-- SUNDAY -->
+<div class="section" id="sunday">
   <div class="section-header">
-    <span class="section-icon">🚗</span>
-    <h2 class="section-title">Saturday Drive Up</h2>
-    <span class="section-count">185 mi · ~3.5 hrs with stops</span>
+    <span class="section-icon">🌤️</span>
+    <h2 class="section-title">Sunday — Browse Your Options</h2>
+    <span class="section-count">Wrap by 4-5 PM · Shatner 7 PM</span>
   </div>
-  <p style="margin-bottom:10px;font-size:0.9rem;color:var(--text-dim);">Departure ~10:30 AM from Inman Park after Eli's baseball game. I-75 N all the way. Saturday northbound traffic thins by the time you're past Marietta.</p>
-  <p style="margin-bottom:16px;"><a href="#map-section" onclick="event.preventDefault();scrollToSection('map-section');setTimeout(showDriveRoute,400);" style="font-size:0.85rem;font-weight:600;">View drive route on map ↑</a></p>
-  <div class="route-timeline">
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Depart Inman Park</span>
-        <span class="route-stop-distance">0 mi from Atlanta · 10:30 AM</span>
-      </div>
-      <div class="route-stop-sell">Through the Connector → I-75 N. Saturday morning = manageable.</div>
-      <div class="route-stop-detail">
-        <p>The I-75/I-85 Connector through Midtown is the first pinch point, but you're starting right at it so you'll be through quickly. I-285 North Perimeter can add 5-10 min on Saturdays. Once past Marietta/Kennesaw, it's clear sailing.</p>
-        <p style="margin-top:6px"><strong>Tip:</strong> If you can push departure to 9:30-10:00 AM, the ride through metro Atlanta is noticeably smoother.</p>
-      </div>
-    </div>
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">The Big Chicken — Marietta (optional)</span>
-        <span class="route-stop-distance">Exit 263 · 15 mi from Atlanta · ~10:50 AM</span>
-      </div>
-      <div class="route-stop-sell">56-ft sheet-metal chicken with moving eyes and beak, built 1963. Atlanta landmark, 5-min photo stop.</div>
-      <div class="route-stop-detail">
-        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=12+Cobb+Pkwy+SE+Marietta+GA+30060" target="_blank" onclick="event.stopPropagation()">12 Cobb Pkwy SE, Marietta, GA 30060</a> (KFC location)</p>
-        <p><strong>Cost/Hours:</strong> Free, visible from the road. Has its own gift shop.</p>
-        <p><strong>Why stop:</strong> It's the Big Chicken. Every Atlantan knows it as a wayfinding landmark. Survived a 1993 storm and near-demolition after 10,000 angry letters. The kids will laugh.</p>
-        <p><strong>Time:</strong> 5 min photo stop, back on highway.</p>
-      </div>
-    </div>
-    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Buc-ee's Calhoun</span>
-        <span class="route-stop-distance">Exit 310 · 65 mi from Atlanta · ~11:30 AM</span>
-      </div>
-      <div class="route-stop-sell">The family road trip mega-stop. Gas, clean restrooms, BBQ, Beaver Nuggets, fudge.</div>
-      <div class="route-stop-detail">
-        <p><strong>What:</strong> 53,200 sq ft travel center with 120 fuel positions, BBQ counter, kolaches, fudge, and the famous Beaver Nuggets.</p>
-        <p><strong>Why stop:</strong> Perfect 1-hour mark. Cleanest restrooms on I-75. Gas prices are competitive. Kids love browsing. Tesla superchargers if applicable.</p>
-        <p><strong>Time needed:</strong> 15-20 min for gas + restrooms, 30 min if you eat.</p>
-        <p><strong>Gas tip:</strong> Fill up here. This tank gets you to Knoxville easily.</p>
-      </div>
-    </div>
-    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Lunch Stop Options (pick one)</span>
-        <span class="route-stop-distance">Exits 290-312 · 50-65 mi from Atlanta · ~11:30 AM-12:30 PM</span>
-      </div>
-      <div class="route-stop-sell">Real food, not gas station. Three strong options right off I-75.</div>
-      <div class="route-stop-detail">
-        <p><strong>Option A: <a href="https://champyschicken.com/locations/east-ridge" target="_blank" onclick="event.stopPropagation()">Champy's Fried Chicken</a></strong> — 6515 Ringgold Rd, East Ridge, TN (Exit 1 TN, &lt;2 min off highway). Sat 10:30AM-midnight. Legendary Chattanooga fried chicken, catfish, Southern sides. $9-14. Zero detour — literally at the exit. Dairy-free: chicken batter is flour-based, sides like beans/slaw/greens work. <strong>Top pick if timing works (~12:30 PM).</strong></p>
-        <p style="margin-top:6px;"><strong>Option B: <a href="https://www.nifbr.net" target="_blank" onclick="event.stopPropagation()">North Indian Flame</a></strong> — 115 Travelers Pathway, Calhoun, GA (Exit 312, &lt;2 min off highway). Sat opens 10AM. Surprisingly legit Indian restaurant in small-town Georgia. Tandoori, curries, biryani, naan. $10-18. Dairy-free: excellent — specify "no cream, no ghee." Dal, chana masala, tandoori chicken all work. <strong>Top pick if you want something more adventurous (~11:30 AM).</strong></p>
-        <p style="margin-top:6px;"><strong>Option C: <a href="https://eldoradocartersvillega.com" target="_blank" onclick="event.stopPropagation()">El Dorado Salvadorian &amp; Mexican</a></strong> — 910 Joe Frank Harris Pkwy, Cartersville, GA (Exit 290, ~5 min off highway). Sat 11AM-10PM. Pupusas, tamales, burritos. $8-15. Dairy-free: high — Salvadorian pupusas are naturally dairy-free (corn masa + beans/meat). <strong>Earliest option (~11:15 AM).</strong></p>
-        <p style="margin-top:6px;"><em>Note: No pork constraint — Champy's has chicken/catfish, Indian Flame has all non-pork options, El Dorado has beef/chicken.</em></p>
-      </div>
-    </div>
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Rock Garden — Calhoun (optional)</span>
-        <span class="route-stop-distance">Exit 310 · 65 mi from Atlanta · ~10 min off I-75</span>
-      </div>
-      <div class="route-stop-sell">Miniature rock castles, cathedrals, and villages built behind a church. Weird, delightful, free. Atlas Obscura hidden gem.</div>
-      <div class="route-stop-detail">
-        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=1411+Rome+Rd+SW+Calhoun+GA+30701" target="_blank" onclick="event.stopPropagation()">1411 Rome Rd SW, Calhoun, GA 30701</a> (behind Calhoun Seventh-Day Adventist Church)</p>
-        <p><strong>Hours:</strong> Daily 8 AM – 7 PM · <strong>Free</strong></p>
-        <p><strong>What:</strong> A retired man built miniature rock structures (tiny castles, churches, towers) along a stream behind a church. Whimsical, handcrafted, genuinely unusual. Kids love scale-hunting.</p>
-        <p><strong>Time needed:</strong> 20-30 min on site · Total detour ~45 min with drive off/on</p>
-        <p><strong>Tip:</strong> Can do this as a stretch/explore stop after Buc-ee's. Different vibe — Buc-ee's is scale, Rock Garden is intimacy.</p>
-      </div>
-    </div>
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Tunnel Hill Civil War Railroad Tunnel (optional, 1.5 hrs)</span>
-        <span class="route-stop-distance">Exit 341 · 95 mi from Atlanta · ~5 min off I-75</span>
-      </div>
-      <div class="route-stop-sell">Golf-cart tour through an 1850 Civil War railroad tunnel. The "Great Locomotive Chase" ran through it in 1862.</div>
-      <div class="route-stop-detail">
-        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=215+Clisby+Austin+Dr+Tunnel+Hill+GA+30755" target="_blank" onclick="event.stopPropagation()">Tunnel Hill Heritage Center, 215 Clisby Austin Dr, Tunnel Hill, GA 30755</a></p>
-        <p><strong>Hours:</strong> Mon-Sat 10 AM – 4 PM. <strong>Closed Sunday.</strong></p>
-        <p><strong>Cost:</strong> Guided tour $15 adult · $13 ages 4-10 · under 3 free. Self-guided $13. <strong>Family of 4 guided: ~$56.</strong></p>
-        <p><strong>⚠️ Reservations:</strong> Call <a href="tel:+17068761571" onclick="event.stopPropagation()">(706) 876-1571</a> to reserve a guided tour. Recommended but not required.</p>
-        <p><strong>Why stop:</strong> First major railroad tunnel in the South. Union commandos stole "The General" locomotive and ran through this tunnel in 1862 — one of the Civil War's most famous raids. You see original drill marks in the rock. The golf-cart-through-a-dark-tunnel format beats "read a plaque."</p>
-        <p><strong>Time:</strong> ~1.5 hrs on site + ~15 min detour = 2 hrs total commitment. Realistic only if leaving Atlanta early enough, or split into a Monday return-trip stop.</p>
-        <p><strong>Pairs with:</strong> The General locomotive at Southern Museum of Civil War &amp; Locomotive History in Kennesaw (Exit 273) — the actual stolen locomotive. Set up the story either way.</p>
-      </div>
-    </div>
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Atomic Mouse — Ringgold (optional)</span>
-        <span class="route-stop-distance">Exit 345 · 100 mi from Atlanta · &lt;1 min off I-75</span>
-      </div>
-      <div class="route-stop-sell">11-foot-tall mouse holding a radiant cheese wedge on a pest-control office roof. Pure roadside absurdity.</div>
-      <div class="route-stop-detail">
-        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=456+Bandy+Lane+Ringgold+GA" target="_blank" onclick="event.stopPropagation()">456 Bandy Lane, Ringgold, GA</a> (on top of EnviroGuard Pest Solutions)</p>
-        <p><strong>Cost/Hours:</strong> Free, always visible from the parking lot.</p>
-        <p><strong>Why stop:</strong> Originally on Atomic Pest Control in Memphis since 1978, moved to Georgia in 2013. A giant mouse with a glowing cheese wedge. The kids will remember it.</p>
-        <p><strong>Time:</strong> 5 min photo stop, right at the exit.</p>
-      </div>
-    </div>
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Chattanooga I-75/I-24 Split</span>
-        <span class="route-stop-distance">120 mi from Atlanta · ~12:45 PM</span>
-      </div>
-      <div class="route-stop-sell">$328M reconstruction mostly done. Daytime should flow, but lane shifts possible.</div>
-      <div class="route-stop-detail">
-        <p>The infamous "Split" reconstruction (Phase 2) completed March 2026. Nighttime lane closures continue between Exit 1 (East Ridge) and Exit 3A (East Brainerd Road), but Saturday daytime should be flowing normally. Stay alert for reduced lanes in spots.</p>
-      </div>
-    </div>
-    <div class="route-stop highlight" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">The Lost Sea — Sweetwater</span>
-        <span class="route-stop-distance">Exit 60 · 165 mi from Atlanta · 12 min off I-75</span>
-      </div>
-      <div class="route-stop-sell">America's largest underground lake. 75-min guided cave tour + boat ride. Genuinely unique.</div>
-      <div class="route-stop-detail">
-        <p><strong>Address:</strong> <a href="https://maps.google.com/?q=140+Lost+Sea+Rd+Sweetwater+TN+37874" target="_blank" onclick="event.stopPropagation()">140 Lost Sea Rd, Sweetwater, TN 37874</a></p>
-        <p><strong>Website:</strong> <a href="https://thelostsea.com" target="_blank" onclick="event.stopPropagation()">thelostsea.com</a></p>
-        <p><strong>Saturday hours:</strong> 9:30 AM – 6:00 PM, tours every 30 min</p>
-        <p><strong>Cost:</strong> Adults $29.95, Kids (4-12) $18.95 → Family of 4: ~$98</p>
-        <p><strong>Tour:</strong> 75 min. 3/4-mile guided walk through Craighead Caverns + boat ride on the underground lake (the climax).</p>
-        <p><strong>Cave temp:</strong> Constant 58°F — bring a light jacket for the kids.</p>
-        <p><strong>⚠️ Martha note:</strong> The tour includes a BOAT RIDE on the underground lake. This is the highlight — but Martha gets nauseous on boats. It's a flat, calm, glass-bottom boat on still underground water (not ocean waves), but flag this with her. Could be an "Andrew + kids" activity while Martha waits above ground.</p>
-        <p><strong>Detour time:</strong> 12 min off I-75 each way + 75 min tour = ~2 hrs total commitment.</p>
-        <p><strong>Verdict:</strong> If you do this, skip it Saturday (tight timing with 4 PM check-in) and save for Monday return. Open Monday 9:30 AM – 5 PM.</p>
-      </div>
-    </div>
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Duck Park — Sweetwater</span>
-        <span class="route-stop-distance">Exit 60 · 165 mi from Atlanta · 7 min off I-75</span>
-      </div>
-      <div class="route-stop-sell">Paved trails along Sweetwater Creek, playground, ducks. Quick kid leg-stretch.</div>
-      <div class="route-stop-detail">
-        <p><strong>Address:</strong> 201 Duck Park Ln, Sweetwater, TN 37874</p>
-        <p><strong>Hours:</strong> Daily 5 AM – 11 PM. Free.</p>
-        <p><strong>Time needed:</strong> 15-20 min for a quick stretch.</p>
-        <p><strong>Verdict:</strong> Nice if you're already stopped at The Lost Sea (same exit). Not worth a standalone detour.</p>
-      </div>
-    </div>
-    <div class="route-stop" onclick="toggleRouteStop(this)">
-      <div class="route-stop-header">
-        <span class="route-stop-name">Arrive Knoxville — 814 Deery St</span>
-        <span class="route-stop-distance">185 mi from Atlanta · ~1:30-2:00 PM</span>
-      </div>
-      <div class="route-stop-sell">Drop bags, decompress. Two Bikes birthday party is walking distance (free food!), Rossini downtown.</div>
-      <div class="route-stop-detail">
-        <p>Check-in isn't until 4 PM, but you can drop bags and start exploring. Your Airbnb is walkable to Old City and 5 min from downtown.</p>
-        <p style="margin-top:6px;"><strong>🎉 <a href="https://www.twobikes.org/community/gnar9pxpnneyug01rrnvoags8yi7ef" target="_blank" onclick="event.stopPropagation()">Two Bikes 5th Anniversary Party</a></strong> — 118 S Central St (Old City, walking distance from Airbnb). Sat 10 AM–5 PM. Free food and drinks all day. 25% off bikes, 20% off parts. Nonprofit bike shop. Easy first stop while you settle in.</p>
-        <p style="margin-top:4px;">Marble City Market (Yassin's) is 0.5 miles away if you want a real meal instead.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- SATURDAY PM -->
-<div class="section" id="saturday">
-  <div class="section-header">
-    <span class="section-icon">🌆</span>
-    <h2 class="section-title">Saturday Afternoon & Evening</h2>
-  </div>
-  <p style="margin-bottom:16px;font-size:0.9rem;color:var(--text-dim);">Realistically arrive ~2:30 PM (kids + Buc-ee's add time). If before 2, one nature stop before check-in. If after 2, head straight to the neighborhood — Marble City Market is a 3-min walk for a snack. Check in at 4, then let downtown + Rossini carry the evening. State Street Garage is free all weekend.</p>
-  <div class="callout callout-info" style="margin-bottom:16px;">
-    <h3>If It Rains Saturday</h3>
+  <div class="callout callout-good" style="margin-bottom:20px;">
+    <h3>🎬 Sunday Evening: Wrath of Khan + William Shatner</h3>
     <ul>
-      <li>Rossini is outdoor — rain kills the Saturday anchor plan.</li>
-      <li><strong>Backup:</strong> Scruffy's Cat Cafe + bookstores (Union Ave Books, Addison's) + Zoo Knoxville (many covered exhibits) + Cruze Farm for dessert.</li>
-      <li>Or pivot to Main Event (laser tag, bowling — all indoors, open Sat 9AM-2AM).</li>
+      <li><strong><a href="https://www.tennesseetheatre.com" target="_blank">Tennessee Theatre</a></strong> — <a href="https://maps.google.com/?q=604+S+Gay+St+Knoxville+TN+37902" target="_blank">604 S Gay St</a> (walkable from Airbnb)</li>
+      <li><strong>7:00 PM – 10:00 PM</strong> · Metal detectors at entry · No cameras/recording</li>
+      <li><strong>Parking:</strong> State Street Garage — free after 6 PM weekends</li>
+      <li><strong>Rhythm:</strong> Wrap adventure by 4-5 PM → Airbnb downtime, prep kid PJs before leaving → dinner ~5:30 → theatre by 6:30-6:45</li>
+      <li><strong>Pre-show dinner:</strong> Yassin's at Marble City (3 min from Airbnb, fast, open till 9) or Nama Sushi (near theatre). Keep it quick.</li>
     </ul>
   </div>
 
+  <p style="margin-bottom:16px;font-size:0.9rem;color:var(--text-dim);">Three buckets: <strong>main contenders</strong> (the ones you flagged), <strong>downtown stuff</strong> (if hanging near the Airbnb), and <strong>the rest</strong>. Click any card for details.</p>
+
+  <!-- MAIN CONTENDERS -->
+  <h3 style="margin:24px 0 12px 0;font-size:1.15rem;">🎯 Main Contenders</h3>
   <div class="card-grid">
-    <div class="card" id="card-rossini" data-zone="downtown" onclick="toggleCard(this)">
+
+    <div class="card" id="card-kma" data-zone="downtown" onclick="toggleCard(this)">
       <div class="card-accent" style="background:var(--zone-downtown)"></div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-name">Rossini Festival</span>
-          <div class="card-badges">
-            <span class="badge badge-signature">Signature</span>
-          </div>
+          <span class="card-name">Knoxville Museum of Art</span>
+          <div class="card-badges"><span class="badge badge-signature">Closed Mon</span></div>
         </div>
-        <div class="card-sell">The short-weekend cheat code. Four outdoor stages of opera, jazz, gospel, ballet. 100+ artisan vendors, food trucks, YFunZone for kids. Free, walkable from your Airbnb. You don't have to invent Saturday — the city does it for you.</div>
+        <div class="card-sell">Free, compact, easy — one floor, one hour if you want. Permanent "Cycle of Life" glass installation by Richard Jolley (worth the visit alone), regional art, rotating exhibitions. Next to Fort Kid playground.</div>
         <div class="card-meta">
-          <span class="meta-item"><span class="meta-icon">📍</span> Market Square · 0.9 mi</span>
-          <span class="meta-item"><span class="meta-icon">🕐</span> Sat 10AM–10PM, Sun 12–7PM</span>
+          <span class="meta-item"><span class="meta-icon">📍</span> 1050 World's Fair Park Dr · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 1–5 PM</span>
           <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
         </div>
       </div>
       <div class="card-detail">
         <div class="detail-grid">
-          <span class="detail-label">Where</span><span class="detail-value">Market Square &amp; surrounding downtown blocks (500 Market St area)</span>
-          <span class="detail-label">Parking</span><span class="detail-value">State Street Garage — free all weekend. Market Square Garage — $3 flat Sat, free Sun.</span>
-          <span class="detail-label">Transit</span><span class="detail-value">KAT Downtown Connector — fare-free, every 15 min weekends</span>
-          <span class="detail-label">Kids</span><span class="detail-value">YFunZone with kid-friendly activities. Wine tastings for adults.</span>
-          <span class="detail-label">Food</span><span class="detail-value">International food trucks — tacos, baklava, cocktails, lemonade</span>
-          <span class="detail-label">Schedule</span><span class="detail-value"><a href="https://www.knoxvilleopera.org/rossini-festival" target="_blank">knoxvilleopera.org/rossini-festival</a></span>
+          <span class="detail-label">Highlight</span><span class="detail-value">Richard Jolley's "Cycle of Life" — 100-ft glass and steel installation, largest of its kind in the U.S.</span>
+          <span class="detail-label">Kids</span><span class="detail-value">Family Gallery with hands-on activities. Small, manageable museum — not overwhelming.</span>
+          <span class="detail-label">Parking</span><span class="detail-value">Free in the museum lot. World's Fair Park garage nearby.</span>
+          <span class="detail-label">Web</span><span class="detail-value"><a href="https://knoxart.org" target="_blank" onclick="event.stopPropagation()">knoxart.org</a></span>
         </div>
-        <div class="detail-tip">💡 You're walking distance from your Airbnb. No parking needed. This is the anchor of your Saturday — everything else wraps around it.</div>
+        <div class="detail-tip">💡 Pairs naturally with Sunsphere + Fort Kid — all three are at World's Fair Park, walking distance apart.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-mcclung" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">McClung Museum</span>
+          <div class="card-badges"><span class="badge badge-signature">Closed Mon</span></div>
+        </div>
+        <div class="card-sell">UT's natural history + culture museum. Dinosaur skeletons, ancient Egypt mummy, Civil War exhibits, Native American artifacts, Tennessee geology. Free, under-the-radar, kid-perfect.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 1327 Circle Park Dr · 7 min (UT campus)</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 1–5 PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Kids' highlights</span><span class="detail-value">Full mastodon skeleton, Egyptian mummy with interpretive panels, dinosaur tracks</span>
+          <span class="detail-label">Parking</span><span class="detail-value">UT visitor parking lot nearby. On-street metered if lucky.</span>
+          <span class="detail-label">Time</span><span class="detail-value">60-90 min is plenty — compact by design</span>
+          <span class="detail-label">Web</span><span class="detail-value"><a href="https://mcclungmuseum.utk.edu" target="_blank" onclick="event.stopPropagation()">mcclungmuseum.utk.edu</a></span>
+        </div>
+        <div class="detail-tip">💡 Quieter than KMA, more kid-catnip (dinosaurs, mummies). If you're picking one, it depends on what the kids respond to.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-muse" data-zone="north" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-north)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Muse Knoxville</span>
+          <div class="card-badges"><span class="badge badge-signature">Closed Mon</span></div>
+        </div>
+        <div class="card-sell">Hands-on children's science museum. Planetarium, interactive exhibits, kid-run "village" play area. Built for 3-10 year olds — right in Eli and Rosie's sweet spot.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 516 N Beaman St · 7 min (Chilhowee Park)</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–5 PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $12/person (under 1 free)</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <span class="detail-label">Format</span><span class="detail-value">Hands-on exhibits (not a look-at-it museum). Kids run around and do things.</span>
+          <span class="detail-label">Planetarium</span><span class="detail-value">Shows included with admission, multiple per day on weekends</span>
+          <span class="detail-label">Parking</span><span class="detail-value">Free lot at the museum</span>
+          <span class="detail-label">Web</span><span class="detail-value"><a href="https://themuseknoxville.org" target="_blank" onclick="event.stopPropagation()">themuseknoxville.org</a></span>
+        </div>
+        <div class="detail-tip">💡 If kids need to burn energy with agency, not just walk past glass cases — this is it.</div>
       </div>
     </div>
 
@@ -1277,51 +1146,75 @@ a:hover { text-decoration: underline; }
       <div class="card-body">
         <div class="card-header">
           <span class="card-name">Ijams Nature Center</span>
-          <div class="card-badges">
-            <span class="badge badge-excellent">Quietly Great</span>
-          </div>
+          <div class="card-badges"><span class="badge badge-excellent">Quietly Great</span></div>
         </div>
-        <div class="card-sell">The best pre-check-in decompression stop. River boardwalk, quarry views, real woods — 12 minutes from your door. It's the "we're really away now" mood without paying a fatigue tax.</div>
+        <div class="card-sell">River boardwalk, flooded marble quarry, real woods — 12 minutes from your door. The "we're really away now" mood without a long drive. Eagle-Scout-built trails, quiet even on weekends.</div>
         <div class="card-meta">
           <span class="meta-item"><span class="meta-icon">📍</span> 2915 Island Home Ave · 12 min</span>
-          <span class="meta-item"><span class="meta-icon">🕐</span> Grounds 8AM–dusk daily</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Grounds 8AM–dusk · Visitor Ctr Sun 10–5</span>
           <span class="meta-item"><span class="meta-icon">💰</span> Free (parking $5)</span>
         </div>
       </div>
       <div class="card-detail">
         <div class="detail-grid">
-          <span class="detail-label">Best trail</span><span class="detail-value">River Boardwalk: ~1.4 mi loop, mostly flat, follows Tennessee River. Mix of mulch + paved. Has steps in spots — not stroller-friendly. 30-60 min.</span>
-          <span class="detail-label">Also</span><span class="detail-value">Tharp Trace around Mead's Quarry: ~1 mi loop with one steep section. Flooded former marble quarry — beautiful.</span>
-          <span class="detail-label">Parking</span><span class="detail-value">$5/day per vehicle. Overflow lot at Mead's Quarry. Members free.</span>
-          <span class="detail-label">Visitor Center</span><span class="detail-value">Sun-Fri 10AM-5PM, Sat 9AM-5PM · <a href="https://www.ijams.org" target="_blank" onclick="event.stopPropagation()">ijams.org</a></span>
+          <span class="detail-label">Best trail</span><span class="detail-value">River Boardwalk: ~1.4 mi loop, mostly flat, follows Tennessee River. Mix of mulch + paved. Has steps — not stroller-friendly. 30-60 min.</span>
+          <span class="detail-label">Also</span><span class="detail-value">Tharp Trace around Mead's Quarry: ~1 mi loop with one steep section. Flooded marble quarry — beautiful, swim-spot vibe.</span>
+          <span class="detail-label">Parking</span><span class="detail-value">$5/day. Overflow lot at Mead's Quarry. Members free.</span>
+          <span class="detail-label">Web</span><span class="detail-value"><a href="https://www.ijams.org" target="_blank" onclick="event.stopPropagation()">ijams.org</a></span>
         </div>
-        <div class="detail-tip">💡 Pair with Honeybee Coffee (6 min away) or SoKno Taco for a South Knox half-day.</div>
+        <div class="detail-tip">💡 Pair with Honeybee Coffee (6 min away) or Southside Garage food trucks for a South Knox half-day.</div>
       </div>
     </div>
 
-    <div class="card" id="card-botanical" data-zone="north" onclick="toggleCard(this)">
-      <div class="card-accent" style="background:var(--zone-north)"></div>
+    <div class="card" id="card-urban-wilderness" data-zone="south" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-south)"></div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-name">Knoxville Botanical Garden</span>
-          <div class="card-badges">
-            <span class="badge badge-excellent">Pleasant & Peaceful</span>
-          </div>
+          <span class="card-name">Urban Wilderness Gateway Park</span>
+          <div class="card-badges"><span class="badge badge-excellent">Kid Action Park</span></div>
         </div>
-        <div class="card-sell">44 acres of gardens, stone walls, and Smoky Mountain views. Free, dawn to dusk. The reset button for a tired-from-driving family — no agenda, just green space.</div>
+        <div class="card-sell">Free outdoor action park — pump track (paved loop with rollers/berms for bikes and scooters), kid-scale bouldering with crash pads, and greenway trail access. 10 min south, across the river.</div>
         <div class="card-meta">
-          <span class="meta-item"><span class="meta-icon">📍</span> 2743 Wimpole Ave · 7 min</span>
+          <span class="meta-item"><span class="meta-icon">📍</span> 2110 Chapman Hwy · 10 min</span>
           <span class="meta-item"><span class="meta-icon">🕐</span> Dawn to dusk daily</span>
           <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
         </div>
       </div>
       <div class="card-detail">
         <div class="detail-grid">
-          <span class="detail-label">Trails</span><span class="detail-value">0.9-mile greenway (crushed gravel, stroller/wheelchair-friendly) + 2+ miles of garden paths</span>
-          <span class="detail-label">April highlights</span><span class="detail-value">Paulk Peony Garden, dogwood trail, Secret Garden (stone-walled garden rooms), Pollinator Garden</span>
-          <span class="detail-label">Restrooms</span><span class="detail-value">Available during visitor center hours (9AM-5PM)</span>
+          <span class="detail-label">Pump track</span><span class="detail-value">Paved looping circuit with rollers and banked turns. Kids can "pump" around on bikes, scooters, skateboards — no pedaling needed. Bring bikes/scooters from home, or skip and just use it as a running loop.</span>
+          <span class="detail-label">Boulders</span><span class="detail-value">Kid-sized rock climbing features with crash pads below. No ropes, no instructor — low-stakes scrambling.</span>
+          <span class="detail-label">Also</span><span class="detail-value">Trailhead for the Urban Wilderness greenway system (miles of trails through South Knox). Restrooms on site.</span>
+          <span class="detail-label">Parking</span><span class="detail-value">Free lot at the Gateway.</span>
         </div>
-        <div class="detail-tip">💡 This is the "reset button" stop, not the grand scenic gesture. Perfect caliber for a tired-from-driving family.</div>
+        <div class="detail-tip">💡 If you don't have bikes with you, Ijams is the better "move the kids" option. The pump track shines if you rent bikes (Knoxville Adventure Collective rents — but closed Mon).</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DOWNTOWN STUFF -->
+  <h3 style="margin:32px 0 12px 0;font-size:1.15rem;">☕ Downtown Stuff (if hanging near the Airbnb)</h3>
+  <p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:12px;">Everything here is walking distance from Gay Street / Market Square. A loose stroll pattern works: coffee + bagel → book browse → lunch → dessert → back to Airbnb.</p>
+  <div class="card-grid">
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Potchke — Brunch Anchor</span>
+          <div class="card-badges"><span class="badge badge-signature">Top Pick</span></div>
+        </div>
+        <div class="card-sell">Michelin-listed Jewish deli. Oat-milk lattes, Avo Tartine and Mushroom Melt for Martha, pastrami reuben for you. The brunch anchor of a downtown Sunday.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 318 N Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 9AM–3PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$ ($12–18)</span>
+          <span class="dairy-badge dairy-good">Dairy-free: Good</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <p>Full details in <a href="#card-potchke" onclick="event.stopPropagation();document.getElementById('card-potchke').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-potchke').classList.add('expanded');">Food Guide</a>. Go early — gets crowded after 10:30 AM.</p>
       </div>
     </div>
 
@@ -1329,126 +1222,220 @@ a:hover { text-decoration: underline; }
       <div class="card-accent" style="background:var(--zone-downtown)"></div>
       <div class="card-body">
         <div class="card-header">
-          <span class="card-name">Downtown Evening Walk</span>
-          <div class="card-badges">
-            <span class="badge badge-signature">Signature</span>
-          </div>
+          <span class="card-name">Tomato Head — Lunch</span>
+          <div class="card-badges"><span class="badge badge-signature">Closed Mon</span></div>
         </div>
-        <div class="card-sell">Market Square → Gay Street → bookstores → dessert or cats. Everything on one walk: Rossini, food trucks, Union Ave Books, Cruze Farm, Scruffy's. State Street Garage is free all weekend.</div>
+        <div class="card-sell">Knoxville institution on Market Square. Vegan cheese pizza for Martha, from-scratch everything. If you're at Rossini, lunch is already here.</div>
         <div class="card-meta">
-          <span class="meta-item"><span class="meta-icon">📍</span> Downtown · 5 min from Airbnb</span>
-          <span class="meta-item"><span class="meta-icon">🕐</span> Rossini till 10PM Sat</span>
-          <span class="meta-item"><span class="meta-icon">🅿️</span> State St Garage: FREE weekends</span>
+          <span class="meta-item"><span class="meta-icon">📍</span> 12 Market Square · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 11AM–9:30PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $$</span>
+          <span class="dairy-badge dairy-excellent">Dairy-free: Excellent</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <p>Full details in <a href="#card-tomato-head" onclick="event.stopPropagation();document.getElementById('card-tomato-head').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('card-tomato-head').classList.add('expanded');">Food Guide</a>.</p>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Union Ave Books</span>
+        </div>
+        <div class="card-sell">Knoxville's main indie bookstore. Well-curated, bigger than Addison's, good kids' section. Sunday browse anchor.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 517 Union Ave · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–6 PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> Free to browse</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Addison's Bookstore</span>
+          <div class="card-badges"><span class="badge badge-signature">Closed Mon</span></div>
+        </div>
+        <div class="card-sell">Smaller, cozier used-and-new bookshop on Gay Street. Tight curation, charming vibe. Pair with Union Ave for a two-bookstore loop.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 126 S Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–4 PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> Free to browse</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Cruze Farm — Ice Cream / Sorbet</span>
+        </div>
+        <div class="card-sell">Local dairy farm's ice cream shop on Gay Street. Sorbet option for Martha, classic flavors for everyone else. The afternoon treat stop.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 445 S Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–10 PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $</span>
+          <span class="dairy-badge dairy-limited">Dairy-free: Sorbet only</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">K Brew Coffee</span>
+        </div>
+        <div class="card-sell">Third-wave coffee on Gay Street. Cold brew, NYC-style bagels, oat milk. Quick fuel-up between stops.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 507 S Gay St · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 8AM–6PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $</span>
+          <span class="dairy-badge dairy-good">Dairy-free: Oat milk</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="north" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-north)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Three Rivers Market (Co-op)</span>
+        </div>
+        <div class="card-sell">Natural food co-op with hot bar, salad bar, baked goods. 2-min walk from the Airbnb. Quick grab-and-go if you don't want a sit-down meal.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 1100 N Central St · 0.2 mi (walk)</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 8AM–8PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $</span>
+          <span class="dairy-badge dairy-excellent">Dairy-free: Excellent</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Paysan Bread &amp; Bagels</span>
+        </div>
+        <div class="card-sell">From-scratch bakery and bagelshop, 0.3 mi walk from the Airbnb. Early breakfast option — grab and keep moving.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 804 Tyson St · 0.3 mi (walk)</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Daily 8AM–2PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Sunsphere Observation Deck</span>
+        </div>
+        <div class="card-sell">The gold sphere from the 1982 World's Fair. 266-ft elevator ride to the observation deck. Quick, free, distinctly Knoxville. Pairs with KMA + Fort Kid.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 810 Clinch Ave · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–6 PM (closed 12:30–1:30)</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-tip">💡 15-min visit. The kids will remember the gold sphere — Andrew's personal-interest call on whether the view justifies the elevator queue.</div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Fort Kid Playground</span>
+          <div class="card-badges"><span class="badge badge-excellent">Free &amp; Fast</span></div>
+        </div>
+        <div class="card-sell">World's Fair Park playground, rebuilt 2023. Climbing structures, slides, swings. Next door to KMA and Sunsphere — batch all three. Zero cost, zero planning.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> World's Fair Park · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Dawn to dusk daily</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-tip">💡 Rebuilt in 2023 after the old wooden castle was torn down. Modern, shaded, and right between KMA and the Sunsphere — ideal mid-visit kid energy release.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THE REST -->
+  <h3 style="margin:32px 0 12px 0;font-size:1.15rem;">🎪 The Rest</h3>
+  <div class="card-grid">
+
+    <div class="card" id="card-rossini" data-zone="downtown" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-downtown)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Rossini Festival — 45-min Pass-Through</span>
+        </div>
+        <div class="card-sell">Knoxville Opera's street fair at Market Square. Four outdoor stages (opera, ballet, jazz, gospel), 75+ artisans, international food. Free. Don't anchor the day around it — stroll through during lunch at Tomato Head, catch a stage for 10 min, move on.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> Market Square · 5 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–7 PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
         </div>
       </div>
       <div class="card-detail">
         <div class="detail-grid">
-          <span class="detail-label">Bookstores</span><span class="detail-value">Union Ave Books (517 Union Ave, Sat 10-7) · Addison's (126 S Gay St, Sat 10-6)</span>
-          <span class="detail-label">Dessert</span><span class="detail-value">Cruze Farm (445 S Gay St, Sat 12-10PM) — sorbet for Martha, dairy ice cream for others</span>
-          <span class="detail-label">Cats</span><span class="detail-value">Scruffy's Cat Cafe (1015 N Broadway, Sat 10-7) — book ahead! $12/person weekend.</span>
-          <span class="detail-label">Coffee</span><span class="detail-value">K Brew (507 S Gay St, Sat 7AM-8PM) — cold brew, NYC-style bagels</span>
+          <span class="detail-label">What's different</span><span class="detail-value">Actual opera + ballet + chamber music on outdoor stages (not generic cover bands). Not your kids' speed, but a 3-min stage pass is atmospheric.</span>
+          <span class="detail-label">Food</span><span class="detail-value">International food trucks — baklava, tacos, Ethiopian. Lunch option if you don't want Tomato Head's line.</span>
+          <span class="detail-label">Kid Zone</span><span class="detail-value">YFunZone with activities. Not a main draw but fine as a palate cleanser between stages.</span>
+          <span class="detail-label">Schedule</span><span class="detail-value"><a href="https://www.knoxvilleopera.org/rossini-festival" target="_blank" onclick="event.stopPropagation()">knoxvilleopera.org/rossini-festival</a></span>
         </div>
-        <div class="detail-tip">💡 Saturday evening sequence: Rossini + food → bookstore browse → Cruze Farm OR Scruffy's. The city hands you an evening.</div>
+        <div class="detail-tip">💡 Sunday is the quieter day (Sat 10AM–10PM is the main event). 45-min ceiling; don't over-invest.</div>
       </div>
     </div>
+
+    <div class="card" data-zone="south" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-south)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Southside Garage Food Trucks</span>
+        </div>
+        <div class="card-sell">South Knox food truck park. Rotating trucks, open-air picnic tables, casual. Pairs naturally with Ijams for a South Knox half-day.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 1014 Sevier Ave · 8 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 11AM–10PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $-$$</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-tip">💡 Truck lineup rotates — check their Instagram before driving over. If Martha needs DF options, you'll want to verify the day's trucks before committing.</div>
+      </div>
+    </div>
+
+    <div class="card" data-zone="south" onclick="toggleCard(this)">
+      <div class="card-accent" style="background:var(--zone-south)"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-name">Honeybee Coffee</span>
+        </div>
+        <div class="card-sell">South Knox coffee shop with oat milk + good bakery case. Pairs perfectly with Ijams (6 min apart) for a South Knox morning.</div>
+        <div class="card-meta">
+          <span class="meta-item"><span class="meta-icon">📍</span> 700 Sevier Ave · 6 min</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 8AM–6PM</span>
+          <span class="meta-item"><span class="meta-icon">💰</span> $</span>
+          <span class="dairy-badge dairy-good">Dairy-free: Oat milk</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- SUNDAY DECISION TREE -->
-<div class="section" id="sunday-decision">
-  <div class="section-header">
-    <span class="section-icon">🌤️</span>
-    <h2 class="section-title">Sunday — Choose Your Adventure</h2>
-  </div>
-  <div class="callout callout-good" style="margin-bottom:20px;">
-    <h3>Sunday Evening: Wrath of Khan + William Shatner</h3>
-    <ul>
-      <li><strong><a href="https://www.tennesseetheatre.com" target="_blank">Tennessee Theatre</a></strong> — <a href="https://maps.google.com/?q=604+S+Gay+St+Knoxville+TN+37902" target="_blank">604 S Gay St</a> (downtown, walkable from Airbnb)</li>
-      <li><strong>7:00 PM – 10:00 PM</strong> · Doors TBD · Metal detectors at entry, no cameras/recording</li>
-      <li><strong>Parking:</strong> State Street Garage — free after 6 PM on weekends</li>
-      <li><strong>What this means for Sunday:</strong> Wrap your adventure by 4-5 PM → Airbnb downtime / naps → <strong>prep kid beds &amp; PJs before leaving</strong> (they'll be zonked at 10 PM) → early dinner ~5:30 → walk to theatre by 6:30-6:45</li>
-      <li><strong>Dinner before the show:</strong> Yassin's at Marble City (quick, 3 min from Airbnb, open till 9) or Nama Sushi downtown (near the theatre). Keep it fast — you want to be seated, not rushing.</li>
-    </ul>
-  </div>
-  <p style="margin-bottom:20px;font-size:0.9rem;color:var(--text-dim);">One major choice for daytime, not two. Pick based on the morning radar and your collective energy. All branches should wrap by 4-5 PM for Airbnb downtime before the show.</p>
-
-  <div class="decision-tree">
-    <div class="decision-prompt">What does Sunday morning feel like?</div>
-    <div class="decision-options">
-      <button class="decision-option" onclick="selectDecision(this, 'scenic')">
-        <h4>🏔️ Scenic Calm</h4>
-        <p>Weather is clearing, family wants beauty. Drive to the Smokies via Townsend — roadside waterfalls, paved trails, mountain views. Best scenery-per-effort ratio.</p>
-      </button>
-      <button class="decision-option" onclick="selectDecision(this, 'science')">
-        <h4>🔬 Science & History</h4>
-        <p>Rain or gray sky, or you want indoor structure. Oak Ridge: AMSE, Manhattan Project, real narrative. The "only here" day trip. 35 min drive.</p>
-      </button>
-      <button class="decision-option" onclick="selectDecision(this, 'chill')">
-        <h4>☕ Downtown Chill</h4>
-        <p>Everyone woke up tired or socially full. Stay local: Old City Market, museums, Scruffy's, Ijams. The "we came back restored" choice.</p>
-      </button>
-      <button class="decision-option" onclick="selectDecision(this, 'spectacle')">
-        <h4>🎢 Kid Spectacle</h4>
-        <p>Kids need a big memory. Ober Mountain Tram in Gatlinburg — 2.1-mile aerial ride, alpine coaster, ice skating. More touristy but worth it for wow factor.</p>
-      </button>
-    </div>
-
-    <div class="decision-result" id="result-scenic">
-      <h4 style="margin-bottom:8px;">🏔️ Townsend + Low-Effort Smokies</h4>
-      <p><strong>Drive:</strong> ~75-90 min from Airbnb. Take US-321 S to Townsend ("Peaceful Side of the Smokies").</p>
-      <p style="margin-top:8px;"><strong>Route sequence:</strong></p>
-      <ol style="padding-left:20px;margin-top:4px;">
-        <li><strong>Foothills Parkway West</strong> — 17-mile scenic drive, Look Rock observation tower (0.8 mi RT hike, 360° views). 50 min from Airbnb.</li>
-        <li><strong>Meigs Falls</strong> — Visible from a roadside pullout on Little River Road. Zero hiking. 1 hr 15 min from Airbnb.</li>
-        <li><strong>Sugarlands Visitor Center</strong> — Restrooms, bookshop, exhibits. 1 hr from Airbnb.</li>
-        <li><strong>Sugarlands Valley Nature Trail</strong> — 0.5 mi paved, flat, ADA accessible. The only fully accessible trail in the park. Stroller-friendly. Benches along the way.</li>
-        <li><strong>Cataract Falls</strong> — 0.7 mi RT from Sugarlands. Easy, 32 ft elevation gain. Small 40-ft waterfall. Most dramatic after rain.</li>
-        <li><strong>Cades Cove</strong> (optional, adds 2-4 hrs) — 11-mile one-way scenic loop. 20 mph speed limit. Wildlife (deer almost certain, black bears possible, wild turkeys). Cable Mill stop with historic buildings, restrooms. <strong>Warning: once you start, there is no shortcut out.</strong> Commit or skip. With kids, budget 3-4 hours minimum.</li>
-      </ol>
-      <p style="margin-top:8px;"><strong>Parking:</strong> $5/day tag required (buy at <a href="https://www.recreation.gov" target="_blank">recreation.gov</a>, must print, match license plate). Under 15 min stops don't need one.</p>
-      <p style="margin-top:4px;"><strong>Closed:</strong> Laurel Falls Trail — closed for rehabilitation. Don't plan around it.</p>
-      <p style="margin-top:4px;"><strong>Best version:</strong> Foothills Parkway + Meigs Falls + Sugarlands + Cataract Falls. Skip Cades Cove — with the Shatner show at 7 PM, you need to be back at the Airbnb by 4-5 PM for downtime.</p>
-    </div>
-
-    <div class="decision-result" id="result-science">
-      <h4 style="margin-bottom:8px;">🔬 Oak Ridge — The Secret City</h4>
-      <p><strong>Drive:</strong> ~35 min from Airbnb. I-40 W to Oak Ridge.</p>
-      <p style="margin-top:8px;"><strong>Recommended sequence:</strong></p>
-      <ol style="padding-left:20px;margin-top:4px;">
-        <li><strong>AMSE</strong> (American Museum of Science & Energy) — 115 E Main St. Sun 1-5 PM. Adults $10, Youth $5, under 5 free. Hands-on science + energy exhibits. Start here.</li>
-        <li><strong>Manhattan Project Visitor Center</strong> — Inside Children's Museum at 461 W Outer Dr. Sun 1-4 PM. <strong>Closed Monday.</strong> NPS rangers, oral histories, the "Secret City" story.</li>
-        <li><strong>Children's Museum of Oak Ridge</strong> — Same building (461 W Outer Dr). Sun 1-4 PM. Adults $10, Kids $8. Hands-on backup if attention wobbles.</li>
-        <li><strong>K-25 History Center</strong> — 652 Enrichment St. Sun 1-5 PM. Free. The uranium enrichment plant story. Older-kid appropriate.</li>
-      </ol>
-      <p style="margin-top:8px;"><strong>Note:</strong> Sunday hours start at 1 PM for most Oak Ridge venues. Don't rush out early — have a leisurely Knoxville morning, then head to Oak Ridge after lunch. <strong>Realistically, pick two of the four</strong> — AMSE alone can eat 1.5-2 hrs with hands-on kids, and you only have until 4-5 PM.</p>
-      <p style="margin-top:4px;"><strong>Also open Monday:</strong> AMSE (9-5). Others closed Monday. So if you want to split: do Manhattan Project + Children's Museum Sunday, AMSE Monday morning.</p>
-    </div>
-
-    <div class="decision-result" id="result-chill">
-      <h4 style="margin-bottom:8px;">☕ Downtown Chill Day</h4>
-      <p>This is not the lazy compromise. This is the "we came home feeling better than when we left" choice.</p>
-      <p style="margin-top:8px;"><strong>Morning:</strong> Potchke for brunch (Jewish deli, Michelin-listed, 318 N Gay St, 9AM-3PM) → stroll Gay Street.</p>
-      <p style="margin-top:4px;"><strong>Midday:</strong> Rossini Festival round two (Sun 12-7PM). Browse Union Ave Books or Addison's (Sun 12-4).</p>
-      <p style="margin-top:4px;"><strong>Afternoon:</strong> Pick two: Knoxville Museum of Art (free, Sun 1-5PM) · McClung Museum (free, Sun 10-5) · Sunsphere (Sun 12-4PM) · Scruffy's Cat Cafe (Sun 10-7). Or Ijams for a quiet nature walk.</p>
-      <p style="margin-top:4px;"><strong>4-5 PM:</strong> Back to Airbnb for downtime and naps.</p>
-      <p style="margin-top:4px;"><strong>~5:30 PM:</strong> Quick dinner — Yassin's (3 min walk) or Nama Sushi (near theatre, Sun 12-9PM).</p>
-      <p style="margin-top:4px;"><strong>7 PM:</strong> Wrath of Khan + Shatner at Tennessee Theatre.</p>
-      <p style="margin-top:4px;"><strong>Closed Sunday:</strong> Good Golly Tamale, Sticky Rice Cafe, Benefit Your Life Bakery, KoPita.</p>
-    </div>
-
-    <div class="decision-result" id="result-spectacle">
-      <h4 style="margin-bottom:8px;">🎢 Ober Mountain + Gatlinburg</h4>
-      <p><strong>Drive:</strong> ~55 min from Airbnb to Ober base station (1001 Parkway, Gatlinburg).</p>
-      <p style="margin-top:8px;"><strong>Smart logistics:</strong> Park at Gatlinburg Welcome Center (1011 Banner Rd) and take the free trolley into downtown. Saves parking anxiety.</p>
-      <p style="margin-top:4px;"><strong>Ober Tram:</strong> 2.1-mile ride, 10 min each way, departs every 20 min. $29/person (5+), under 5 free. Spring Fun Pass $37 (includes most mountaintop attractions). Family of 4: ~$116-148.</p>
-      <p style="margin-top:4px;"><strong>At the top:</strong> Tennessee Flyer alpine coaster (open in April — separate charge or Adventure Pass), indoor ice skating, scenic chairlift, Wildlife Encounter.</p>
-      <p style="margin-top:4px;"><strong>Food at top:</strong> Seasons of Ober (full service), Ober Mountain Cafe (burgers/pretzels), Fiddle & Pick BBQ, Buzzin' Bear (coffee + ice cream).</p>
-      <p style="margin-top:4px;"><strong>Anakeesta note:</strong> Partially open — Ridge Rambler only (scenic truck ride), both coasters work, but Chondola is closed. $35 adults / $23 kids. Only worth combining if you're already in Gatlinburg and have set expectations.</p>
-      <p style="margin-top:4px;"><strong>Buy tram tickets online in advance:</strong> <a href="https://tickets.obermountain.com" target="_blank">tickets.obermountain.com</a></p>
-      <p style="margin-top:8px;"><strong>⚠️ Shatner timing:</strong> 55 min drive back from Gatlinburg. To be at the Airbnb by 4:30 for downtime, you need to <strong>leave Gatlinburg by 3:15 PM</strong>. Plan your time at the top accordingly — don't start the alpine coaster at 2:45.</p>
-    </div>
-  </div>
-</div>
 
 <!-- MONDAY AM -->
 <div class="section" id="monday">
@@ -1531,7 +1518,7 @@ a:hover { text-decoration: underline; }
       <ul>
         <li>Potchke (9AM-3PM), Yassin's (11AM-9PM), Nama Sushi (11AM-9:30PM, half-price to-go from 4PM)</li>
         <li>Union Ave Books (10AM-8PM), Lawson McGhee Library (9AM-8PM), Sunsphere (10AM-5PM)</li>
-        <li>AMSE Oak Ridge (9AM-5PM), Ijams (8AM-dusk), Zoo Knoxville (9AM-5PM)</li>
+        <li>AMSE Oak Ridge (9AM-5PM), Ijams (8AM-dusk)</li>
         <li>Cruze Farm (12-10PM), Cinnaholic (8AM-9PM)</li>
       </ul>
     </div>
@@ -1856,21 +1843,6 @@ a:hover { text-decoration: underline; }
           <span class="detail-label">Reserve</span><span class="detail-value"><a href="https://www.scruffyscafeknox.com" target="_blank">scruffyscafeknox.com</a> — weekend slots fill up. Book ASAP.</span>
           <span class="detail-label">Drinks</span><span class="detail-value">Coffee, tea, wine, beer, pastries</span>
           <span class="detail-label">Family total</span><span class="detail-value">~$48 for family of 4</span>
-        </div>
-      </div>
-    </div>
-    <div class="card" onclick="toggleCard(this)">
-      <div class="card-accent" style="background:var(--zone-north)"></div>
-      <div class="card-body">
-        <div class="card-header">
-          <span class="card-name">Zoo Knoxville</span>
-          <div class="card-badges"><span class="badge badge-excellent">Half-Day Outing</span></div>
-        </div>
-        <div class="card-sell">1,500+ animals, 200 species, 5 minutes from your Airbnb. Giraffe feeding ($5) where you feed 17-ft Jumbe at eye level. Aldabra giant tortoise encounter ($5). Max's Aviary is the standout new addition.</div>
-        <div class="card-meta">
-          <span class="meta-item"><span class="meta-icon">📍</span> 3500 Knoxville Zoo Dr · 5 min</span>
-          <span class="meta-item"><span class="meta-icon">🕐</span> Daily 9AM-5PM</span>
-          <span class="meta-item"><span class="meta-icon">💰</span> Check <a href="https://www.zooknoxville.org" target="_blank" onclick="event.stopPropagation()">zooknoxville.org</a> · Groupon from $17.95 · $5 parking</span>
         </div>
       </div>
     </div>
@@ -2308,9 +2280,7 @@ const PINS = [
   { lat: 35.9322, lng: -83.9188, name: 'Tri-Star Arts / Candoro', zone: 'south', desc: '4450 Candora Ave · Contemporary art in 1923 marble building', cat: 'culture' },
   { lat: 35.9530, lng: -83.9050, name: 'Southside Garage', zone: 'south', desc: '1014 Sevier Ave · Food trucks + patio games', cat: 'food' },
   // North/East
-  { lat: 35.9831, lng: -83.8824, name: 'Botanical Garden', zone: 'north', desc: '2743 Wimpole Ave · 7 min · FREE · Dawn-dusk', cat: 'nature' },
   { lat: 35.9816, lng: -83.9233, name: "Scruffy's Cat Cafe", zone: 'north', desc: '1015 N Broadway · 3 min · BOOK AHEAD · Mon CLOSED', cat: 'cats' },
-  { lat: 35.9967, lng: -83.8928, name: 'Zoo Knoxville', zone: 'north', desc: '3500 Knoxville Zoo Dr · 5 min · Daily 9-5', cat: 'zoo' },
   { lat: 35.9971, lng: -83.8850, name: 'Muse Knoxville', zone: 'north', desc: '516 N Beaman St · 10 min · Mon CLOSED', cat: 'kids' },
   { lat: 35.9620, lng: -83.9255, name: 'Fort Kid Playground', zone: 'downtown', desc: '1050 World\'s Fair Park Dr · Rebuilt 2023 · Free', cat: 'kids' },
   { lat: 35.9430, lng: -83.9010, name: 'Urban Wilderness Gateway', zone: 'south', desc: '2110 Chapman Hwy · Pump tracks + boulders · 10 min · Free', cat: 'kids' },
@@ -2624,9 +2594,8 @@ const REFS = {
   'cinnaholic': { card: 'card-cinnaholic', name: 'Cinnaholic', meta: '9450 S Northshore Dr · Sun 12-6, Mon 8-9 · $$ · 20 min', sell: 'Every item vegan, dairy-free, egg-free. Kids build custom cinnamon rolls. 20 min west.', df: 'excellent' },
   'cruze': { card: 'card-cruze', name: 'Cruze Farm', meta: '445 S Gay St · Sat-Mon 12-10 PM · $ · 5 min', sell: 'Outstanding local dairy ice cream. Martha: sorbet only (limited). Others: legendary.', df: 'fair' },
   'scruffys': { card: 'card-scruffys', name: "Scruffy's Cat Cafe", meta: '1015 N Broadway · Sat-Sun 10-7 · $12/person · 3 min', sell: 'Room of rescue cats, coffee, kids welcome ages 2+. Book ahead on weekends.', df: null },
-  'ijams': { card: 'card-ijams', name: 'Ijams Nature Center', meta: '2915 Island Home Ave · 8AM-dusk · Free (parking $5) · 12 min', sell: 'River boardwalk, quarry views, real woods. Best pre-check-in decompression stop.', df: null },
-  'botanical': { card: 'card-botanical', name: 'Botanical Garden', meta: '2743 Wimpole Ave · Dawn-dusk · FREE · 7 min', sell: '44 acres of gardens, stone walls, Smoky Mountain views. The reset button for tired families.', df: null },
-  'rossini': { card: 'card-rossini', name: 'Rossini Festival', meta: 'Market Square · Sat 10AM-10PM, Sun 12-7 · FREE · 5 min', sell: 'Four outdoor stages, 100+ vendors, food trucks, kids zone. Your Saturday anchor.', df: null },
+  'ijams': { card: 'card-ijams', name: 'Ijams Nature Center', meta: '2915 Island Home Ave · 8AM-dusk · Free (parking $5) · 12 min', sell: 'River boardwalk, quarry views, real woods. The "we\'re really away" stop.', df: null },
+  'rossini': { card: 'card-rossini', name: 'Rossini Festival', meta: 'Market Square · Sun 12-7 · FREE · 5 min', sell: 'Knoxville Opera street fair — opera/ballet/jazz stages. 45-min pass-through at lunch.', df: null },
   'three-rivers': { card: null, name: 'Three Rivers Market', meta: '1100 N Central St · Daily 8AM-8PM · $ · 2 min walk', sell: 'Natural food co-op with hot bar. Walking distance. Lots of vegan/dairy-free options.', df: 'excellent' },
   'marble-city': { card: 'card-yassins', name: 'Marble City Market', meta: '333 W Depot Ave · Daily · $ · 3 min', sell: "Food hall with Yassin's + other options. Close to Airbnb, good for a quick bite.", df: null },
 };
@@ -2806,8 +2775,7 @@ function collapsePastDays() {
   const todayNum = y * 10000 + m * 100 + d;
   const sat = 20260418, sun = 20260419, mon = 20260420;
   const toCollapse = [];
-  if (todayNum > sat) toCollapse.push('drive-up', 'saturday');
-  if (todayNum > sun) toCollapse.push('sunday-decision');
+  if (todayNum > sun) toCollapse.push('sunday');
   if (todayNum > mon) toCollapse.push('monday', 'drive-back');
   // Always expand the rest
   document.querySelectorAll('.section').forEach(s => s.classList.remove('collapsed'));
