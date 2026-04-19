@@ -1643,7 +1643,7 @@ body.dark .todays-plan-time { color: #5fb095; }
   <div class="mini-map-wrap">
     <a class="gmaps-btn" id="gmaps-monday" href="#" target="_blank" rel="noopener">🗺️ Open in Google Maps</a>
     <div id="map-monday" class="mini-map"></div>
-    <div class="mini-map-caption">Monday morning — optional Ijams nature walk, breakfast at Potchke, quick Sunsphere if time allows. Numbers in visit order.</div>
+    <div class="mini-map-caption">Monday morning — optional Ijams walk, breakfast at Potchke, then Cinnaholic as the first stop heading out of town. Numbers in visit order.</div>
   </div>
 
   <div class="card-grid">
@@ -1668,24 +1668,6 @@ body.dark .todays-plan-time { color: #5fb095; }
           <span class="detail-label">Best for kids</span><span class="detail-value">Bagels, matzoh ball soup, simple sandwiches</span>
           <span class="detail-label">Also at</span><span class="detail-value">Potchke Bagel: <a href="https://www.google.com/maps/search/?api=1&query=Potchke%20Bagel%20Knoxville%20TN" target="_blank" rel="noopener">432 N Cedar Bluff Rd</a>, daily 7AM-2PM</span>
         </div>
-      </div>
-    </div>
-    <div class="card" data-zone="downtown" onclick="toggleCard(this)">
-      <div class="card-accent" style="background:var(--zone-downtown)"></div>
-      <div class="card-body">
-        <div class="card-header">
-          <span class="card-name">Sunsphere + World's Fair Park</span>
-          <div class="card-badges"><span class="badge badge-excellent">Quick & Distinctive</span></div>
-        </div>
-        <div class="card-sell">The surviving icon of the 1982 World's Fair. Observation deck opens at 10 AM Monday — but with a 4 PM home deadline, only do this if you're already nearby. Quick 15-minute visit, not worth delaying departure for.</div>
-        <div class="card-meta">
-          <span class="meta-item"><span class="meta-icon">📍</span> <a href="https://www.google.com/maps/search/?api=1&query=Sunsphere%20Knoxville%20TN" target="_blank" rel="noopener">810 Clinch Ave</a> · 5 min</span>
-          <span class="meta-item"><span class="meta-icon">🕐</span> Mon 10AM–5PM (closed 12:30–1:30)</span>
-          <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
-        </div>
-      </div>
-      <div class="card-detail">
-        <div class="detail-tip">💡 If you can leave a bit after 10, this is a distinctly Knoxville final stop. The observation deck has panoramic views and the kids will remember the gold sphere.</div>
       </div>
     </div>
     <div class="card" id="card-cinnaholic-monday" data-zone="west" onclick="toggleCard(this)">
@@ -1753,7 +1735,7 @@ body.dark .todays-plan-time { color: #5fb095; }
       <h3>Open Monday</h3>
       <ul>
         <li>Potchke (9AM-3PM), Yassin's (11AM-9PM), Nama Sushi (11AM-9:30PM, half-price to-go from 4PM)</li>
-        <li>Union Ave Books (10AM-8PM), Lawson McGhee Library (9AM-8PM), Sunsphere (10AM-5PM)</li>
+        <li>Union Ave Books (10AM-8PM), Lawson McGhee Library (9AM-8PM)</li>
         <li>AMSE Oak Ridge (9AM-5PM), Ijams (8AM-dusk)</li>
         <li>Cruze Farm (12-10PM), Cinnaholic (8AM-9PM)</li>
       </ul>
@@ -3197,13 +3179,12 @@ function initMiniMaps() {
   buildMiniMap('map-sunday', sundayStops, { numbered: true, drawLine: true, loopBack: true });
   hookGmapsBtn('gmaps-sunday', sundayStops, 'walking');
 
-  // Monday morning — Potchke + optional Ijams + depart
+  // Monday morning — Potchke + optional Ijams + Cinnaholic on the way out
   const mondayMorningStops = [
     { lat: 35.97731, lng: -83.92123, name: 'Airbnb', addr: '814 Deery St, Knoxville, TN', cat: 'home', label: 'S' },
     { lat: 35.9562, lng: -83.8718, name: 'Ijams Nature Center (optional)', query: 'Ijams Nature Center Knoxville TN', addr: '2915 Island Home Ave, Knoxville, TN', desc: '12 min south · Free · Quick boardwalk', scrollTo: 'card-ijams-monday' },
     { lat: 35.9680, lng: -83.9200, name: 'Potchke', query: 'Potchke Knoxville TN', addr: '318 N Gay St, Knoxville, TN', desc: 'Breakfast anchor · Daily 9-3', scrollTo: 'card-potchke' },
-    { lat: 35.9619, lng: -83.9235, name: 'Sunsphere (if nearby)', query: 'Sunsphere Knoxville TN', addr: '810 Clinch Ave, Knoxville, TN', desc: 'Opens 10 AM · Quick stop' },
-    { lat: 35.97731, lng: -83.92123, name: 'Depart from Airbnb', addr: '814 Deery St, Knoxville, TN', cat: 'home', label: 'E' }
+    { lat: 35.8621, lng: -84.0669, name: 'Cinnaholic (on the way out)', query: 'Cinnaholic Knoxville TN', addr: '9450 S Northshore Dr, Knoxville, TN', desc: 'Martha paradise · Mon 8AM-9PM', scrollTo: 'card-cinnaholic-monday' }
   ];
   buildMiniMap('map-monday', mondayMorningStops, { numbered: true, drawLine: true, loopBack: true });
   hookGmapsBtn('gmaps-monday', mondayMorningStops, 'driving');
