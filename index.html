@@ -3090,7 +3090,12 @@ function buildMiniMap(containerId, stops, opts) {
 
 function openInGoogleMaps(stops) {
   if (!stops || stops.length < 2) return '';
-  const enc = function(s) { return encodeURIComponent(s.addr || (s.lat + ',' + s.lng)); };
+  // Prefer `query` (venue name + city) so Google lands on the business pin.
+  // Fall back to addr, then lat/lng — used for private residences and generic points.
+  const enc = function(s) {
+    const v = s.query || s.addr || (s.lat + ',' + s.lng);
+    return encodeURIComponent(v);
+  };
   const origin = enc(stops[0]);
   const destination = enc(stops[stops.length - 1]);
   const waypoints = stops.slice(1, -1).map(enc).join('|');
@@ -3115,13 +3120,13 @@ function initMiniMaps() {
   // Sunday — Walk Everything itinerary
   const sundayStops = [
     { lat: 35.97731, lng: -83.92123, name: 'Airbnb', addr: '814 Deery St, Knoxville, TN 37917', cat: 'home', label: 'S' },
-    { lat: 35.9800, lng: -83.9205, name: 'Paysan Bread & Bagels', addr: '804 Tyson St, Knoxville, TN', desc: 'Breakfast walk' },
-    { lat: 35.9686, lng: -83.9205, name: "Addison's Bookstore", addr: '126 S Gay St, Knoxville, TN', desc: 'Book browse (opens 12)', scrollTo: null },
-    { lat: 35.9641, lng: -83.9209, name: 'Union Ave Books', addr: '517 Union Ave, Knoxville, TN', desc: 'Book browse' },
-    { lat: 35.9652, lng: -83.9199, name: 'Rossini Festival / Market Square', addr: '500 Market St, Knoxville, TN', desc: 'Festival pass-through + lunch' },
-    { lat: 35.9627, lng: -83.9258, name: 'Knoxville Museum of Art', addr: "1050 World's Fair Park Dr, Knoxville, TN", desc: 'Free · opens 1 PM', scrollTo: 'card-kma' },
-    { lat: 35.9619, lng: -83.9235, name: 'Sunsphere', addr: '810 Clinch Ave, Knoxville, TN', desc: 'Observation deck' },
-    { lat: 35.9620, lng: -83.9255, name: 'Fort Kid Playground', addr: "1050 World's Fair Park Dr, Knoxville, TN", desc: 'Kid energy release' },
+    { lat: 35.9800, lng: -83.9205, name: 'Paysan Bread & Bagels', query: 'Paysan Bread and Bagels Knoxville TN', addr: '804 Tyson St, Knoxville, TN', desc: 'Breakfast walk' },
+    { lat: 35.9686, lng: -83.9205, name: "Addison's Bookstore", query: "Addison's Bookstore Knoxville TN", addr: '126 S Gay St, Knoxville, TN', desc: 'Book browse (opens 12)' },
+    { lat: 35.9641, lng: -83.9209, name: 'Union Ave Books', query: 'Union Ave Books Knoxville TN', addr: '517 Union Ave, Knoxville, TN', desc: 'Book browse' },
+    { lat: 35.9652, lng: -83.9199, name: 'Rossini Festival / Market Square', query: 'Market Square Knoxville TN', addr: '500 Market St, Knoxville, TN', desc: 'Festival pass-through + lunch' },
+    { lat: 35.9627, lng: -83.9258, name: 'Knoxville Museum of Art', query: 'Knoxville Museum of Art', addr: "1050 World's Fair Park Dr, Knoxville, TN", desc: 'Free · opens 1 PM', scrollTo: 'card-kma' },
+    { lat: 35.9619, lng: -83.9235, name: 'Sunsphere', query: 'Sunsphere Knoxville TN', addr: '810 Clinch Ave, Knoxville, TN', desc: 'Observation deck' },
+    { lat: 35.9620, lng: -83.9255, name: 'Fort Kid Playground', query: 'Fort Kid Knoxville TN', addr: "1050 World's Fair Park Dr, Knoxville, TN", desc: 'Kid energy release' },
     { lat: 35.97731, lng: -83.92123, name: 'Airbnb', addr: '814 Deery St, Knoxville, TN 37917', cat: 'home', label: 'E' }
   ];
   buildMiniMap('map-sunday', sundayStops, { numbered: true, drawLine: true, loopBack: true });
@@ -3130,9 +3135,9 @@ function initMiniMaps() {
   // Monday morning — Potchke + optional Ijams + depart
   const mondayMorningStops = [
     { lat: 35.97731, lng: -83.92123, name: 'Airbnb', addr: '814 Deery St, Knoxville, TN', cat: 'home', label: 'S' },
-    { lat: 35.9562, lng: -83.8718, name: 'Ijams Nature Center (optional)', addr: '2915 Island Home Ave, Knoxville, TN', desc: '12 min south · Free · Quick boardwalk', scrollTo: 'card-ijams-monday' },
-    { lat: 35.9680, lng: -83.9200, name: 'Potchke', addr: '318 N Gay St, Knoxville, TN', desc: 'Breakfast anchor · Daily 9-3', scrollTo: 'card-potchke' },
-    { lat: 35.9619, lng: -83.9235, name: 'Sunsphere (if nearby)', addr: '810 Clinch Ave, Knoxville, TN', desc: 'Opens 10 AM · Quick stop' },
+    { lat: 35.9562, lng: -83.8718, name: 'Ijams Nature Center (optional)', query: 'Ijams Nature Center Knoxville TN', addr: '2915 Island Home Ave, Knoxville, TN', desc: '12 min south · Free · Quick boardwalk', scrollTo: 'card-ijams-monday' },
+    { lat: 35.9680, lng: -83.9200, name: 'Potchke', query: 'Potchke Knoxville TN', addr: '318 N Gay St, Knoxville, TN', desc: 'Breakfast anchor · Daily 9-3', scrollTo: 'card-potchke' },
+    { lat: 35.9619, lng: -83.9235, name: 'Sunsphere (if nearby)', query: 'Sunsphere Knoxville TN', addr: '810 Clinch Ave, Knoxville, TN', desc: 'Opens 10 AM · Quick stop' },
     { lat: 35.97731, lng: -83.92123, name: 'Depart from Airbnb', addr: '814 Deery St, Knoxville, TN', cat: 'home', label: 'E' }
   ];
   buildMiniMap('map-monday', mondayMorningStops, { numbered: true, drawLine: true, loopBack: true });
@@ -3141,12 +3146,12 @@ function initMiniMaps() {
   // Monday drive-leg — Knoxville → Atlanta with top stops
   const driveStops = [
     { lat: 35.97731, lng: -83.92123, name: 'Knoxville — Airbnb', addr: '814 Deery St, Knoxville, TN', cat: 'home', label: 'K' },
-    { lat: 35.6010, lng: -84.4610, name: 'Lost Sea (optional)', addr: '140 Lost Sea Rd, Sweetwater, TN 37874', desc: 'Exit 60 · Cave + underground lake' },
-    { lat: 35.4430, lng: -84.7550, name: 'Mayfield Dairy (Mon only)', addr: '806 E Madison Ave, Athens, TN 37303', desc: 'Exit 52 · Factory tour + ice cream' },
-    { lat: 34.8400, lng: -85.0430, name: 'Tunnel Hill (optional)', addr: '215 Clisby Austin Dr, Tunnel Hill, GA 30755', desc: 'Exit 341 · Civil War tunnel' },
-    { lat: 34.0230, lng: -84.6145, name: 'Main Street Eats (dinner pickup)', addr: '2844 S Main St, Kennesaw, GA 30144', desc: 'Exit 271 · Best burger quality' },
-    { lat: 33.8860, lng: -84.5150, name: "Muss & Turner's (dinner pickup)", addr: "1675 Cumberland Pkwy SE, Smyrna, GA 30080", desc: 'Exit 260 · Top pick for Martha' },
-    { lat: 33.7580, lng: -84.3520, name: 'Inman Park — Home', addr: 'Inman Park, Atlanta, GA', cat: 'home', label: 'H' }
+    { lat: 35.6010, lng: -84.4610, name: 'Lost Sea (optional)', query: 'The Lost Sea Adventure Sweetwater TN', addr: '140 Lost Sea Rd, Sweetwater, TN 37874', desc: 'Exit 60 · Cave + underground lake' },
+    { lat: 35.4430, lng: -84.7550, name: 'Mayfield Dairy (Mon only)', query: 'Mayfield Dairy Visitor Center Athens TN', addr: '806 E Madison Ave, Athens, TN 37303', desc: 'Exit 52 · Factory tour + ice cream' },
+    { lat: 34.8400, lng: -85.0430, name: 'Tunnel Hill (optional)', query: 'Tunnel Hill Heritage Center GA', addr: '215 Clisby Austin Dr, Tunnel Hill, GA 30755', desc: 'Exit 341 · Civil War tunnel' },
+    { lat: 34.0230, lng: -84.6145, name: 'Main Street Eats (dinner pickup)', query: 'Main Street Eats Kennesaw GA', addr: '2844 S Main St, Kennesaw, GA 30144', desc: 'Exit 271 · Best burger quality' },
+    { lat: 33.8860, lng: -84.5150, name: "Muss & Turner's (dinner pickup)", query: "Muss and Turner's Smyrna GA", addr: "1675 Cumberland Pkwy SE, Smyrna, GA 30080", desc: 'Exit 260 · Top pick for Martha' },
+    { lat: 33.7580, lng: -84.3520, name: 'Inman Park — Home', query: 'Inman Park Atlanta GA', addr: 'Inman Park, Atlanta, GA', cat: 'home', label: 'H' }
   ];
   buildMiniMap('map-drive-home', driveStops, { numbered: true, drawLine: true });
   hookGmapsBtn('gmaps-drive-home', driveStops, 'driving');
