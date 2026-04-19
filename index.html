@@ -1042,6 +1042,40 @@ a:hover { text-decoration: underline; }
 }
 .todays-plan-list li.step-lunch::before { background: #b8860b; content: "🍽️"; font-size: 0.9rem; }
 .todays-plan-list li.step-home::before { background: #5a4635; content: "🏠"; font-size: 0.9rem; }
+.todays-plan-list li.step-sideshow::before {
+  background: #6b7280;
+  content: "✨";
+  font-size: 0.9rem;
+  counter-increment: none;
+}
+.todays-plan-list li.step-addon::before {
+  background: #c2712d;
+  content: "🎯";
+  font-size: 0.9rem;
+  counter-increment: none;
+}
+.todays-plan-list li.step-sideshow, .todays-plan-list li.step-addon {
+  counter-increment: none;
+  background: rgba(107, 114, 128, 0.04);
+}
+.todays-plan-list li.step-addon { background: rgba(194, 113, 45, 0.06); }
+.role-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+.role-keystone { background: #2d6a4f; color: #fff; }
+.role-sideshow { background: #6b7280; color: #fff; }
+.role-addon { background: #c2712d; color: #fff; }
+body.dark .role-keystone { background: #5fb095; color: #1a1a1a; }
+body.dark .role-sideshow { background: #9ca3af; color: #1a1a1a; }
+body.dark .role-addon { background: #e08b3f; color: #1a1a1a; }
 .todays-plan-time {
   display: inline-block;
   font-weight: 700;
@@ -1220,26 +1254,33 @@ body.dark .todays-plan-time { color: #5fb095; }
       <h3>Walk Everything — zero driving, full downtown</h3>
     </div>
     <p class="todays-plan-tagline">Park once at the World's Fair Park garage. Loop through Gay Street, Market Square, and the WFP cluster — the day ends right where you parked. Then drive home to recharge before Shatner.</p>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin:12px 0 14px 0;">Every stop below is tagged: <span class="role-badge role-keystone">🔑 Keystone</span> (core, budget real time) · <span class="role-badge role-sideshow">✨ Side Show</span> (quick pass-by, 2-10 min) · <span class="role-badge role-addon">🎯 Add-On</span> (20-90 min committed detour — opt in if time allows).</p>
     <ol class="todays-plan-list">
-      <li><span class="todays-plan-time">Park first —</span> Two ways to stage the car so you end the day next to it:
-        <ul style="margin:6px 0 0 0;padding-left:18px;font-size:0.9rem;">
-          <li><strong>Option A — one car, park central:</strong> Drive everyone to the <a href="https://www.google.com/maps/search/?api=1&query=World%27s+Fair+Park+Garage+Knoxville+TN" target="_blank" rel="noopener">World's Fair Park Garage</a> (Locust St, free Sunday). Walk ~0.5 mi north to Gay Street to begin the loop. The itinerary loops back here naturally at the end.</li>
-          <li><strong>Option B — split strategy:</strong> Andrew drops Martha + kids at <a href="https://www.google.com/maps/search/?api=1&query=Union%20Ave%20Books%20Knoxville%20TN" target="_blank" rel="noopener">Union Ave Books</a> (or Addison's), then drives to the World's Fair Park Garage and parks. Catches up to the family via <strong>Bird/Lime scooter</strong> (~5 min, check the app for nearest) or walks back (~0.5 mi / 10 min). Car is pre-positioned at the end.</li>
-        </ul>
-      </li>
-      <li><span class="todays-plan-time">12:00 PM —</span> Stroll Gay Street. Browse <strong>Addison's Bookstore</strong> and <strong>Union Ave Books</strong> (both open 12). Coffee top-up at <strong>K Brew</strong>. <br><em style="font-size:0.85rem;color:var(--text-dim);">🎁 Bonus nearby: 5 min north you hit <strong>Old City (Jackson Ave)</strong> — Victorian brick, quieter on Sunday. <strong>Pretentious Beer Co.'s glass studio</strong> is on the way; kids can watch glassblowing through the viewing window.</em> <br><span class="todays-plan-dist">📏 ~0.5 mi from parking at WFP (walking north on Gay)</span></li>
-      <li><span class="todays-plan-time">12:30 PM —</span> <strong>Rossini Festival pass-through</strong> on Market Square — 30-45 min max. Hear a stage, browse artisans, move on. <br><em style="font-size:0.85rem;color:var(--text-dim);">🎁 Bonus on the square: <strong>Tennessee Woman Suffrage Memorial</strong> (bronze, 2-min stop — TN was the final state to ratify the 19th). <strong>Krutch Park</strong> is right next door with a waterfall + benches if the kids need a breather.</em> <br><span class="todays-plan-dist">📏 ~0.3 mi from Gay Street</span></li>
-      <li class="step-lunch"><span class="todays-plan-time">1:00 PM —</span> <strong>Lunch</strong> — plenty of options around Market Square (Tomato Head is right there; browse Food Guide for more). <br><em style="font-size:0.85rem;color:var(--text-dim);">🎁 After lunch, a 10-min riverfront detour south gets you <strong>Volunteer Landing</strong> — Tennessee River boardwalk, Star of Knoxville riverboat docked. Swap in if weather's nice. Also where the <strong>Riverboat cruise</strong> departs if you confirmed one is running today.</em> <br><span class="todays-plan-dist">📏 0 mi — stay on Market Square</span></li>
-      <li><span class="todays-plan-time">1:30 PM —</span> Walk to World's Fair Park. <strong>Knoxville Museum of Art</strong> (free, 60-90 min). Richard Jolley glass installation is the headliner. <br><em style="font-size:0.85rem;color:var(--text-dim);">🎁 On the way: you'll cross the <strong>Clinch Avenue Viaduct</strong> — stop for 60 seconds for the Sunsphere + skyline view before descending into WFP.</em> <br><span class="todays-plan-dist">📏 ~0.4 mi from Market Square</span></li>
-      <li><span class="todays-plan-time">3:00 PM —</span> <strong>Sunsphere</strong> — quick elevator ride to the observation deck (~15 min). <br><span class="todays-plan-dist">📏 ~0.15 mi from KMA (next door)</span></li>
-      <li><span class="todays-plan-time">3:20 PM —</span> <strong>Fort Kid Playground</strong> — let the kids burn off right next to the Sunsphere before heading home. <br><span class="todays-plan-dist">📏 ~0.1 mi from Sunsphere (same park)</span></li>
-      <li class="step-home"><span class="todays-plan-time">4:00 PM —</span> Back to the car at WFP Garage — you're already there. Drive to Airbnb (~5 min), downtime, prep kid PJs for after the show, dinner by 5:00, walk to Tennessee Theatre by 5:45-6:00. <strong>Doors open 6 PM.</strong> <br><span class="todays-plan-dist">📏 ~0.05 mi to car · ~1 mi drive back to Airbnb</span></li>
+      <li><span class="todays-plan-time">— Park —</span> <strong>World's Fair Park Garage</strong> <span class="role-badge role-keystone">🔑 Keystone</span> · Free Sunday. Two staging options: <strong>(A)</strong> Everyone walks north to Gay St together. <strong>(B)</strong> Andrew drops family at <a href="https://www.google.com/maps/search/?api=1&query=Union%20Ave%20Books%20Knoxville%20TN" target="_blank" rel="noopener">Union Ave Books</a>, parks, rejoins via Bird/Lime scooter or 10-min walk back.</li>
+      <li><span class="todays-plan-time">12:00 PM —</span> <strong>Gay Street bookstores</strong> <span class="role-badge role-keystone">🔑 Keystone · ~30 min</span> — Addison's, Union Ave Books (both open 12), K Brew refuel. <br><span class="todays-plan-dist">📏 ~0.5 mi from WFP · walking north</span></li>
+      <li class="step-sideshow"><span class="todays-plan-time">~12:10 PM —</span> <strong>Mast General Store</strong> <span class="role-badge role-sideshow">✨ Side Show · 5-15 min</span> · 402 S Gay St, Sun 11–6. Retro candy + outdoor gear browsing. On-route, controlled kid-bribe stop. <br><span class="todays-plan-dist">📏 on route · on Gay St</span></li>
+      <li class="step-addon"><span class="todays-plan-time">~12:15 PM —</span> <strong>Old City (Jackson Ave)</strong> + <strong>Pretentious Beer glass studio</strong> + <strong>Old City Market (today 11-4)</strong> <span class="role-badge role-addon">🎯 Add-On · 20-40 min</span> · Victorian brick historic district 5 min north of Gay St. Glassblowing through a viewing window. Old City Market runs today only with makers + local food. Opt in if kids are game and time allows. <br><span class="todays-plan-dist">📏 ~0.3 mi north detour · adds 20-40 min</span></li>
+      <li class="step-sideshow"><span class="todays-plan-time">12:30 PM —</span> <strong>Strong Alley mural hunt</strong> <span class="role-badge role-sideshow">✨ Side Show · 10 min</span> — cut through between Gay St and Market Square. 24 hr, free. Kid scavenger-hunt prompt: weirdest, best animal, most hidden detail. <br><span class="todays-plan-dist">📏 on route · between Gay St &amp; Market Sq</span></li>
+      <li><span class="todays-plan-time">12:40 PM —</span> <strong>Rossini Festival @ Market Square</strong> <span class="role-badge role-keystone">🔑 Keystone · 30-45 min</span> — outdoor stages, artisans, free. <br><span class="todays-plan-dist">📏 ~0.3 mi from Gay Street</span></li>
+      <li class="step-sideshow"><span class="todays-plan-time">~1:00 PM —</span> <strong>Tennessee Woman Suffrage Memorial</strong> <span class="role-badge role-sideshow">✨ Side Show · 2 min</span> · Bronze sculpture on Market Square. TN was the final state to ratify the 19th. <br><span class="todays-plan-dist">📏 0 mi · on Market Square</span></li>
+      <li class="step-sideshow"><span class="todays-plan-time">~1:05 PM —</span> <strong>Krutch Park</strong> <span class="role-badge role-sideshow">✨ Side Show · 5-10 min</span> · Adjacent to Market Square. Waterfall + sculpture mini-walk. "Which sculpture would you put in our yard?" <br><span class="todays-plan-dist">📏 0 mi · adjacent</span></li>
+      <li class="step-lunch"><span class="todays-plan-time">1:15 PM —</span> <strong>Lunch at Market Square</strong> <span class="role-badge role-keystone">🔑 Keystone · 45 min</span> · Tomato Head right there; browse Food Guide for more. Keep it tight; afternoon is tighter than morning. <br><span class="todays-plan-dist">📏 0 mi</span></li>
+      <li class="step-addon"><span class="todays-plan-time">~2:00 PM —</span> <strong>Volunteer Landing / Riverwalk</strong> + optional <strong>Star of Knoxville Riverboat</strong> <span class="role-badge role-addon">🎯 Add-On · 20 min walk / 90 min cruise</span> · 10-min south detour gets you the riverfront boardwalk. Riverboat is where it departs if today's cruise is confirmed (<a href="tel:+18655257827" onclick="event.stopPropagation()">(865) 525-7827</a>). <br><span class="todays-plan-dist">📏 0.5 mi south of Market Sq · riverfront</span></li>
+      <li class="step-sideshow"><span class="todays-plan-time">~2:00 PM —</span> <strong>Clinch Avenue Viaduct</strong> <span class="role-badge role-sideshow">✨ Side Show · 1 min pause</span> · Pedestrian bridge between Gay St and WFP you'll cross anyway. 60 seconds for the Sunsphere + skyline view. <br><span class="todays-plan-dist">📏 on route · between Market Sq and WFP</span></li>
+      <li><span class="todays-plan-time">2:15 PM —</span> <strong>Knoxville Museum of Art</strong> <span class="role-badge role-keystone">🔑 Keystone · 45-60 min</span> · Sun 1–5, free. Richard Jolley glass installation is the headliner. <br><span class="todays-plan-dist">📏 ~0.4 mi from Market Square</span></li>
+      <li class="step-addon"><span class="todays-plan-time">— alt —</span> <strong>East Tennessee History Center</strong> <span class="role-badge role-addon">🎯 Add-On · alt to KMA, 45 min</span> · 601 S Gay St, Sun 1–5, free. Swap for KMA if you want local history instead of contemporary art. <br><span class="todays-plan-dist">📏 ~0.25 mi SE of Market Sq</span></li>
+      <li class="step-addon"><span class="todays-plan-time">— alt —</span> <strong>Maple Hall bowling</strong> <span class="role-badge role-addon">🎯 Add-On · indoor reset, 45-75 min</span> · 414 S Gay St, Sun 11–11, $25/lane/hr. Swap in if kids need a physical reset over museum time. <br><span class="todays-plan-dist">📏 ~0.2 mi from Market Sq · on Gay St</span></li>
+      <li><span class="todays-plan-time">3:00 PM —</span> <strong>Sunsphere</strong> <span class="role-badge role-keystone">🔑 Keystone · 15 min</span> · <strong>⚠️ Closes 4 PM Sunday — don't drift.</strong> Observation deck elevator ride. <br><span class="todays-plan-dist">📏 ~0.15 mi from KMA (next door)</span></li>
+      <li class="step-sideshow"><span class="todays-plan-time">~3:15 PM —</span> <strong>1982 World's Fair markers</strong> <span class="role-badge role-sideshow">✨ Side Show · 10 min</span> · Self-guided signs scattered around WFP. "Find three signs" game. Turns the gold ball into a story. <br><span class="todays-plan-dist">📏 0 mi · at WFP</span></li>
+      <li><span class="todays-plan-time">3:20 PM —</span> <strong>Fort Kid Playground</strong> <span class="role-badge role-keystone">🔑 Keystone · 30-40 min</span> · Let the kids burn off. Right next to Sunsphere. <br><span class="todays-plan-dist">📏 ~0.1 mi from Sunsphere</span></li>
+      <li class="step-home"><span class="todays-plan-time">4:00 PM —</span> Back to the car at WFP Garage. Drive to Airbnb (~5 min), downtime, prep kid PJs, dinner by 5:00, walk to Tennessee Theatre by 5:45-6:00. <strong>Doors open 6 PM.</strong> <br><span class="todays-plan-dist">📏 ~0.05 mi to car · ~1 mi drive</span></li>
     </ol>
+    <p style="font-size:0.82rem;color:var(--text-dim);margin-top:8px;font-style:italic;">One framing for the kids: "Knoxville is a city where the old frontier town, the railroad city, the river city, and the World's Fair city are all stacked within a few blocks." Turn the day into a scavenger hunt — murals, sculptures, the gold ball, the river, the theatre facade.</p>
     <div class="todays-plan-total">🥾 <strong>Total walking:</strong> ~1.5 mi across the day (most of that is the initial stroll north on Gay Street). The loop intentionally ends where you parked — no uphill trek home with tired kids.</div>
     <div class="mini-map-wrap">
       <a class="gmaps-btn" id="gmaps-sunday" href="#" target="_blank" rel="noopener">🗺️ Open in Google Maps</a>
       <div id="map-sunday" class="mini-map"></div>
-      <div class="mini-map-caption">Sunday progression — numbered pins (P → E) are the main loop. Emoji pins 🎁 are bonus stops you can slot in. Click any pin for details.</div>
+      <div class="mini-map-caption">Linear progression — <strong>numbered pins (P → E)</strong> are 🔑 Keystones (core). <strong>Amber-ringed 🎯 pins</strong> are Add-On detours (20-90 min). <strong>Gray ✨ pins</strong> are Side Shows (2-10 min pass-bys). Click any pin for details.</div>
     </div>
   </div>
 
@@ -1662,7 +1703,7 @@ body.dark .todays-plan-time { color: #5fb095; }
         <div class="card-sell">The gold sphere from the 1982 World's Fair. 266-ft elevator ride to the observation deck. Quick, free, distinctly Knoxville. Pairs with KMA + Fort Kid.</div>
         <div class="card-meta">
           <span class="meta-item"><span class="meta-icon">📍</span> <a href="https://www.google.com/maps/search/?api=1&query=Sunsphere%20Knoxville%20TN" target="_blank" rel="noopener">810 Clinch Ave</a> · 5 min</span>
-          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–6 PM (closed 12:30–1:30)</span>
+          <span class="meta-item"><span class="meta-icon">🕐</span> Sun 12–4 PM (no midday closure Sun)</span>
           <span class="meta-item"><span class="meta-icon">💰</span> FREE</span>
         </div>
       </div>
@@ -3256,19 +3297,32 @@ function buildMiniMap(containerId, stops, opts) {
     L.polyline(coords, { color: '#e0633a', weight: 3, opacity: 0.8, dashArray: '6, 5' }).addTo(mm);
   }
 
-  // Bonus stops: non-numbered emoji pins, not in the polyline, not in Google Maps waypoints
+  // Bonus stops: non-numbered pins, not in the polyline, not in Google Maps waypoints
+  // Role-aware rendering: 'addon' = larger amber ring, 'sideshow' = smaller gray ring
   if (opts.bonusStops && opts.bonusStops.length) {
     opts.bonusStops.forEach(function(s) {
-      const emoji = CAT[s.cat] || '🎁';
-      const sz = 22;
+      const emoji = CAT[s.cat] || '📍';
+      const role = s.role || 'sideshow';
+      const isAddon = role === 'addon';
+      const sz = isAddon ? 26 : 20;
+      const ringColor = isAddon ? '#c2712d' : '#6b7280';
+      const roleIcon = isAddon ? '🎯' : '✨';
+      const html = '<div style="position:relative;width:' + (sz + 8) + 'px;height:' + (sz + 8) + 'px;">'
+        + '<div style="width:' + (sz + 8) + 'px;height:' + (sz + 8) + 'px;border-radius:50%;background:' + ringColor + ';opacity:0.25;position:absolute;top:0;left:0;"></div>'
+        + '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:' + sz + 'px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));">' + emoji + '</div>'
+        + '<div style="position:absolute;bottom:-2px;right:-2px;font-size:10px;background:' + ringColor + ';color:#fff;border-radius:50%;width:14px;height:14px;display:flex;align-items:center;justify-content:center;border:1.5px solid #fff;">' + roleIcon + '</div>'
+        + '</div>';
       const icon = L.divIcon({
-        html: '<div style="font-size:' + sz + 'px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));opacity:0.9;">' + emoji + '</div>',
+        html: html,
         className: '',
-        iconSize: [sz + 4, sz + 4],
-        iconAnchor: [(sz + 4) / 2, (sz + 4) / 2]
+        iconSize: [sz + 8, sz + 8],
+        iconAnchor: [(sz + 8) / 2, (sz + 8) / 2]
       });
       const marker = L.marker([s.lat, s.lng], { icon: icon }).addTo(mm);
-      marker.bindPopup('<strong>🎁 ' + s.name + '</strong>' + (s.desc ? '<br><span style="font-size:0.85em;color:#666;">' + s.desc + '</span>' : ''));
+      const rolePill = isAddon
+        ? '<span style="background:#c2712d;color:#fff;padding:1px 6px;border-radius:10px;font-size:0.65rem;">🎯 ADD-ON</span>'
+        : '<span style="background:#6b7280;color:#fff;padding:1px 6px;border-radius:10px;font-size:0.65rem;">✨ SIDE SHOW</span>';
+      marker.bindPopup('<strong>' + s.name + '</strong> ' + rolePill + (s.desc ? '<br><span style="font-size:0.85em;color:#666;">' + s.desc + '</span>' : ''));
       if (s.scrollTo) {
         marker.on('click', function() {
           const target = document.getElementById(s.scrollTo);
@@ -3332,13 +3386,20 @@ function initMiniMaps() {
     { lat: 35.9620, lng: -83.9260, name: "Back to car at WFP", query: "World's Fair Park Garage Knoxville TN", addr: '963 Worlds Fair Park Dr, Knoxville, TN', cat: 'home', label: 'E' }
   ];
   const sundayBonus = [
-    { lat: 35.9657, lng: -83.9202, name: 'Krutch Park', cat: 'nature', desc: 'Kid breather · adjacent to Market Square' },
-    { lat: 35.9655, lng: -83.9197, name: 'TN Woman Suffrage Memorial', cat: 'culture', desc: 'Bronze sculpture on Market Square · 2-min stop' },
-    { lat: 35.9595, lng: -83.9175, name: 'Volunteer Landing / Riverwalk', cat: 'scenic', desc: '10 min walk south from Market Square · waterfront' },
-    { lat: 35.9706, lng: -83.9191, name: 'Old City (Jackson Ave)', cat: 'culture', desc: '5 min north of Gay St · historic district' },
-    { lat: 35.9698, lng: -83.9188, name: 'Pretentious Beer Glass Studio', cat: 'culture', desc: 'Old City · watchable glassblowing' },
-    { lat: 35.9638, lng: -83.9235, name: 'Clinch Avenue Viaduct', cat: 'scenic', desc: 'Pedestrian bridge · Gay St → WFP · skyline view' },
-    { lat: 35.9595, lng: -83.9175, name: 'Star of Knoxville Riverboat (call first)', cat: 'scenic', desc: 'Volunteer Landing · 90-min cruise · schedule varies', scrollTo: 'card-riverboat' },
+    // Side Shows (quick pass-by, 2-10 min, gray)
+    { lat: 35.9657, lng: -83.9202, name: 'Krutch Park', cat: 'nature', role: 'sideshow', desc: '5-10 min · waterfall + sculpture mini-walk · adjacent to Market Sq' },
+    { lat: 35.9655, lng: -83.9197, name: 'TN Woman Suffrage Memorial', cat: 'culture', role: 'sideshow', desc: '2 min · bronze sculpture on Market Square' },
+    { lat: 35.9656, lng: -83.9195, name: 'Strong Alley mural hunt', cat: 'culture', role: 'sideshow', desc: '10 min · between Gay St & Market Sq · kid scavenger hunt' },
+    { lat: 35.9638, lng: -83.9235, name: 'Clinch Avenue Viaduct', cat: 'scenic', role: 'sideshow', desc: '1 min · pedestrian bridge · Gay St → WFP · skyline view' },
+    // Add-Ons (20-90 min, amber)
+    { lat: 35.9656, lng: -83.9191, name: 'Mast General Store', cat: 'market', role: 'sideshow', desc: '5-15 min · 402 S Gay · Sun 11-6 · retro candy browse' },
+    { lat: 35.9632, lng: -83.9196, name: 'East Tennessee History Center', cat: 'culture', role: 'addon', desc: '45 min · 601 S Gay · Sun 1-5 · FREE · KMA alternative' },
+    { lat: 35.9654, lng: -83.9191, name: 'Maple Hall bowling', cat: 'kids', role: 'addon', desc: '45-75 min · 414 S Gay · Sun 11-11 · $25/lane · indoor reset' },
+    { lat: 35.9712, lng: -83.9188, name: 'Old City Market (today 11-4)', cat: 'market', role: 'addon', desc: '20-40 min · W. Jackson Ave · makers + local food · today only' },
+    { lat: 35.9595, lng: -83.9175, name: 'Volunteer Landing / Riverwalk', cat: 'scenic', role: 'addon', desc: '20 min · 10 min walk south from Market Sq · waterfront' },
+    { lat: 35.9706, lng: -83.9191, name: 'Old City (Jackson Ave)', cat: 'culture', role: 'addon', desc: '20-40 min · 5 min north of Gay St · historic district' },
+    { lat: 35.9698, lng: -83.9188, name: 'Pretentious Beer Glass Studio', cat: 'culture', role: 'addon', desc: '15-20 min · Old City · watchable glassblowing' },
+    { lat: 35.9595, lng: -83.9176, name: 'Star of Knoxville Riverboat (call first)', cat: 'scenic', role: 'addon', desc: '90 min · Volunteer Landing · schedule varies · call (865) 525-7827', scrollTo: 'card-riverboat' },
   ];
   buildMiniMap('map-sunday', sundayStops, { numbered: true, drawLine: true, loopBack: true, bonusStops: sundayBonus });
   hookGmapsBtn('gmaps-sunday', sundayStops, 'walking');
